@@ -9,3 +9,5 @@ BIRTHDAY DATE NOT NULL ,
 E_MAIL VARCHAR2(100) NOT NULL ,
 TEL VARCHAR2(100) NOT NULL
 );
+
+select * from recipe_member;
