@@ -29,6 +29,7 @@ public class RecipeDAO {
 		closeAll(pstmt, con);
 	}
 	
+	/*  레시피 목록 전체 */
 	public ArrayList<RecipeVO> getRecipeList() throws SQLException{
 		ArrayList<RecipeVO> list=new ArrayList<RecipeVO>();
 		Connection con=null;
@@ -67,6 +68,30 @@ public class RecipeDAO {
 			closeAll(rs, pstmt, con);
 		}
 		return list;
+	}
+	
+	/*  레시피 등록 */
+	public int createRecipe(RecipeVO rvo) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		try {
+			con = dataSource.getConnection();
+
+			StringBuilder sql = new StringBuilder("INSERT INTO recipe(RECIPE_NUM,id,title,content,category_num,image) ");
+			sql.append("values(recipe_seq.nextval,?,?,?,?,?) ");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, rvo.getMemberVO().getId());
+			pstmt.setString(2,rvo.getTitle());
+			pstmt.setString(3,rvo.getContent());
+			pstmt.setInt(4, rvo.getCategoryVO().getCategoryNo());
+			pstmt.setString(5, rvo.getImage());
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			closeAll(pstmt, con);
+		}
+		return result;
 	}
 }
 
