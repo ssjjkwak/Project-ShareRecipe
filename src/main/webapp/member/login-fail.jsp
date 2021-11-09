@@ -10,7 +10,7 @@
 	<body>
 		<script type="text/javascript">
 			alert("아이디 혹은 비밀번호가 틀렸습니다.");
-			location.href = "redirect:login.jsp";
+			location.href = "../member/login.jsp";
 		</script>
 	</body>
 </html>
