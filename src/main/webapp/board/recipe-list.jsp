@@ -37,5 +37,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<button type="button" onclick="location.href='board/recipe-write.jsp'">글등록</button>
 </body>
 </html>
