@@ -28,7 +28,9 @@
 				<td>${li.categoryVO.cName}</td>
 				<td>${li.recipeNo} </td>
 				<td>${li.image}</td>
-				<td>${li.title}</td>
+				<td>
+				<a href="RecipeDetailController.do?no=${li.recipeNo}">${li.title}</a>
+				</td>
 				<td>${li.memberVO.id}</td>
 				<td>${li.hits}</td>
 				<td>${li.likes}</td>
