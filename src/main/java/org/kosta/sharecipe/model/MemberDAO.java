@@ -7,8 +7,6 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import org.kosta.sharecipe.model.MemberVO;
-
 public class MemberDAO {
 	private static MemberDAO instance = new MemberDAO();
 	private DataSource dataSource;
@@ -45,6 +43,7 @@ public class MemberDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
+
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				memberVO = new MemberVO(id, password, rs.getString(1), rs.getString(2), rs.getString(3),
