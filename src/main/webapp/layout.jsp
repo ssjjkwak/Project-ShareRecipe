@@ -43,27 +43,22 @@
           <div class="row flex-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0"><a class="img-landing-banner" href="#!"><img class="img-fluid" src="assets/img/gallery/hero-header.png" alt="hero-header" /></a></div>
             <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
-              <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light" style="font-family: 'Jua'; font-weight: 500;">오늘은 뭘 먹을까?</h1>
-              <h1 class="text-800 mb-5 fs-4" style="font-family: 'Jua'; font-weight: 500;">Within a few clicks, find meals that<br class="d-none d-xxl-block" />are accessible near you</h1>
+              <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light" style="font-family: 'Jua'; font-weight: 500;">오늘은 뭘 먹을까?</h1><br>
+              <h1 class="text-800 mb-5 fs-4" style="font-family: 'Jua'; font-weight: 500;">자취생들의 걱정 1위 "오늘 뭐 먹지?"<br class="d-none d-xxl-block" /><br>SHARE:CIPE 에서 단번에 해결!</h1>
               <div class="card w-xxl-75">
                 <div class="card-body">
-                  <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <button class="nav-link active mb-3" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-motorcycle me-2"></i>Delivery</button>
-                      <button class="nav-link mb-3" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-shopping-bag me-2"></i>Pickup</button>
-                    </div>
-                  </nav>
-                  <div class="tab-content mt-3" id="nav-tabContent">
+                  
+                  <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                       <form class="row gx-2 gy-2 align-items-center">
                         <div class="col">
-                          <div class="input-group-icon"><i class="fas fa-map-marker-alt text-danger input-box-icon"></i>
+                        <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
                             <label class="visually-hidden" for="inputDelivery">Address</label>
-                            <input class="form-control input-box form-foodwagon-control" id="inputDelivery" type="text" placeholder="Enter Your Address" />
+                            <input class="form-control input-box form-foodwagon-control" style="font-family: 'Jua'; font-weight: 500;" id="inputDelivery" type="text" placeholder="먹고싶은 음식을 검색해보세요!" />
                           </div>
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
-                          <button class="btn btn-danger" type="submit">Find Food</button>
+                          <button class="btn btn-danger" type="submit" style="font-family: 'Jua'; font-weight: 500;">레시피 검색</button>
                         </div>
                       </form>
                     </div>
@@ -254,7 +249,7 @@
               </div>
               </a>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
+            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-3">
             <a href="#" style="display:block;">
               <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/food-world.png" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
@@ -266,7 +261,7 @@
               </div>
               </a>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
+            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-3">
             <a href="#" style="display:block;">
               <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/food-world.png" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
@@ -278,7 +273,7 @@
               </div>
               </a>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
+            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-3">
             <a href="#" style="display:block;">
               <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/food-world.png" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
@@ -290,7 +285,7 @@
               </div>
               </a>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
+            <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-3">
             <a href="#" style="display:block;">
               <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/food-world.png" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
@@ -302,7 +297,7 @@
               </div>
               </a>
             </div>
-            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!" style="font-family: 'Jua'; font-weight: 500;">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
+            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="all-recipe-board.jsp" style="font-family: 'Jua'; font-weight: 500;">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
           </div>
         </div>
       </section>
