@@ -11,3 +11,5 @@ TEL VARCHAR2(100) NOT NULL
 );
 
 select * from recipe_member;
+
+insert into RECIPE_MEMBER values('test','java','a','성남',sysdate,to_date('2003-05-21','YYYY-MM-DD'),'a@a.com','1234');
