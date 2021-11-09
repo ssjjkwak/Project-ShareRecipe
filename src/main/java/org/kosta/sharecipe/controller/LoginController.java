@@ -14,8 +14,10 @@ public class LoginController implements Controller {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		MemberVO mvo = MemberDAO.getInstance().login(id, password);
+		if(mvo==null)
+			return "redirect:member/login-fail.jsp";
 		HttpSession session = request.getSession();
 		session.setAttribute("mvo", mvo);
-		return null;
+		return "redirect:HomeController.do";
 	}
 }
