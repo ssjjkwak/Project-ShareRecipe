@@ -24,7 +24,7 @@ public class UpdateMemberController implements Controller {
 		String address=request.getParameter("address");
 		String birthday=request.getParameter("birthday");
 		String tel=request.getParameter("tel");	
-		MemberVO vo=new MemberVO(id, password, name, address, birthday, tel, null, null);
+		MemberVO vo=new MemberVO(id, password, name, address, null, birthday, null, tel);
 		MemberDAO.getInstance().updateMember(vo);
 		session.setAttribute("mvo", vo);
 		return "redirect:update-result.jsp";

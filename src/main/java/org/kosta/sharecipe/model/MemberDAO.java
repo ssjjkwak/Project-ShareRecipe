@@ -39,7 +39,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		try {
 			con = dataSource.getConnection();
-			String sql = "select name,address,signInDate,birthday,eMail,tel from recipe_member where id=? and password=?";
+			String sql = "select name,address,sign_in_date,birthday,e_mail,tel from RECIPE_MEMBER where id=? and password=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
@@ -113,4 +113,40 @@ public class MemberDAO {
 			closeAll(pstmt, con);
 		}
 	}
+	public MemberVO getMemberById(String id) throws SQLException {
+		MemberVO mvo = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs =null;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder();
+			sql.append("select id,password,name,address,birthday,tel ");
+			sql.append("from recipe_member ");
+			sql.append("where id=?");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				mvo = new MemberVO(id, rs.getString("password"), rs.getString("name"), rs.getString("address"), null, rs.getString("birthday"), null, rs.getString("tel"));
+			}
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return mvo;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
