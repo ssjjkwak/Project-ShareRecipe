@@ -28,7 +28,11 @@ public class CreateRecipeController implements Controller {
 		*/
 		
 		//이미지 삽입에 관련된 사항들
-		String saveDir="C:/kosta224/toy-project/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
+		//String saveDir="C:/kosta224/toy-project/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
+		//정훈
+		String saveDir="C:/kosta224/gitTest-workspace/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
+		//String saveDir="/image"; //저장될 위치 설정
+		
 		int maxSize=3*1024*1024; //3M byte 로 크기를 제한
 		
 		DiskFileItemFactory itemFactory=new DiskFileItemFactory();
@@ -86,7 +90,8 @@ public class CreateRecipeController implements Controller {
 			return "redirect:board/recipe-write-fail.jsp";
 		}else{
 			System.out.println("등록성공");
-			return "redirect:RecipeListController.do";
+			return "redirect:board/recipe-write-ok.jsp";
+			//return "redirect:RecipeListController.do";
 		}
 		
 		//아래와 같은 방법을 사용할 수 없던 이유 정훈이한테 설명해주기
