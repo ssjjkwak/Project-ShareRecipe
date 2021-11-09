@@ -297,7 +297,7 @@
               </div>
               </a>
             </div>
-            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="all-recipe-board.jsp" style="font-family: 'Jua'; font-weight: 500;">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
+            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="board/all-recipe-board.jsp" style="font-family: 'Jua'; font-weight: 500;">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
           </div>
         </div>
       </section>
