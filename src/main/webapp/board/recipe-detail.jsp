@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <title>레시피 등록 폼</title>
 </head>
+<script type="text/javascript">
+ function deleteRecipe(){
+	 if(confirm("삭제하시겠습니까?")){
+		 document.getElementById("deleteForm").submit();
+	 }
+	 
+ }
+</script>
 <body>
 	<table>
 		<tr>
@@ -35,9 +43,14 @@
 		</tr>
 	</table>
 		 <img src="image/${rvo.image }" width="100px">
+	
 	<div class="text-center">
 		<button type="submit" class="btn btn-success" onclick="location.href=''">수정</button>
-		<button type="submit" class="btn btn-success">삭제</button>
+
+		<form action="RecipeDeleteController.do" id="deleteForm" method="post">
+		<input type="hidden" name="no" value="${rvo.recipeNo}">
+		</form>
+		<button type="submit" class="btn btn-success" onclick="deleteRecipe()">삭제</button>
 	</div>
 </body>
 </html>
