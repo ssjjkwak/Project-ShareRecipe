@@ -17,7 +17,7 @@ public class RecipeUpdateFormController implements Controller {
 		//요청방식 post 체크
 		
 		//번호를 가져오지 못해서 하드코딩한 상태
-		request.setAttribute("rvo", RecipeDAO.getInstance().getRecipeByNo("14"));
+		request.setAttribute("rvo", RecipeDAO.getInstance().getRecipeByNo(request.getParameter("recipeNo")));
 				
 		return "board/recipe-update.jsp";
 	}

@@ -59,7 +59,7 @@ public class RecipeUpdateController implements Controller {
 					int category_num = Integer.parseInt(item.getString());
 					categoryVO.setCategoryNo(category_num);
 					recipeVO.setCategoryVO(categoryVO);
-				} else if (item.getFieldName().equals("no")) {
+				} else if (item.getFieldName().equals("recipeNo")) {
 					recipeVO.setRecipeNo(Integer.parseInt(item.getString()));
 				} else if (item.getFieldName().equals("title")) {
 					recipeVO.setTitle(item.getString());
