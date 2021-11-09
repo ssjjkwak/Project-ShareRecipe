@@ -8,8 +8,7 @@
 <title>recipe-update</title>
 </head>
 <body>
-<!-- <form enctype="multipart/form-data" action="../RecipeUpdateController.do" method="post"> -->
-<form action="../RecipeUpdateController.do" method="post">
+<form enctype="multipart/form-data" action="RecipeUpdateController.do" method="post">
 <table>
 	<tr>
 	<td>
@@ -39,12 +38,12 @@
 		<!-- session 보유 -->
 			<td><input type="hidden" name="id"></td>
 		</tr>
-		<!-- <tr>
+		<tr>
 			<td>
 				<input type="file" name="image">
 			</td>
 		</tr>
- -->	</table>
+		</table>
 	<button type="submit">수정</button>
 	</form>
 </body>

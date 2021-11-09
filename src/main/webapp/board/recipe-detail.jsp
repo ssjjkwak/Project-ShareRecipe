@@ -15,8 +15,8 @@
  }
  function updateRecipe(){
 	 if(confirm("수정하시겠습니까?")){
-		 //document.getElementById("updateForm").submit();
-	 	location.href="board/recipe-update.jsp";
+		document.getElementById("updateForm").submit();
+	 	//location.href="board/recipe-update.jsp";
 	 }
  }
 </script>
@@ -50,7 +50,7 @@
 		 <img src="image/${rvo.image }" width="100px">
 	
 	<div class="text-center">
-		<form  id="updateForm" method="post">
+		<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
 		<input type="hidden" name="no" value="${rvo.recipeNo }">
 		</form>
 		<button type="submit" class="btn btn-success" onclick="updateRecipe()">수정</button>

@@ -172,14 +172,14 @@ public class RecipeDAO {
 		int result =0;
 		try {
 			con=dataSource.getConnection();
-			StringBuilder sql=new StringBuilder("update recipe set category_num=?,title=?,content=? ");
+			StringBuilder sql=new StringBuilder("update recipe set category_num=?,title=?,content=? , image=?");
 			sql.append("where recipe_num=?");
 			pstmt=con.prepareStatement(sql.toString());
 			pstmt.setInt(1, rvo.getCategoryVO().getCategoryNo());
 			pstmt.setString(2, rvo.getTitle());
 			pstmt.setString(3, rvo.getContent());
-			//pstmt.setString(4, rvo.getImage());
-			pstmt.setInt(4, rvo.getRecipeNo());
+			pstmt.setString(4, rvo.getImage());
+			pstmt.setInt(5, rvo.getRecipeNo());
 			result = pstmt.executeUpdate();
 		}finally {
 			closeAll(pstmt, con);
