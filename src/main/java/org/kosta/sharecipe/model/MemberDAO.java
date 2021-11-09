@@ -39,7 +39,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		try {
 			con = dataSource.getConnection();
-			String sql = "select name,address,sign_in_date,birthday,e_mail,tel from RECIPE_MEMBER where id=? and password=?";
+			String sql = "select name,address,sign_in_date,birthday,email,tel from RECIPE_MEMBER where id=? and password=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
@@ -60,13 +60,12 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = dataSource.getConnection();
-			String sql = "update mvc_member set password=?,name=?,address=?,birthday=to_date(?,'YYYY-MM-DD')  where id=?";
+			String sql = "update recipe_member set password=?,name=?,address=? where id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getPassword());
 			pstmt.setString(2, vo.getName());
 			pstmt.setString(3, vo.getAddress());
-			pstmt.setString(4, vo.getBirthday());
-			pstmt.setString(5, vo.getId());
+			pstmt.setString(4, vo.getId());
 			pstmt.executeUpdate();
 		} finally {
 			closeAll(pstmt, con);
@@ -98,7 +97,7 @@ public class MemberDAO {
 		try {
 			con = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) ");
+			sql.append("insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,EMAIL,TEL) ");
 			sql.append("values(?,?,?,?,sysdate,to_date(?,'YYYY-MM-DD'),?,?)");
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, vo.getId());

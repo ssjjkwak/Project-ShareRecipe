@@ -16,33 +16,32 @@
 </head>
 <script type="text/javascript">
 function checkId() {
-	let ck = document.getElementById("joinId").value;
+	let mid = document.getElementById("joinId").value;
 
-	if (ck == "") {
+	if (mid=="") {
 		alert("아이디를 입력하세요!");
 	} else {
-		window.open("RegisterIdCheckController.do?id=" + ck, "mypopup",
+		window.open("../RegisterIdCheckController.do?id="+mid, "mypopup",
 				"width=300,height=200,top=150,left=500");
 	}
 }
 // 아이디 중복확인하지 않은 상태에서 가입하기를 누르면 아이디 중복확인하세요 alert 후 전송시키지 않는다 
-function checkForm() {
-	if (document.getElementById("joinId").value != document
-			.getElementById("flag").value) {
+/* function checkForm() {
+	if(document.getElementById("joinId").value!=document.getElementById("flag").value){
 		alert("아이디 중복확인하세요");
 		return false;
 	}
-}
+} */
 </script>
 <body>
 	<div class="container">
 		<div class="row h-100">
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-			<a href="index.jsp""><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br><br>
+			<a href="../index.jsp""><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br><br>
 				<h3 style="font-family: 'Jua'; font-weight: 800;">회원가입</h3>
 				<br>
 				<br><br>
-				<form action="RegisterMemberController.do" onsubmit="return checkForm()" method="post">
+				<form action="../RegisterMemberController.do" onsubmit="return checkForm()" method="post">
 					<input type="hidden" id="flag" value="">
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 75%; margin-bottom: 20px; display: inline-block; float: left;"

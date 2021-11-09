@@ -14,8 +14,7 @@ public class RegisterMemberController implements Controller {
 		String password=request.getParameter("joinPw");
 		String name=request.getParameter("joinName");
 		StringBuilder sb=new StringBuilder();
-		String address=sb.append(request.getParameter("joinAddr1")).append("joinAddr2").append("joinAddr3").append("joinAddr4").toString();
-		System.out.println(address);
+		String address=sb.append(request.getParameter("joinAddr1")).append(" ").append("joinAddr2").append(" ").append("joinAddr3").append(" ").append("joinAddr4").toString();
 		String birthday=request.getParameter("joinBirthday");
 		StringBuilder sb1=new StringBuilder();
 		String eMail=sb1.append(request.getParameter("joinMail1")).append(request.getParameter("joinMail2")).toString();
