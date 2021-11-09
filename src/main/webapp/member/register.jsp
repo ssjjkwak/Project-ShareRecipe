@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>회원가입</title>
+ <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <link rel="manifest" href="../assets/img/favicons/manifest.json">
 <meta name="msapplication-TileImage"
 	content="../assets/img/favicons/mstile-150x150.png">
@@ -21,23 +22,23 @@ function checkId() {
 	if (mid=="") {
 		alert("아이디를 입력하세요!");
 	} else {
-		window.open("../RegisterIdCheckController.do?id="+mid, "mypopup",
+		window.open("../RegisterIdCheckController.do?joinId="+mid, "mypopup",
 				"width=300,height=200,top=150,left=500");
 	}
 }
 // 아이디 중복확인하지 않은 상태에서 가입하기를 누르면 아이디 중복확인하세요 alert 후 전송시키지 않는다 
-/* function checkForm() {
+function checkForm() {
 	if(document.getElementById("joinId").value!=document.getElementById("flag").value){
-		alert("아이디 중복확인하세요");
+		alert("아이디 중복 확인이 필요합니다.");
 		return false;
 	}
-} */
+} 
 </script>
 <body>
 	<div class="container">
-		<div class="row h-100">
+		<div class="row h-100" style="background-color:#F9FAFD;">
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-			<a href="../index.jsp""><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br><br>
+			<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br><br>
 				<h3 style="font-family: 'Jua'; font-weight: 800;">회원가입</h3>
 				<br>
 				<br><br>
@@ -48,7 +49,7 @@ function checkId() {
 						type="text" id="joinId" name="joinId" placeholder="아이디를 입력하세요."
 						required="required">
 					<button class="btn btn-danger" onclick="checkId()"
-						style="position: relative; margin: 0; padding: 0; height: 38px; width: 20%;"
+						style="position: relative; margin: 0; padding: 0; height: 38px; width: 20%; font-family: 'Jua'; font-weight: 500;"
 						type="button">중복확인</button>
 					<br> <input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
@@ -62,15 +63,15 @@ function checkId() {
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 50%; display: inline-block; float: left; margin-bottom: 20px;"
 						type="text" name="joinAddr1" id="sample2_postcode"
-						placeholder="우편번호" disabled="disabled"> <input
+						placeholder="우편번호" readonly="readonly"> <input
 						class="btn btn-danger"
-						style="position: relative; margin: 0; padding: 0; height: 38px; width: 20%; left: -10%;"
+						style="position: relative; margin: 0; padding: 0; height: 38px; width: 20%; left: -10%; font-family: 'Jua'; font-weight: 500;"
 						type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
 
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="text"
 						name="joinAddr2" id="sample2_address" placeholder="주소"
-						disabled="disabled"><br> <input
+						readonly="readonly"><br> <input
 						class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 48%; display: inline-block; float: left; margin-bottom: 20px; margin-right: 4%;"
 						type="text" name="joinAddr3" id="sample2_detailAddress"
@@ -82,7 +83,7 @@ function checkId() {
 						class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="text"
 						name="joinTel" placeholder="휴대폰번호(공백없이 숫자만 입력)"
-						required="required"><br> <input
+						required="required"><br> <div style="text-align: left;"><span style="font-family: 'Jua'; font-weight: 500;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생년월일</span></div><br><input
 						class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="date"
 						name="joinBirthday" required="required"><br> <input
@@ -94,11 +95,11 @@ function checkId() {
 						style="font-family: 'Jua'; font-weight: 500; width: 45%; display: block; float: right; margin-bottom: 20px;"
 						name="joinMail2" id="email_server" onchange="input_email();">
 						<option value="">주소선택</option>
-						<option value="naver.com">@naver.com</option>
-						<option value="gmail.com">@gmail.com</option>
-						<option value="hotmail.com">@hotmail.com</option>
+						<option value="@naver.com">@naver.com</option>
+						<option value="@gmail.com">@gmail.com</option>
+						<option value="@hotmail.com">@hotmail.com</option>
 					</select> <br> <br>
-					<button class="btn btn-danger btn-lg" style="margin-top: 20px;">회원가입</button>
+					<button style="font-family: 'Jua'; font-weight: 500;" class="btn btn-danger btn-lg" style="margin-top: 20px;">회원가입</button>
 				</form>
 			</div>
 		</div>
@@ -215,5 +216,13 @@ function checkId() {
 					+ 'px';
 		}
 	</script>
+	<script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
 </body>
 </html>
