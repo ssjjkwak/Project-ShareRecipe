@@ -8,7 +8,14 @@
 <title>recipe-update</title>
 </head>
 <body>
+<!-- <form enctype="multipart/form-data" action="../RecipeUpdateController.do" method="post"> -->
+<form action="../RecipeUpdateController.do" method="post">
 <table>
+	<tr>
+	<td>
+		<input type="hidden" name="no" value="${rvo.recipeNo }">
+	</td>
+	</tr>
 		<tr>
 			<td>
 				<select name="category_num">
@@ -21,23 +28,24 @@
 			</td>
 		</tr>
 		<tr>
-			<td><input type="text" name="title" placeholder="${rvo.title }" required="required"></td>
+			<td><input type="text" name="title" placeholder="" required="required"></td>
 		</tr>
 		<tr>
 			<td>
-				<textarea rows="10" name="content" placeholder="${rvo.content }" required="required"></textarea>
+				<textarea rows="10" name="content" placeholder="" required="required"></textarea>
 			</td>
 		</tr>
 		<tr>
 		<!-- session 보유 -->
 			<td><input type="hidden" name="id"></td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>
 				<input type="file" name="image">
 			</td>
 		</tr>
-	</table>
-	
+ -->	</table>
+	<button type="submit">수정</button>
+	</form>
 </body>
 </html>
