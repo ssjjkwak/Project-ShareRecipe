@@ -20,8 +20,8 @@ public class RegisterMemberController implements Controller {
 		StringBuilder sb1=new StringBuilder();
 		String eMail=sb1.append(request.getParameter("joinMail1")).append(request.getParameter("joinMail2")).toString();
 		String tel=request.getParameter("joinTel");
-		//MemberVO vo=new MemberVO(id,password,name,address,null,birthday,eMail,tel);
-		//MemberDAO.getInstance().register(vo);
+		MemberVO vo=new MemberVO(id,password,name,address,null,birthday,eMail,tel);
+		MemberDAO.getInstance().register(vo);
 		MemberDAO.getInstance().login(id, password);
 		return "";
 	}

@@ -40,33 +40,12 @@ public class MemberDAO {
 			pstmt.setString(2, password);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				memberVO=new MemberVO(id,password,rs.getString(1));
+				//memberVO=new MemberVO(id,password,rs.getString(1));
 			}
 		}finally {
 			closeAll(rs, pstmt, con);
 		}
 		return memberVO;
-	}
-	public void register(MemberVO vo) throws SQLException {
-		Connection con=null;
-		PreparedStatement pstmt=null;
-		try {
-			con=dataSource.getConnection();
-			StringBuilder sql=new StringBuilder();
-			sql.append("insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) ");
-			sql.append("values(?,?,?,?,sysdate,to_date(?,'YYYY-MM-DD'),?,?)");
-			pstmt=con.prepareStatement(sql.toString());
-			pstmt.setString(1, null);
-			pstmt.setString(2, null);
-			pstmt.setString(3, null);
-			pstmt.setString(4, null);
-			pstmt.setString(5, null);
-			pstmt.setString(6, null);
-			pstmt.setString(7, null);
-			pstmt.executeUpdate();
-		}finally {
-			closeAll(pstmt, con);
-		}
 	}
 }
 
