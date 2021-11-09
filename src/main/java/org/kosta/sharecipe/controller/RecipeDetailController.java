@@ -21,7 +21,7 @@ public class RecipeDetailController implements Controller {
 		RecipeVO rvo=RecipeDAO.getInstance().getRecipeByNo(no);
 		request.setAttribute("rvo", rvo);
 		return "board/recipe-detail.jsp";
-		//return "layout.jsp";
+		//return "index.jsp";
 	}
 
 }
