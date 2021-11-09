@@ -53,6 +53,17 @@ from recipe r,category c
 where r.category_num=c.category_num
 order by r.reg_date desc
 
+--게시물 상세보기
+select r.recipe_num,r.title,m.id,r.content,r.hits,r.likes,to_char(r.reg_date,'yyyy.mm.dd') as reg_date,r.image
+from recipe r, recipe_member m
+where r.id=m.id and r.recipe_num=3;
+
+select r.recipe_num,r.title,m.id,r.content,r.hits,r.likes,to_char(r.reg_date,'yyyy.mm.dd') as reg_date,r.image
+from recipe r, recipe_member m
+where r.id=m.id and r.recipe_num=3; 
+
+
+
 
 
 

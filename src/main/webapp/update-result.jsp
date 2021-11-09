@@ -20,7 +20,7 @@
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
 				<h3>회원정보 수정 완료!</h3>
 				
-					<a href="layout.jsp"><button class="btn btn-danger btn-lg" style="margin-top: 20px;">메인으로</button></a>
+					<a href="redirect:"><button class="btn btn-danger btn-lg" style="margin-top: 20px;">메인으로</button></a>
 				</form>
 			</div>
 		</div>

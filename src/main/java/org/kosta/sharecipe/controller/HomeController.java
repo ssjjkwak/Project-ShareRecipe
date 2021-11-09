@@ -2,16 +2,14 @@ package org.kosta.sharecipe.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-public class LogoutController implements Controller {
+public class HomeController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		HttpSession session = request.getSession(false);
-		if(session != null)
-			session.invalidate();
-		return "redirect:layout.jsp";
+		request.setAttribute("popular", "board/recipe-popular.jsp");
+		request.setAttribute("newWrite", "board/recipe-newWrite.jsp");
+		return "layout.jsp";
 	}
 
 }
