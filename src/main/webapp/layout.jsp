@@ -84,11 +84,13 @@
         </div>
       </section>
       <!-- 메인이미지(검색) 끝-->
+    
 	  <!-- recipe-popular.jsp import  -->
 	  <c:import url="${requestScope.popular }"/>
 	  
       <!-- recipe-newWrite.jsp import -->
       <c:import url="${requestScope.newWrite }"/>
+
 
 
       <!-- ============================================-->
