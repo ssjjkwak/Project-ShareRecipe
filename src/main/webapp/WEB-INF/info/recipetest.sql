@@ -45,6 +45,8 @@ CONSTRAINT recipe_fk2 FOREIGN KEY(CATEGORY_NUM) REFERENCES category(category_num
 INSERT INTO recipe(RECIPE_NUM,id,title,content,category_num,image) 
 values(recipe_seq.nextval,'JAVA','월요일테스트','본문임',1,'1636364271303.jpg');
 
+
+
 select * from recipe;
 
 				
@@ -63,7 +65,11 @@ from recipe r, recipe_member m
 where r.id=m.id and r.recipe_num=3; 
 
 
+--조회수 증가
+update recipe set hits=hits+1 where recipe_num=3;
 
+--레시피 삭제
+delete from RECIPE where recipe_num=6;
 
 
 
