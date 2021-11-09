@@ -11,12 +11,12 @@
       <c:choose>
 	<c:when test="${sessionScope.mvo==null}">
       <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-        <a href="login.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>로그인</div></a>
-        <a href="RegisterMemberController.do"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>회원가입</div></a>
+        <a href="member/login.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>로그인</div></a>
+        <a href="member/register.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>회원가입</div></a>
       </form>
 	</c:when>
 	<c:otherwise>
-        <a href="update-member.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>${sessionScope.mvo.name}님</div></a>
+        <a href="member/update-member.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>${sessionScope.mvo.name}님</div></a>
         <a href="#"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>나의 레시피</div></a>
         <a href="LogoutController.do"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500;"> <i class="fas fa-user me-2"></i>로그아웃</div></a>
 	</c:otherwise>

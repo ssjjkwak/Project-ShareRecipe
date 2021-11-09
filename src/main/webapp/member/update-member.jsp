@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>회원가입</title>
-<link rel="manifest" href="assets/img/favicons/manifest.json">
+<link rel="manifest" href="../assets/img/favicons/manifest.json">
 <meta name="msapplication-TileImage"
-	content="assets/img/favicons/mstile-150x150.png">
+	content="../assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
 <link href="../assets/css/theme.css" rel="stylesheet" />
 </head>
