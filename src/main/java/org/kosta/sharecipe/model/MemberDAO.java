@@ -40,7 +40,7 @@ public class MemberDAO {
 			pstmt.setString(2, password);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				memberVO=new MemberVO(id,password,rs.getString(1));
+				//memberVO=new MemberVO(id,password,rs.getString(1));
 			}
 		}finally {
 			closeAll(rs, pstmt, con);
