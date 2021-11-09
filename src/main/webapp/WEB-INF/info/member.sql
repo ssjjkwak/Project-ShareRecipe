@@ -17,8 +17,10 @@ values('kykim97','김근영','971030','수내',sysdate,to_date('1997-10-30','YYY
 insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) 
 values('ksj','곽승진','a','동탄',sysdate,to_date('1997-04-09','YYYY-MM-DD'),'abc@gmail.com','01045980690');
 
-select * from recipe_member;
+update recipe_member set password='fff',name='김김',address='주소',birthday=to_date('1997-11-09','YYYY-MM-DD')  where id='add';
 
+select * from recipe_member;
+commit
 select name,address,sign_in_date,birthday,e_mail,tel from RECIPE_MEMBER where id=? and password=?;
 
 insert into RECIPE_MEMBER values('test','java','a','성남',sysdate,to_date('2003-05-21','YYYY-MM-DD'),'a@a.com','1234');

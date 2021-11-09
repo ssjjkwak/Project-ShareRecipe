@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>회원가입</title>
-<link rel="manifest" href="assets/img/favicons/manifest.json">
+<link rel="manifest" href="../assets/img/favicons/manifest.json">
 <meta name="msapplication-TileImage"
-	content="assets/img/favicons/mstile-150x150.png">
+	content="../assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
 <link href="../assets/css/theme.css" rel="stylesheet" />
 </head>
@@ -20,40 +20,36 @@
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
 				<h3>회원정보 수정</h3>
 				<br><br>
-				<form action="UpdateMemberController.do" method="post">
+				<form action="../UpdateMemberController.do" method="post">
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width:75%; margin-bottom:20px; display: inline-block; float:left;"
-						type="text" name="joinId" value="${sessionScope.mvo.id}" disabled="disabled"
+						type="text" name="upId" value="${sessionScope.mvo.id}" disabled="disabled"
 						required="required">
 					<br> 
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
-						name="joinPw" value="${sessionScope.mvo.password}" required="required">
+						name="upPw" value="${sessionScope.mvo.password}" required="required">
 					<br> 
-					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="joinName" value="${sessionScope.mvo.name}"
+					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="upName" value="${sessionScope.mvo.name}"
 						required="required"> 
 					<br> 	
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 50%;display: inline-block; float:left;margin-bottom:20px;" type="text"
-						name="joinAddr1" id="sample2_postcode" value="${sessionScope.mvo.address}"
-						disabled="disabled"> 
-					<input class="form-control border-0 input-box bg-100"
-						style="font-family: 'Jua'; font-weight: 500; width: 50%;display: inline-block; float:left;margin-bottom:20px;" type="text"
-						name="joinAddr1" id="sample2_postcode" placeholder="우편번호"
+						name="upAddr1" id="sample2_postcode" placeholder="우편번호"
 						disabled="disabled"> 
 						
 					<input class="btn btn-danger" style="position:relative; margin:0;padding:0; height: 38px; width:20%; left:-10%;" type="button"
 						onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
 						
-					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="joinAddr2" id="sample2_address"
+					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="upAddr2" id="sample2_address"
 						placeholder="주소" disabled="disabled"><br> 
 					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; width: 48%;display: inline-block; float:left;margin-bottom:20px; margin-right: 4%;"
-						type="text" name="joinAddr3" id="sample2_detailAddress"
+						type="text" name="upAddr3" id="sample2_detailAddress"
 						placeholder="상세주소"> 
-					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; width: 48%;display: inline-block; float:left;margin-bottom:20px;" type="text" name="joinAddr4"
+					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; width: 48%;display: inline-block; float:left;margin-bottom:20px;" type="text" name="upAddr4"
 						id="sample2_extraAddress" placeholder="참고항목"> <br> 
 					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;"
-						type="text" name="joinTel" value="${sessionScope.mvo.tel}"
+						type="text" name="upTel" value="${sessionScope.mvo.tel}"
 						required="required"><br> 
 			
 					<br>
