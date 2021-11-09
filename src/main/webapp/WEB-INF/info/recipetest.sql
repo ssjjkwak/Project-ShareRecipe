@@ -47,15 +47,6 @@ values(recipe_seq.nextval,'JAVA','월요일테스트','본문임',1,'16363642713
 
 select * from recipe;
 
-
-th>카테고리명</th>
-				<th>번호</th>
-				<th>이미지</th>
-				<th class="title">제목</th>
-				<th>작성자</th>
-				<th>조회</th>
-				<th>추천수</th>
-				<th>작성일</th>
 				
 select c.category_name,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,r.reg_date
 from recipe r,category c
@@ -66,9 +57,7 @@ order by r.reg_date desc
 
 
 
-
-
-
+--데이블 drop 할 경우 아래의 순서로 진행해야함
 drop table recipe;
 drop table category;
 drop table recipe_member;
