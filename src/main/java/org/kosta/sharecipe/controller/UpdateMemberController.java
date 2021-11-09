@@ -16,7 +16,7 @@ public class UpdateMemberController implements Controller {
 		//로그인 체크 
 		HttpSession session=request.getSession(false);
 		if(session==null||session.getAttribute("mvo")==null) {//로그인 상태가 아니면 index로 이동시킨다 
-			return "redirect:layout.jsp";
+			return "redirect:index.jsp";
 		}
 		String id=request.getParameter("id");
 		String password=request.getParameter("password");
@@ -27,7 +27,7 @@ public class UpdateMemberController implements Controller {
 		MemberVO vo=new MemberVO(id, password, name, address, null, birthday, null, tel);
 		MemberDAO.getInstance().updateMember(vo);
 		session.setAttribute("mvo", vo);
-		return "redirect:update-result.jsp";
+		return "redirect:member/update-result.jsp";
 	}
 
 }

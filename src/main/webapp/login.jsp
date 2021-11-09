@@ -13,7 +13,7 @@
 		<div class="container">
           <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-            	<a href="layout.jsp"><img src="assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br>
+            	<a href="index.jsp"><img src="assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br>
 				<form action="LoginController.do" method="post">
 				    <input class="form-control border-0 input-box bg-100" type="text" name="id" placeholder="아이디" required="required" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" /><br>
 				    <input class="form-control border-0 input-box bg-100" type="password" name="password" placeholder="비밀번호" required="required" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" /><br><br>
