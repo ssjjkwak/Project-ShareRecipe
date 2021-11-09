@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="container">
-          <div class="row h-100">
+          <div class="row h-100" style="background-color:#F9FAFD;">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
             	<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br>
 				<form action="../LoginController.do" method="post">

@@ -22,7 +22,14 @@ public class UpdateMemberController implements Controller {
 		String password=request.getParameter("upPw");
 		String name=request.getParameter("upName");
 		StringBuilder sb=new StringBuilder();
-		String address=sb.append(request.getParameter("upAddr1")).append(" ").append("upAddr2").append(" ").append("upAddr3").append(" ").append("upAddr4").toString();
+		sb.append(request.getParameter("upAddr1"));
+		sb.append(" ");
+		sb.append(request.getParameter("upAddr2"));
+		sb.append(" ");
+		sb.append(request.getParameter("upAddr3"));
+		sb.append(" ");
+		sb.append(request.getParameter("upAddr4"));
+		String address = sb.toString();		
 		String tel=request.getParameter("upTel");	
 		MemberVO vo=new MemberVO(id, password, name, address, null, null, null, tel);
 		MemberDAO.getInstance().updateMember(vo);

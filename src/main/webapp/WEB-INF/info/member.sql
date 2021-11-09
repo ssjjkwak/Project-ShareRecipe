@@ -10,11 +10,11 @@ EMAIL VARCHAR2(100) NOT NULL ,
 TEL VARCHAR2(100) NOT NULL
 );
 
-insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) 
+insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,EMAIL,TEL) 
 values('java','길동이','321','미금',sysdate,to_date('1996-04-22','YYYY-MM-DD'),'kimbeneeee@gmail.com','01012345678');
-insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) 
+insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,EMAIL,TEL) 
 values('kykim97','김근영','971030','수내',sysdate,to_date('1997-10-30','YYYY-MM-DD'),'kykim97@naver.com','01054331428');
-insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,E_MAIL,TEL) 
+insert into recipe_member(ID,NAME,PASSWORD,ADDRESS,SIGN_IN_DATE,BIRTHDAY,EMAIL,TEL) 
 values('ksj','곽승진','a','동탄',sysdate,to_date('1997-04-09','YYYY-MM-DD'),'abc@gmail.com','01045980690');
 
 update recipe_member set password='fff',name='김김',address='주소',birthday=to_date('1997-11-09','YYYY-MM-DD')  where id='add';

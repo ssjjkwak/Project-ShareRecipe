@@ -23,7 +23,7 @@
 				<form action="../UpdateMemberController.do" method="post">
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width:75%; margin-bottom:20px; display: inline-block; float:left;"
-						type="text" name="upId" value="${sessionScope.mvo.id}" disabled="disabled"
+						type="text" name="upId" value="${sessionScope.mvo.id}" readonly="readonly"
 						required="required">
 					<br> 
 					<input class="form-control border-0 input-box bg-100"
@@ -36,13 +36,13 @@
 					<input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 50%;display: inline-block; float:left;margin-bottom:20px;" type="text"
 						name="upAddr1" id="sample2_postcode" placeholder="우편번호"
-						disabled="disabled"> 
+						readonly="readonly"> 
 						
 					<input class="btn btn-danger" style="position:relative; margin:0;padding:0; height: 38px; width:20%; left:-10%;" type="button"
 						onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
 						
 					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="upAddr2" id="sample2_address"
-						placeholder="주소" disabled="disabled"><br> 
+						placeholder="주소" readonly="readonly"><br> 
 					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; width: 48%;display: inline-block; float:left;margin-bottom:20px; margin-right: 4%;"
 						type="text" name="upAddr3" id="sample2_detailAddress"
 						placeholder="상세주소"> 
