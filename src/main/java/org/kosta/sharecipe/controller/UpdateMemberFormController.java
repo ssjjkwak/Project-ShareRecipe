@@ -11,8 +11,8 @@ public class UpdateMemberFormController implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		request.setAttribute("mvo", MemberDAO.getInstance().getMemberById(request.getParameter("id")));
-	      request.setAttribute("url", "update-member.jsp");
-	      return "layout.jsp";
+	      request.setAttribute("url", "member/update-member.jsp");
+	      return "index.jsp";
 	}
 
 }

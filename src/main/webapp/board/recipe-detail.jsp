@@ -12,7 +12,12 @@
 	 if(confirm("삭제하시겠습니까?")){
 		 document.getElementById("deleteForm").submit();
 	 }
-	 
+ }
+ function updateRecipe(){
+	 if(confirm("수정하시겠습니까?")){
+		 //document.getElementById("updateForm").submit();
+	 	location.href="board/recipe-update.jsp";
+	 }
  }
 </script>
 <body>
@@ -45,7 +50,10 @@
 		 <img src="image/${rvo.image }" width="100px">
 	
 	<div class="text-center">
-		<button type="submit" class="btn btn-success" onclick="location.href=''">수정</button>
+		<form  id="updateForm" method="post">
+		<input type="hidden" name="no" value="${rvo.recipeNo }">
+		</form>
+		<button type="submit" class="btn btn-success" onclick="updateRecipe()">수정</button>
 
 		<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 		<input type="hidden" name="no" value="${rvo.recipeNo}">

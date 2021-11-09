@@ -71,6 +71,8 @@ update recipe set hits=hits+1 where recipe_num=3;
 --레시피 삭제
 delete from RECIPE where recipe_num=6;
 
+--레시피 수정
+update recipe set category_num=2,title='화요일저녁',content='밤',image='1636449018556.jpg' where recipe_num=3;
 
 
 
