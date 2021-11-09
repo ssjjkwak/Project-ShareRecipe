@@ -11,7 +11,7 @@ public class LogoutController implements Controller {
 		HttpSession session = request.getSession(false);
 		if(session != null)
 			session.invalidate();
-		return "redirect:HomeController.do";
+		return "redirect:layout.jsp";
 	}
 
 }
