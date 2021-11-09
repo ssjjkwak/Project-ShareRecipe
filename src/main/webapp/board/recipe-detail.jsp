@@ -51,7 +51,7 @@
 	
 	<div class="text-center">
 		<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
-		<input type="hidden" name="no" value="${rvo.recipeNo }">
+		<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
 		</form>
 		<button type="submit" class="btn btn-success" onclick="updateRecipe()">수정</button>
 

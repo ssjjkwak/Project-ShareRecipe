@@ -29,7 +29,7 @@
 				<td>${li.recipeNo} </td>
 				<td>${li.image}</td>
 				<td>
-				<a href="RecipeDetailController.do?no=${li.recipeNo}">${li.title}</a>
+				<a href="RecipeDetailController.do?recipeNo=${li.recipeNo}">${li.title}</a>
 				</td>
 				<td>${li.memberVO.id}</td>
 				<td>${li.hits}</td>
