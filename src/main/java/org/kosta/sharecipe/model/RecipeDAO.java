@@ -133,19 +133,37 @@ public class RecipeDAO {
 		}
 		return rvo;
 	}
+
+	// 조회수 증가
 	public void updateHits(String no) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		
+
 		try {
-		con=dataSource.getConnection();
-		String sql="update recipe set hits=hits+1 where recipe_num=?";
-		pstmt=con.prepareStatement(sql);
-		pstmt.setString(1,no);
-		pstmt.executeUpdate();
-		}finally {
+			con = dataSource.getConnection();
+			String sql = "update recipe set hits=hits+1 where recipe_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.executeUpdate();
+		} finally {
 			closeAll(pstmt, con);
 		}
 	}
 	
+	// 레시피 삭제
+	public void deleteRecipeByNo(String no) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "delete from RECIPE where recipe_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.executeUpdate();
+		} finally {
+			closeAll(pstmt, con);
+		}
+
+	}
+
 }
