@@ -88,6 +88,10 @@ Back to List (목록으로 복귀하는 버튼)
 <details>
 <summary>CLASS DIAGRAM</summary>
 
+![class-diagram-강사님feedback](https://user-images.githubusercontent.com/72936976/141053671-24c6e73b-73cc-4e50-98c3-e32af6b67dcf.jpg)
+
+
+
 </details> 
  
 <details>
