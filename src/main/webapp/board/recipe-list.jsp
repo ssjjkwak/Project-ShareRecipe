@@ -42,10 +42,11 @@
       <div class="container">
           <div class="row flex-center">
             <div class="col-lg-7 mx-auto text-center">
-              <h5 class="fw-bold fs-3 fs-lg-4 lh-sm" style="font-family: 'Jua';">레시피</h5><br>
+              <h5 class="fw-bold fs-3 fs-lg-4 lh-sm" style="font-family: 'Jua'; ">우리들의 레시피</h5><br>
             </div>
           </div>
           
+
 		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100; " >최신등록순</h3>
 		<c:choose>
 		<c:when test="${sessionScope.mvo!=null}">
@@ -53,6 +54,7 @@
 		</c:when>
 		</c:choose>
 		<!-- <div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div> -->
+
 		<table class="table table-hover table-striped boardlist" style="font-family: 'Jua'; font-weight: 100;">
 			<thead>
 				<tr style="background-color: #FFB30E">
@@ -92,5 +94,14 @@
 		</ul><br>
         </div>
       </main>
+      <script src="../vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+      
 	</body>
 </html>
