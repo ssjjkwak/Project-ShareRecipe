@@ -32,7 +32,7 @@
 			-->
 			
 			<tr>
-				<td><select name="category_num">
+				<td><select name="category_num" required="required">
 						<option>카테고리 선택</option>
 						<option value="1">한식</option>
 						<option value="2">양식</option>
