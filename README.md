@@ -1,6 +1,6 @@
-# :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
+# :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento: 
  
-## 개요 :stew:
+## 개요 :stew: 
 + 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판을 제작하는 프로젝트입니다.
    + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시, 레시피 수정, 레시피 조회, 레시피 '좋아요' 기능
 
@@ -18,12 +18,12 @@
 + Kakao Map API
 
 ## 구성원 및 구현 기능 :meat_on_bone:
-+ 김근영 ([kk-young](https://github.com/kk-young)) : DEVELOPER / DB / BACK 
++ 김근영 ([kk-young](https://github.com/kk-young)) : DEVELOPER / DB / FE 
 + 김정훈 ([anngdung2](https://github.com/anngdung2)) : DEVELOPER / FE / DB
 + 권용은 ([jenkwon92](https://github.com/jenkwon92)) : DEVELOPER / BE / GIT
 + 김윤구 ([kimbeneee](https://github.com/kimbeneee)) : DEVELOPER / BE / GIT
 + 김근원 ([guenwon](https://github.com/guenwon)) : DEVELOPER / FE / BE 
-+ 곽승진 ([ssjjkwak](https://github.com/ssjjkwak)) : DEVELOPER / DB / GIT  
++ 곽승진 ([ssjjkwak](https://github.com/ssjjkwak)) : DEVELOPER / GIT / BE  
 #### :computer: EVERYONE IS A DEVELOPER :computer: 
 
 ## 요구사항 🍛
@@ -59,9 +59,9 @@ Back to List (목록으로 복귀하는 버튼)
 회원당 한번씩 추천수를 누를수 있는 기능을 구현한다
 
 3. 홈 제공 게시글 : Popular, Recent, Quisine
- Popular : 추천수가 많은 게시글 순으로 정렬
- Recent : 작성일이 최근인 게시글 순으로 정렬
- Quisine : 음식 카테고리 별로 정렬 (ex.한식/양식/중식 등)
+ + Popular : 추천수가 많은 게시글 순으로 정렬
+ + Recent : 작성일이 최근인 게시글 순으로 정렬
+ + Quisine : 음식 카테고리 별로 정렬 (ex.한식/양식/중식 등)
 
 4. 카테고리별로 리스트 조회가 가능하도록한다
     각 카테고리에서 view all 버튼 누르면 전체 게시글 리스트로 이동
@@ -100,10 +100,67 @@ Back to List (목록으로 복귀하는 버튼)
 ![erd-로지컬](https://user-images.githubusercontent.com/72936976/141054310-0836bbaf-9c66-4f1b-8bad-ffde8908bfdc.png)
 
 
+![erd-피지컬 진짜 최종](https://user-images.githubusercontent.com/72936976/141054803-1a72c593-78ae-4d79-a6d8-ac96df9fbca9.png)
 
 
 </details>
 
 <details>
-<summary>FILE LIST</summary>
+<summary>FILE LIST</summary>               
+MemberDAO.java <br>                                                                     
+MemberVO.java <br>                                                                  
+DataSourceManager.java<br>                                                                                                                                  
+RecipeVO.java             <br>           
+PagingBean.java               <br>                                                                 
+RecipeDAO.java<br>
+CategoryVO.java<br>
+Controller.java<br>
+FrontControllerServlet.java<br> 
+ImageController.java<br>
+CreateRecipeController.java<br>
+CreateRecipeFormController.java<br>
+RecipeDetailController.java<br>
+UpdateRecipeController.java<br>
+UpdateRecipeFormController.java<br>
+DeleteRecipeController.java  <br>
+IdCheckController.java<br>
+RegisterMemberController.java<br>
+LoginController.java<br>
+LogoutController.java   <br>            
+UpdateMemberController.java<br>
+UpdateMemberFormController.java<br>
+RegisterMemberFormController.java<br>
+LoginFormController.java<br>
+error.jsp <br>
+header.jsp<br>
+index.jsp<br>
+layout.jsp<br>
+register-member.jsp <br>                              
+idcheck-ok.jsp<br>
+idcheck-fail.jsp<br>
+register-result.jsp<br>
+login.jsp<br>
+login-fail.jsp<br>
+update-member.jsp<br>
+update-result.jsp<br>
+recipe-list.jsp<br>
+recipe-update.jsp<br>
+recipe-write.jsp<br>
+recipe-detail.jsp<br>
+recipe-delete.jsp    <br>                          
+Board.sql<br>
+Member.sql
+
 </details>
+
+## GIT 🥩
++ Github
++ Sourcetree
+<details>
+<summary>Git Branch 구조</summary>
+
+![GIT-TREE](https://user-images.githubusercontent.com/72936976/141056178-4122d2ed-1aa7-41cb-8844-2a5b5dca85c1.png)
+
+ 
+ 
+</details> 
