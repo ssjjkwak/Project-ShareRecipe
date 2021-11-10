@@ -96,6 +96,12 @@ Back to List (목록으로 복귀하는 버튼)
  
 <details>
 <summary>ERD</summary>
+
+![erd-로지컬](https://user-images.githubusercontent.com/72936976/141054310-0836bbaf-9c66-4f1b-8bad-ffde8908bfdc.png)
+
+
+
+
 </details>
 
 <details>
