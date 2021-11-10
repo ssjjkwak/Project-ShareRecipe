@@ -23,7 +23,7 @@
 + 권용은 / DEVELOPER / BE / GIT
 + 김윤구 / DEVELOPER / BE / GIT
 + 김근원 / DEVELOPER / FE / BE 
-+ 곽승진 / DEVELOPER / DB / GIT
++ 곽승진 [ssjjkwak](https://github.com/ssjjkwak) / DEVELOPER / DB / GIT
 
 ### :computer: EVERYONE IS A DEVELOPER 
 
