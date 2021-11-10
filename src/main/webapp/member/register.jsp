@@ -28,11 +28,32 @@ function checkId() {
 }
 // 아이디 중복확인하지 않은 상태에서 가입하기를 누르면 아이디 중복확인하세요 alert 후 전송시키지 않는다 
 function checkForm() {
+	let password = document.forms[0];
+	let pass1 = password.joinPw.value;
+	let pass2 = password.joinPwck.value;
 	if(document.getElementById("joinId").value!=document.getElementById("flag").value){
 		alert("아이디 중복 확인이 필요합니다.");
 		return false;
 	}
-} 
+	if(pass1!=pass2){
+		alert("패스워드가 일치하지 않습니다.");
+		return false;
+	}
+}
+// 패스워드 일치 확인
+function pwCheck() {
+	let password = document.forms[0];
+	let pass1 = password.joinPw.value;
+	let pass2 = password.joinPwck.value;
+	if(pass1!=pass2){
+		document.getElementById("checkPwd").style.color="red";
+		document.getElementById("checkPwd").innerHTML="비밀번호가 일치하지 않습니다.";
+	}else{
+		document.getElementById("checkPwd").style.color="green";
+		document.getElementById("checkPwd").innerHTML="비밀번호가 일치합니다.";
+	}
+}
+
 </script>
 <body>
 	<div class="container">
@@ -56,7 +77,10 @@ function checkForm() {
 						name="joinPw" placeholder="비밀번호를 입력하세요." required="required">
 					<br> <input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
-						name="joinPwck" placeholder="비밀번호 재확인" required="required">
+						name="joinPwck" placeholder="비밀번호 재확인" onkeyup="pwCheck()" required="required">
+						<div style="text-align: left; margin-top: 5px; margin-bottom: -10px;">
+							<span style="margin-left: 40px; font-family: 'Jua'; font-weight: 200; font-size: 12px;" id="checkPwd"></span>
+						</div>
 					<br> <input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="text"
 						name="joinName" placeholder="이름 입력" required="required"> <br>
