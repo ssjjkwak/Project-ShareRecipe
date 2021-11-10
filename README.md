@@ -1,7 +1,7 @@
 # :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
  
 ## 개요 :stew:
-+ 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판 기능을 수행할 수 있는 프로젝트입니다.
++ 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판을 제작하는 프로젝트입니다.
    + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시, 레시피 수정, 레시피 조회, 레시피 '좋아요' 기능
 
 ## 개발기간 :hamburger:
@@ -66,5 +66,26 @@ Back to List (목록으로 복귀하는 버튼)
 4. 카테고리별로 리스트 조회가 가능하도록한다
     각 카테고리에서 view all 버튼 누르면 전체 게시글 리스트로 이동
 
+## 설계 프로세스 🥙
+<details>
+<summary>GANTT CHART</summary>
+(https://docs.google.com/spreadsheets/d/1mtG1TZNYDDq6ArvWKuf_K026qZb_dR2NwS85DdZuqWg/edit#gid=1115838130)
+</details>
 
+<details>
+<summary>USECASE DIAGRAM</summary>
 
+</details>
+
+<details>
+<summary>CLASS DIAGRAM</summary>
+
+</details> 
+ 
+<details>
+<summary>ERD</summary>
+</details>
+
+<details>
+<summary>FILE LIST</summary>
+</details>
