@@ -24,6 +24,19 @@ INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(1,'한식');
 INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(2,'양식');
 INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(3,'일식');
 INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(4,'중식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(5,'채식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(6,'디저트');
+
+--정훈이만 수정할 것
+UPDATE CATEGORY SET CATEGORY_NAME='중식' WHERE CATEGORY_NUM=2;
+UPDATE CATEGORY SET CATEGORY_NAME='양식' WHERE CATEGORY_NUM=4;
+
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(1,'한식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(2,'중식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(3,'일식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(4,'양식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(5,'채식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(6,'디저트');
 
 select*from category;
 
@@ -71,6 +84,8 @@ update recipe set hits=hits+1 where recipe_num=3;
 --레시피 삭제
 delete from RECIPE where recipe_num=6;
 
+--레시피 수정
+update recipe set category_num=2,title='화요일저녁',content='밤',image='1636449018556.jpg' where recipe_num=3;
 
 
 
