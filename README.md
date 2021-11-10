@@ -100,6 +100,7 @@ Back to List (목록으로 복귀하는 버튼)
 ![erd-로지컬](https://user-images.githubusercontent.com/72936976/141054310-0836bbaf-9c66-4f1b-8bad-ffde8908bfdc.png)
 
 
+![erd-피지컬 진짜 최종](https://user-images.githubusercontent.com/72936976/141054803-1a72c593-78ae-4d79-a6d8-ac96df9fbca9.png)
 
 
 </details>
