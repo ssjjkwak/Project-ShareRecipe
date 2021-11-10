@@ -8,7 +8,7 @@
 <title>레시피 등록 폼</title>
 </head>
 <body>
-	<form enctype="multipart/form-data" action="../CreateRecipeController.do" method="post">
+	<form enctype="multipart/form-data" action="../RecipeCreateController.do" method="post">
 	<table>
 		<tr>
 			<td>

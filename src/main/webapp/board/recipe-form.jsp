@@ -49,11 +49,11 @@
 	<body>
 		<div class="container">
 			<div style="background-color:#F9FAFD;">
-            	<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-					<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px; margin-top: 80px;"></a><br><br><br><br>
-					<h2 style="font-family: 'Jua'; font-weight: 700;">나만의 레시피를 공유해 보세요!</h2><br>
-				</div>
-			<form enctype="multipart/form-data" id="submitForm" action="../CreateRecipeController.do" method="post">
+          <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
+					  <a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px; margin-top: 80px;"></a><br><br><br><br>
+					  <h2 style="font-family: 'Jua'; font-weight: 700;">나만의 레시피를 공유해 보세요!</h2><br>
+			    </div>
+			<form enctype="multipart/form-data" id="submitForm" action="../RecipeCreateController.do" method="post">
 			<input type="hidden" name="id">
 			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
 				<option style="text-align: left;">카테고리</option>
