@@ -69,6 +69,7 @@
 			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			</form>
 			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a></div>
 =======
@@ -76,10 +77,15 @@
 			</div>			
 			</form><br>
 >>>>>>> 9c8d12423c4672f7e4d87f1e84cfac8fa3b64ec6
+=======
+			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+			</div>			
+			</form><br>
+>>>>>>> ced6a102ce2b49285a4fd94897b39d250f787d27
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
-			<a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
+			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
 			</div>
 			</form>
 		</div>

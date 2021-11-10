@@ -84,7 +84,5 @@ public class RecipeUpdateController implements Controller {
 			System.out.println("수정성공");
 			return "redirect:board/recipe-update-ok.jsp";
 		}
-
 	}
-
 }
