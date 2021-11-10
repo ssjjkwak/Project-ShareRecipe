@@ -23,8 +23,8 @@
 + 권용은 ([jenkwon92](https://github.com/jenkwon92)) : DEVELOPER / BE / GIT
 + 김윤구 ([kimbeneee](https://github.com/kimbeneee)) : DEVELOPER / BE / GIT
 + 김근원 ([guenwon](https://github.com/guenwon)) : DEVELOPER / FE / BE 
-+ 곽승진 ([ssjjkwak](https://github.com/ssjjkwak)) : DEVELOPER / DB / GIT 
-  :computer: EVERYONE IS A DEVELOPER :computer: 
++ 곽승진 ([ssjjkwak](https://github.com/ssjjkwak)) : DEVELOPER / DB / GIT  
+#### :computer: EVERYONE IS A DEVELOPER :computer: 
 
 ## 요구사항 🍛
 
