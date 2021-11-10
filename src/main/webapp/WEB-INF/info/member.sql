@@ -25,3 +25,4 @@ select name,address,sign_in_date,birthday,e_mail,tel from RECIPE_MEMBER where id
 
 insert into RECIPE_MEMBER values('test','java','a','성남',sysdate,to_date('2003-05-21','YYYY-MM-DD'),'a@a.com','1234');
 
+select count(*) from recipe_member where name='길동이' and tel='01012345678';
