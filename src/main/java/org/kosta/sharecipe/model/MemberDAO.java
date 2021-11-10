@@ -134,6 +134,28 @@ public class MemberDAO {
 		}
 		return mvo;
 	}
+	public MemberVO FindMemberId(String name,String email) throws SQLException {
+		MemberVO vo=null;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			con=dataSource.getConnection();
+			String sql="select id from recipe_member where name=? and email=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				vo=new MemberVO();
+				vo.setId(rs.getString(1));
+				vo.setName(name);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return vo;
+	}
 }
 
 

@@ -19,9 +19,9 @@
 				    <input class="form-control border-0 input-box bg-100" type="password" name="password" placeholder="비밀번호" required="required" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" /><br><br>
 					<div class="d-grid gap-2"><button type="submit" style="font-family: 'Jua'; font-weight: 100" class="btn btn-lg btn-danger">로그인</button></div><br>
 				</form>
-				<form action="FindIdController.do" style="width:211px; float:left;  padding-right:10px;">
-					<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" role="button" style="font-family: 'Jua'; font-weight: 100">아이디찾기</a></div><br>
-				</form>
+				
+					<div class="d-grid gap-2"><a href="findid.jsp" class="btn btn-lg btn-warning" role="button" style="font-family: 'Jua'; font-weight: 100">아이디찾기</a></div><br>
+				
 				<form action="FindPasswordController.do" style="width:211px; float:left;  padding-right:10px;">
 					<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" role="button" style="font-family: 'Jua'; font-weight: 100">비번찾기</a></div><br>
 				</form>
