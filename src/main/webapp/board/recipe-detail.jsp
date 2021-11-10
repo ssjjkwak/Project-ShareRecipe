@@ -49,7 +49,6 @@
 	 function updateRecipe(){
 		 if(confirm("수정하시겠습니까?")){
 			document.getElementById("updateForm").submit();
-		 	//location.href="board/recipe-update.jsp";
 		 }
 	 }
   </script>
@@ -69,7 +68,7 @@
 			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
 			</form>
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a></div>
+			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a></div>
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
 			</form>
