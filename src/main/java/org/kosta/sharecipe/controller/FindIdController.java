@@ -13,14 +13,15 @@ public class FindIdController implements Controller{
 		String name=request.getParameter("name");
 		StringBuilder sb=new StringBuilder();
 		sb.append(request.getParameter("email1"));
-		sb.append(request.getParameter("eamil2"));
+		sb.append(request.getParameter("email2"));
 		String email=sb.toString();
+		System.out.println(name+" "+email);
 		MemberVO vo=MemberDAO.getInstance().FindMemberId(name,email);
 		String path=null;
 		if(vo==null) {
-			path="redirect:member/findid-fail.jsp";
+			path="member/findid-fail.jsp";
 		}else {
-			path="redirect:member/findid-ok.jsp";
+			path="member/findid-ok.jsp";
 			request.setAttribute("mvo", vo);
 		}
 		return path;
