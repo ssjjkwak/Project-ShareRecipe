@@ -19,11 +19,11 @@
 				   <input
 						class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 48%; display: inline-block; float: left; margin-bottom: 20px;"
-						type="text" name="mail1" placeholder="이메일" required="required">
+						type="text" name="email1" placeholder="이메일" required="required">
 					<%-- <span style="position: relative; top:5px">@</span>--%>
 					<select class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500; width: 45%; display: block; float: right; margin-bottom: 20px;"
-						name="mail2" id="email_server" onchange="input_email();">
+						name="email2" id="email_server" onchange="input_email();">
 						<option value="">주소선택</option>
 						<option value="@naver.com">@naver.com</option>
 						<option value="@gmail.com">@gmail.com</option>

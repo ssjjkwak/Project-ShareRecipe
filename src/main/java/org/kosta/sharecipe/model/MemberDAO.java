@@ -156,6 +156,25 @@ public class MemberDAO {
 		}
 		return vo;
 	}
+	public MemberVO getMemberByPw(String id, String email) throws SQLException{
+	      MemberVO mvo = null;
+	      Connection con = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs =null;
+	      try {
+	         con = dataSource.getConnection();
+	         String sql = "select password from recipe_member where id=? and email=?";
+	         pstmt=con.prepareStatement(sql);
+	         pstmt.setString(1, id);
+	         pstmt.setString(2, email);
+	         rs=pstmt.executeQuery();
+	         if(rs.next())
+	            mvo=new MemberVO(id, rs.getString("password"),null,null,null,null,email,null);
+	      }finally {
+	         closeAll(rs, pstmt, con);
+	      }
+	      return mvo;
+	   }
 }
 
 
