@@ -13,14 +13,16 @@
 	content="../assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
 <link href="../assets/css/theme.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
 </head>
 <body>
 	<div class="container">
 		<div class="row h-100">
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-				<h3>회원정보 수정 완료!</h3>
+				<h3 style="font-family: 'Jua'; font-weight: 500;">회원정보 수정 완료!</h3>
 				
-					<a href="../index.jsp"><button class="btn btn-danger btn-lg" style="margin-top: 20px;">메인으로</button></a>
+					<a href="../index.jsp"><button class="btn btn-danger btn-lg" style="font-family: 'Jua'; font-weight: 500; margin-top: 20px;">메인으로</button></a>
 				</form>
 			</div>
 		</div>

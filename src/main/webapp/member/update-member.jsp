@@ -13,12 +13,14 @@
 	content="../assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
 <link href="../assets/css/theme.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
 		<div class="row h-100">
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-				<h3>회원정보 수정</h3>
+			<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br>
+				<h3 style="font-family: 'Jua'; font-weight: 500;">회원정보 수정</h3>
 				<br><br>
 				<form action="../UpdateMemberController.do" method="post">
 					<input class="form-control border-0 input-box bg-100"
@@ -38,7 +40,7 @@
 						name="upAddr1" id="sample2_postcode" placeholder="우편번호"
 						readonly="readonly"> 
 						
-					<input class="btn btn-danger" style="position:relative; margin:0;padding:0; height: 38px; width:20%; left:-10%;" type="button"
+					<input class="btn btn-danger" style="font-family: 'Jua'; font-weight: 500; position:relative; margin:0;padding:0; height: 38px; width:20%; left:-10%;" type="button"
 						onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
 						
 					<input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" type="text" name="upAddr2" id="sample2_address"
@@ -53,7 +55,7 @@
 						required="required"><br> 
 			
 					<br>
-					<button class="btn btn-danger btn-lg" style="margin-top: 20px;">수정</button>
+					<button class="btn btn-danger btn-lg" style="margin-top: 20px; font-family: 'Jua'; font-weight: 500;">수정</button>
 				</form>
 			</div>
 		</div>
