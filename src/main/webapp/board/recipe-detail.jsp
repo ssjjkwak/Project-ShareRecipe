@@ -68,13 +68,17 @@
 			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
 			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
+				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
 			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+			  </c:if>
 			</div>			
 			</form><br>
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
+				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
 			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
+			</c:if>
 			</div>
 			</form>
 		</div>
