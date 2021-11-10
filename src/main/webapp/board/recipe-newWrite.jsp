@@ -105,6 +105,12 @@
               </div>
               </a>
             </div>
+            <!-- <script type="text/javascript">
+            	function 
+            </script>
+            <form action="LoginController.do" id=""></form>
+             -->
+			    
             <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="RecipeListController.do" style="font-family: 'Jua'; font-weight: 500;">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
           </div>
         </div>
