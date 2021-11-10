@@ -25,7 +25,7 @@
 + 김근원 / DEVELOPER / FE / BE 
 + 곽승진 / DEVELOPER / DB / GIT
 
-# :computer: EVERYONE IS A DEVELOPER 
+### :computer: EVERYONE IS A DEVELOPER 
 
 
 
