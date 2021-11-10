@@ -21,9 +21,11 @@ CATEGORY_NAME VARCHAR2(100) NOT NULL
 );
 
 INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(1,'한식');
-INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(2,'양식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(2,'중식');
 INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(3,'일식');
-INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(4,'중식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(4,'양식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(5,'채식');
+INSERT INTO category(CATEGORY_NUM,CATEGORY_NAME) values(6,'디저트');
 
 select*from category;
 

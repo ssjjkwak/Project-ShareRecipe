@@ -40,24 +40,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   </head>
+  <script type="text/javascript">
+  function recipeSubmit(){
+			document.getElementById("submitForm").submit();
+	}
+
+  </script>
 	<body>
-		<c:import url="header.jsp"></c:import>
+		<c:import url="../header.jsp"></c:import>
 		<br><br><br><br><br><br>
 		<div class="container">
-			<form action="#" method="post">
-			<!--
-			  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" style="font-family: 'Jua'; font-weight: 500;">
-			    카테고리 선택
-			  </button>
-			  <div class="dropdown-menu" style="font-family: 'Jua'; font-weight: 500;">
-			    <a class="dropdown-item" href="#">한식</a>
-			    <a class="dropdown-item" href="#">중식</a>
-			    <a class="dropdown-item" href="#">일식</a>
-			    <a class="dropdown-item" href="#">양식</a>
-			    <a class="dropdown-item" href="#">채식</a>
-			    <a class="dropdown-item" href="#">디저트</a>
-			  </div>
-			</div> -->
+			<form enctype="multipart/form-data" id="submitForm" action="../CreateRecipeController.do" method="post">
+			<input type="hidden" name="id">
 			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
 				<option style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>
@@ -68,13 +62,13 @@
 				<option value="6" style="text-align: left;">&nbsp;디저트</option>
 			</select>
 			<br><br>
-			<input class="form-control border-5 input-box bg-100" type="text" placeholder="제목을 10자 이내로 입력해 주세요." style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" /><br>
-			<textarea class="form-control border-5 input-box bg-100" type="text" placeholder="레시피 작성 예시) 1. 난이도 / 2. 소요시간 / 3. 재료 / 4. 만족도 / 5. 본문" rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;"></textarea>
+			<input class="form-control border-5 input-box bg-100" type="text" name="title" placeholder="제목을 10자 이내로 입력해 주세요." style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" required="required"/><br>
+			<textarea class="form-control border-5 input-box bg-100" name="content" placeholder="레시피 작성 예시) 1. 난이도 / 2. 소요시간 / 3. 재료 / 4. 만족도 / 5. 본문" rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required"></textarea>
 			<br>
-			<input class="form-control border-5 input-box bg-100" type="file" style="font-family: 'Jua'; font-weight: 500; width:60%;">
+			<input class="form-control border-5 input-box bg-100" type="file" name="image" style="font-family: 'Jua'; font-weight: 500; width:60%;">
 			
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100; width:10%;">완료</a></div>
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a></div>
+			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%;">완료</a></div>
+			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" type="reset" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a></div>
 			
 			</form>
 		</div>
