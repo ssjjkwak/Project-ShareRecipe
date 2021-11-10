@@ -1,4 +1,4 @@
-## :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
+# :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
  
 ## 개요 :stew:
 + 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판 기능을 수행할 수 있는 프로젝트입니다.
