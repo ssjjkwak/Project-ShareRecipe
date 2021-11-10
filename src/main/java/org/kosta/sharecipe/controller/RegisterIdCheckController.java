@@ -10,11 +10,11 @@ public class RegisterIdCheckController implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String id = request.getParameter("joinId");
-		boolean result=MemberDAO.getInstance().checkId(id);
-		if(result)
-			return "member/idcheck-fail.jsp";
-		else
-			return "member/idcheck-ok.jsp";
+		int result=MemberDAO.getInstance().checkId(id);
+		System.out.println(id+result);
+		
+		return "";
+				
 	}
 
 }
