@@ -9,11 +9,10 @@
 </head>
 <body>
 <script type="text/javascript">
-	//alert("글등록이 완료되었습니다");
-	alert("${pageContext.request.contextPath}");
-	//"redirect:RecipeListController.do"
-	//location.href="${pageContext.request.contextPath}/redirect:RecipeListController.do";
-	location.href="${pageContext.request.contextPath}/RecipeListController.do";
+	alert("글 수정 실패");
+	//location.href="../ListController.do";// home으로 보낸다   ../ 를 한 이유는 member 디렉토리 상위로 가야하기 때문에 
+	//location.href="${pageContext.request.contextPath}/RecipeUpdateController.do";
+	location.href="../RecipeListController.do";
 </script>
 </body>
 </html>

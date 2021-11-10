@@ -9,10 +9,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	//alert("글등록이 완료되었습니다");
+	alert("업데이트 완료");
 	alert("${pageContext.request.contextPath}");
-	//"redirect:RecipeListController.do"
-	//location.href="${pageContext.request.contextPath}/redirect:RecipeListController.do";
 	location.href="${pageContext.request.contextPath}/RecipeListController.do";
 </script>
 </body>

@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>회원정보 수정 완료</title>
-<link rel="manifest" href="assets/img/favicons/manifest.json">
+<link rel="manifest" href="../assets/img/favicons/manifest.json">
 <meta name="msapplication-TileImage"
-	content="assets/img/favicons/mstile-150x150.png">
+	content="../assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
 <link href="../assets/css/theme.css" rel="stylesheet" />
 </head>
@@ -20,7 +20,7 @@
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
 				<h3>회원정보 수정 완료!</h3>
 				
-					<a href="redirect:"><button class="btn btn-danger btn-lg" style="margin-top: 20px;">메인으로</button></a>
+					<a href="../index.jsp"><button class="btn btn-danger btn-lg" style="margin-top: 20px;">메인으로</button></a>
 				</form>
 			</div>
 		</div>

@@ -133,19 +133,61 @@ public class RecipeDAO {
 		}
 		return rvo;
 	}
+
+	// 조회수 증가
 	public void updateHits(String no) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		
+
 		try {
-		con=dataSource.getConnection();
-		String sql="update recipe set hits=hits+1 where recipe_num=?";
-		pstmt=con.prepareStatement(sql);
-		pstmt.setString(1,no);
-		pstmt.executeUpdate();
-		}finally {
+			con = dataSource.getConnection();
+			String sql = "update recipe set hits=hits+1 where recipe_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.executeUpdate();
+		} finally {
 			closeAll(pstmt, con);
 		}
 	}
 	
+	// 레시피 삭제
+	public void deleteRecipeByNo(String no) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "delete from RECIPE where recipe_num=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.executeUpdate();
+		} finally {
+			closeAll(pstmt, con);
+		}
+	}
+	
+	//레시피 수정 
+	public int updateRecipeByNo(RecipeVO rvo) throws SQLException {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		int result =0;
+		try {
+			con=dataSource.getConnection();
+			StringBuilder sql=new StringBuilder("update recipe set category_num=?,title=?,content=? , image=?");
+			sql.append("where recipe_num=?");
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setInt(1, rvo.getCategoryVO().getCategoryNo());
+			pstmt.setString(2, rvo.getTitle());
+			pstmt.setString(3, rvo.getContent());
+			pstmt.setString(4, rvo.getImage());
+			pstmt.setInt(5, rvo.getRecipeNo());
+			result = pstmt.executeUpdate();
+		}finally {
+			closeAll(pstmt, con);
+		}
+		return result;
+	}
 }
+
+
+
+

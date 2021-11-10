@@ -37,7 +37,7 @@
   <body>
   <main class="main" id="top">
   <!-- header import -->
-  <c:import url="header.jsp"></c:import>
+  <c:import url="../header.jsp"></c:import>
 	 <br><br><br><br><br><br>
       <div class="container">
           <div class="row flex-center">

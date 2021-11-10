@@ -12,9 +12,9 @@ public class RegisterIdCheckController implements Controller {
 		String id = request.getParameter("joinId");
 		boolean result=MemberDAO.getInstance().checkId(id);
 		if(result)
-			return "idcheck-fail.jsp";
+			return "member/idcheck-fail.jsp";
 		else
-			return "idcheck-ok.jsp";
+			return "member/idcheck-ok.jsp";
 	}
 
 }

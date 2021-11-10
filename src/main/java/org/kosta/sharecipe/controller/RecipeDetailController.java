@@ -14,14 +14,14 @@ public class RecipeDetailController implements Controller {
 		
 		
 		
-		String no=request.getParameter("no");
+		String recipeNo=request.getParameter("recipeNo");
 		//조회수 증가
-		RecipeDAO.getInstance().updateHits(no);
+		RecipeDAO.getInstance().updateHits(recipeNo);
 		//상세보기
-		RecipeVO rvo=RecipeDAO.getInstance().getRecipeByNo(no);
+		RecipeVO rvo=RecipeDAO.getInstance().getRecipeByNo(recipeNo);
 		request.setAttribute("rvo", rvo);
 		return "board/recipe-detail.jsp";
-		//return "layout.jsp";
+		//return "index.jsp";
 	}
 
 }
