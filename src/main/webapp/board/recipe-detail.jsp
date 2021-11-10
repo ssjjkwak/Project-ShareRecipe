@@ -55,25 +55,34 @@
 	<body>
 		<c:import url="../header.jsp"></c:import>
 		<br><br><br><br><br><br>
-		<div class="container">
+		<div class="container" style="text-align: center;">
 			<input type="hidden" name="id">
-			 <div class="form-control border-5 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" >제목: ${rvo.title }</div><br>
-			 <div class="form-control border-5 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" >작성자: ${rvo.memberVO.id }</div><br>
-			 <div class="form-control border-5 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" >작성일: ${rvo.wroteDate }</div><br>
-			 <div class="form-control border-5 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" >추천수: ${rvo.likes }</div><br>
-			 <div class="form-control border-5 input-box bg-100" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" >조회수: ${rvo.hits }</div><br>
-			 <img src="image/${rvo.image }" width="400px"  style="text-align: center">
+			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">제목: ${rvo.title }</div><br>
+			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">작성자: ${rvo.memberVO.id }</div><br>
+			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">작성일: ${rvo.wroteDate }</div><br>
+			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">추천수: ${rvo.likes }</div><br>
+			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">조회수: ${rvo.hits }</div><br>
+			 <img src="image/${rvo.image }" width="400px"  style="text-align: center"><br>
 			<textarea class="form-control border-5 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" >${rvo.content }</textarea>
 			<br>
 			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
+			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
+<<<<<<< HEAD
 			</form>
 			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a></div>
+=======
+			<a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+			</div>			
+			</form><br>
+>>>>>>> 9c8d12423c4672f7e4d87f1e84cfac8fa3b64ec6
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
+			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
+			<a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
+			</div>
 			</form>
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a></div>
-
 		</div>
+		<br><br>
 	</body>
 </html>
