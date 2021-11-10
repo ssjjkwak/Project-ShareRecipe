@@ -2,6 +2,7 @@ package org.kosta.sharecipe.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.kosta.sharecipe.model.MemberDAO;
 import org.kosta.sharecipe.model.MemberVO;
@@ -31,7 +32,9 @@ public class RegisterMemberController implements Controller {
 		MemberVO vo=new MemberVO(id,password,name,address,null,birthday,email,tel);
 		MemberDAO.getInstance().register(vo);
 		MemberDAO.getInstance().login(id, password);
-		return "";
+		HttpSession session = request.getSession();
+		session.setAttribute("mvo", vo);
+		return "index.jsp";
 	}
 
 }

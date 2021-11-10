@@ -41,11 +41,6 @@ public class RecipeUpdateController implements Controller {
 		// 업로드된 정보 분석!!! 각각의 컴포넌트들을 FileItem 단위로 쪼갠다..
 		request.setCharacterEncoding("utf-8"); // 다국어 인코딩
 
-		// java.lang.ClassCastException: org.apache.catalina.connector.RequestFacade
-		// cannot be cast to org.apache.tomcat.util.http.fileupload.RequestContext
-		// 이슈 기록대상
-		// List<FileItem> items=upload.parseRequest(request);
-		// List<FileItem> items=upload.parseRequest((RequestContext) request);
 		List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
 
 		RecipeVO recipeVO = new RecipeVO();// Empty상태의 VO 생성
@@ -89,7 +84,5 @@ public class RecipeUpdateController implements Controller {
 			System.out.println("수정성공");
 			return "redirect:board/recipe-update-ok.jsp";
 		}
-
 	}
-
 }
