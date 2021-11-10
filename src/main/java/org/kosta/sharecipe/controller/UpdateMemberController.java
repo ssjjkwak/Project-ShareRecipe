@@ -1,5 +1,6 @@
 package org.kosta.sharecipe.controller;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,10 @@ public class UpdateMemberController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//요청방식 POST 체크
+				if(request.getMethod().equals("POST")==false) {
+					throw new ServletException("회원정보 수정은 POST방식만 허용됩니다");
+				}
 		
 		//로그인 체크 
 		HttpSession session=request.getSession(false);

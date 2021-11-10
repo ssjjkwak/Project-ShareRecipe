@@ -52,9 +52,7 @@
 	 }
   </script>
 	<body>
-	<main class="main" id="top">
 	<c:import url="../header.jsp"></c:import>
-		
 		<br><br><br><br>
 		<div class="container mt-5">
 			<input type="hidden" name="id">
@@ -69,25 +67,20 @@
 			<br>
 			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
+				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
+			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+			  </c:if>
+			</div>			
+			</form><br>
 			</form>
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
+				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
+			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
+			  </c:if>
+			</div>
 			</form>
-			<div class="d-grid gap-2">
-			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:20%;">수정</a>
-			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:20%;">삭제</a>
-			</div>
-			</div>
 		</div>
 		<br><br>
-	</main>
-	<script src="../vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
-    <script src="assets/js/theme.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
-	</body>
+		</body>
 </html>
