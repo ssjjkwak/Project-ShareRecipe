@@ -159,5 +159,8 @@ Member.sql
 <details>
 <summary>Git Branch 구조</summary>
 
+![GIT-TREE](https://user-images.githubusercontent.com/72936976/141056178-4122d2ed-1aa7-41cb-8844-2a5b5dca85c1.png)
 
+ 
+ 
 </details> 
