@@ -74,7 +74,7 @@ Back to List (목록으로 복귀하는 버튼)
 
 <details>
 <summary>USECASE DIAGRAM</summary>
-
+![usecase-강사님feedback](https://user-images.githubusercontent.com/72936976/141051340-08f8f0ac-74af-4cec-ad90-0133d4333d12.jpg)
 </details>
 
 <details>
