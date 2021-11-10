@@ -18,12 +18,12 @@
 + Kakao Map API
 
 ## 구성원 및 구현 기능 :meat_on_bone:
-+ 김근영 / DEVELOPER / DB / BACK
-+ 김정훈 / DEVELOPER / FE / DB
-+ 권용은 / DEVELOPER / BE / GIT
-+ 김윤구 / DEVELOPER / BE / GIT
-+ 김근원 / DEVELOPER / FE / BE 
-+ 곽승진 [ssjjkwak](https://github.com/ssjjkwak) / DEVELOPER / DB / GIT
++ 김근영 [kk-young](https://github.com/kk-young) : DEVELOPER / DB / BACK
++ 김정훈 [anngdung2](https://github.com/anngdung2) : DEVELOPER / FE / DB
++ 권용은 [jenkwon92](https://github.com/jenkwon92) : DEVELOPER / BE / GIT
++ 김윤구 [kimbeneee](https://github.com/kimbeneee) : DEVELOPER / BE / GIT
++ 김근원 [guenwon](https://github.com/guenwon) : DEVELOPER / FE / BE 
++ 곽승진 [ssjjkwak](https://github.com/ssjjkwak) : DEVELOPER / DB / GIT
 
 ### :computer: EVERYONE IS A DEVELOPER 
 
