@@ -82,3 +82,5 @@ update recipe set category_num=2,title='화요일저녁',content='밤',image='16
 drop table recipe;
 drop table category;
 drop table recipe_member;
+
+drop table recipe cascade constraint

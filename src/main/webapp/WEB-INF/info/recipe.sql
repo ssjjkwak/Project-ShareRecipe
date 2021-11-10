@@ -38,5 +38,9 @@ RECIPE_NUM NUMBER NOT NULL ,
 CONSTRAINT recipe_fk3 FOREIGN KEY(RECIPE_NUM) REFERENCES RECIPE(RECIPE_NUM)
 );
 
+select * from IMAGE; 
 ALTER TABLE IMAGE
 ADD (CONSTRAINT R_10 FOREIGN KEY (RECIPE_NUM) REFERENCES RECIPE(RECIPE_NUM));
+
+insert into IMAGE (image_num, image_name, category_num, recipe_num)
+values('1','erd-피지컬 진짜 최종.png','1','1');
