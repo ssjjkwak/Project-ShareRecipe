@@ -3,6 +3,7 @@ package org.kosta.sharecipe.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,12 +21,10 @@ public class RecipeCreateController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//로그인 체크
-		/*
-		HttpSession session = request.getSession(false);
-		if(session ==null ||session.getAttribute("mvo")==null)
-			return "redirect:ListController.do";
-		*/
+		//요청방식 POST 체크
+		if(request.getMethod().equals("POST")==false) {
+			throw new ServletException("레시피 등록은 POST방식만 허용됩니다");
+		}
 		
 		//아래와 같이 작성하면 동작은 하지만 depricated 될 예정이라 다른 방법을 찾음
 		//String saveDir=request.getRealPath("image");
