@@ -7,5 +7,29 @@
 ## 개발기간 :hamburger:
 + 약 3주 (2021.10.29 ~ 2021.11.11~)
 
+## 기술스택 :sushi:
++ java v1.8
++ oracle db
++ apche tomcat v8.5
++ html, css, javascript(es6)
++ eclipse
++ github
++ bootstrap4
++ Kakao Map API
+
+## 구성원 및 구현 기능 :meat_on_bone:
++ 김근영 / DEVELOPER / DB / BACK
++ 김정훈 / DEVELOPER / FE / DB
++ 권용은 / DEVELOPER / BE / GIT
++ 김윤구 / DEVELOPER / BE / GIT
++ 김근원 / DEVELOPER / FE / BE 
++ 곽승진 / DEVELOPER / DB / GIT
+
+# :computer: EVERYONE IS A DEVELOPER 
+
+
+
+
+
 
 
