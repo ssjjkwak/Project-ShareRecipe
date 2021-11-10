@@ -70,6 +70,11 @@ Back to List (목록으로 복귀하는 버튼)
 <details>
 <summary>GANTT CHART</summary>
 (https://docs.google.com/spreadsheets/d/1mtG1TZNYDDq6ArvWKuf_K026qZb_dR2NwS85DdZuqWg/edit#gid=1115838130)
+
+![간트차트 사진](https://user-images.githubusercontent.com/72936976/141052127-1fe09ea9-0f6c-4f99-a3dc-30f389348ddd.PNG)
+
+
+ 
 </details>
 
 <details>
