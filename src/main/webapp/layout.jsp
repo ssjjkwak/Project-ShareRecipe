@@ -117,7 +117,8 @@
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h5>
                           </div>
                         </div>
-                        </a>
+                     </a> 
+                      
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                       <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
