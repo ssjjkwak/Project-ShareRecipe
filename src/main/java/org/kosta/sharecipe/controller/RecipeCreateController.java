@@ -29,11 +29,9 @@ public class RecipeCreateController implements Controller {
 		//아래와 같이 작성하면 동작은 하지만 depricated 될 예정이라 다른 방법을 찾음
 		//String saveDir=request.getRealPath("image");
 		//프로젝트 완료 후 실제 서비스 시에 사용할 경로 - 프로젝트 새로 로드하면 이미지가 사라지므로 프로젝트 완료후 사용
-		//String saveDir = request.getSession().getServletContext().getRealPath("image");
 		
 		//이미지 삽입에 관련된 사항들
 		//용은
-		String saveDir="C:/kosta224/toy-project/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
 		//정훈
 		//String saveDir="C:/kosta224/gitTest-workspace/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
 		
