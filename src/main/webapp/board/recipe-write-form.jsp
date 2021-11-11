@@ -42,6 +42,12 @@
   </head>
   <script type="text/javascript">
   function recipeSubmit(){
+			
+			let category = document.getElementById("category").value;
+			if(category==0){
+				alert("카테고리를 선택해주세요");
+				return false;
+			}
 			document.getElementById("submitForm").submit();
 	}
 
@@ -55,8 +61,8 @@
 			    </div>
 			<form enctype="multipart/form-data" id="submitForm" action="../RecipeCreateController.do" method="post">
 			<input type="hidden" name="id">
-			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
-				<option style="text-align: left;">카테고리</option>
+			<select name="category_num" id="category" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
+				<option value="0" style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>
 				<option value="2" style="text-align: left;">&nbsp;&nbsp;중식</option>
 				<option value="3" style="text-align: left;">&nbsp;&nbsp;일식</option>
@@ -65,6 +71,7 @@
 				<option value="6" style="text-align: left;">&nbsp;디저트</option>
 			</select>
 			<br><br>
+			<input type="hidden" name="id" value="${mvo.id }">
 			<input class="form-control border-5 input-box bg-100" type="text" name="title" placeholder="제목을 10자 이내로 입력해 주세요." style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" required="required"/><br>
 			<textarea class="form-control border-5 input-box bg-100" name="content" placeholder="레시피 작성 예시) 1. 난이도 / 2. 소요시간 / 3. 재료 / 4. 만족도 / 5. 본문" rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required"></textarea>
 			<br>

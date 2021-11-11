@@ -68,10 +68,8 @@ public class RecipeCreateController implements Controller {
             }else if(item.getFieldName().equals("content")){
                recipeVO.setContent(item.getString());
             }else if(item.getFieldName().equals("id")){
-               //session 처리 해결
-               String id = "JAVA";
                MemberVO mvo = new MemberVO();
-               mvo.setId(id);
+               mvo.setId(item.getString());
                recipeVO.setMemberVO(mvo);
             }
          }else{ // textfield가 아니라면..업로드 처리
