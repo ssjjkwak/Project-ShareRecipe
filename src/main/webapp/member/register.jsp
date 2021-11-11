@@ -33,7 +33,7 @@ let i = 1;
 				i=0;
 			}
 		}
-		xhr.open("get","../RegisterIdCheckServlet?joinId="+joinId);
+		xhr.open("get","../RegisterIdCheckController.do?joinId="+joinId);
 		xhr.send();
 	}
 
@@ -102,9 +102,9 @@ function pwCheck() {
 }
 
 </script>
-<body>
+<body style="background-color: #F9FAFD">
 	<div class="container">
-		<div class="row h-100" style="background-color:#F9FAFD;">
+		<div class="row h-100">
 			<div class="col-lg-7 mx-auto text-center mt-7 mb-5">
 			<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br><br><br>
 				<h3 style="font-family: 'Jua'; font-weight: 800;">회원가입</h3>
