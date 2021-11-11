@@ -50,8 +50,9 @@
 		<c:import url="../header.jsp"></c:import>
 		<br><br><br><br><br><br>
 		<div class="container">
-			<form enctype="multipart/form-data" id="submitForm" action="../CreateRecipeController.do" method="post">
+			<form enctype="multipart/form-data" id="submitForm" action="RecipeUpdateController.do" method="post">
 			<input type="hidden" name="id">
+			<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
 			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
 				<option style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>

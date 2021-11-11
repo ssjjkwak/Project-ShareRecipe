@@ -16,7 +16,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                         <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
                           <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">	은열글자까지가능</h4><!-- varchar2(48) -->
+                            <h4 class="fw-bold text-1000 text-truncate mb-1 etc" style="font-family: 'Jua'; width: 195px;">sdfsdfsd	은열글자까지가능</h4><!-- varchar2(48) -->
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>

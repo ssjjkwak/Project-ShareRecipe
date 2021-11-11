@@ -1,6 +1,7 @@
 package org.kosta.sharecipe.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -63,7 +64,13 @@ public class FrontControllerServlet extends HttpServlet {
 			String path = controller.execute(request, response);
 			if (path.startsWith("redirect:")) {
 				response.sendRedirect(path.substring(9));// redirect: 을 제외한 경로로 이동시킨다
-			} else {
+			}else if(path.equalsIgnoreCase("AjaxView")) {
+	    		//id 중복확인 ajax 부분
+	    		response.setContentType("text/html;charset=utf-8");
+	    		PrintWriter out=response.getWriter();
+	    		out.print(request.getAttribute("result"));
+	    		out.close();
+	    	} else {
 				request.getRequestDispatcher(path).forward(request, response);
 			}
 		} catch (Exception e) {
