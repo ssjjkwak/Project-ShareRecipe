@@ -228,6 +228,35 @@ public class RecipeDAO {
 		return list;
 	}
 	
+	//최신 데이터 8개 
+	public ArrayList<RecipeVO> getLatestRecipe () throws SQLException{
+		ArrayList<RecipeVO> list  = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder("SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date ");
+			sql.append("FROM (select * from recipe order by reg_date desc) ");
+			sql.append("WHERE rownum<=8 ");
+			sql.append("ORDER BY reg_date DESC");
+			pstmt = con.prepareStatement(sql.toString());
+			rs= pstmt.executeQuery();
+			while(rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+				list.add(rvo);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+		
+	}
+	
 }
 
 
