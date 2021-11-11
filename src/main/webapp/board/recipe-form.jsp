@@ -46,7 +46,7 @@
 	}
 
   </script>
-	<body>
+	<body style="background-color: #F9FAFD">
 		<div class="container">
 			<div style="background-color:#F9FAFD;">
           <div class="col-lg-7 mx-auto text-center mt-7 mb-5">

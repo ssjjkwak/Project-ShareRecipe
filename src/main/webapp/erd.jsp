@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-       <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -40,15 +40,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   </head>
-  <body>
+<body>
 	<div class="container">
-        <div class="row h-100">
+        <div class="row h-100" style="background-color:#F9FAFD;">
             	<div class="col-lg-7 mx-auto text-center mt-5 mb-3">
-            		<img class="form-control border-0 border-warning bg-100" src="assets/img/error.jpg" style="width:620px; height:300px;"><br><br>
-            		<h1 style="font-family: 'Jua'; font-weight: 500;">시스템 점검 중입니다!</h1>
-            		<h5 style="font-family: 'Jua'; font-weight: 500;">이용에 불편을 드려 죄송합니다</h5>
-            	</div>
-        </div>
+            	<a href="index.jsp"><img src="assets/img/favicons/favicon.jpg" style="width:300px;"></a><br><br>
+            	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Logical (개발 전)</h3><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-logical-before-cut.png" style="width:650px; height:350px;">
+			</div>
+        	<div class="col-lg-7 mx-auto text-center mt-3 mb-3">
+            	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Physical (개발 전)</h3><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-physical-before.png" style="width:650px; height:350px;">
+			</div>
+        	<div class="col-lg-7 mx-auto text-center mt-3 mb-3">
+            	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Logical (개발 후)</h3><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-logical-before-cut.png" style="width:650px; height:350px;">
+			</div>
+        	<div class="col-lg-7 mx-auto text-center mt-3 mb-5">
+            	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Physical (개발 후)</h3><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-physical-before.png" style="width:650px; height:350px;">
+			</div>
+		</div>
 	</div>
 </body>
 </html>

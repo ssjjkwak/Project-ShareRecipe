@@ -52,6 +52,7 @@
 	 }
   </script>
 	<body>
+	<main class="main" id="top">
 	<c:import url="../header.jsp"></c:import>
 		<br><br><br><br>
 		<div class="container mt-5">
@@ -65,22 +66,27 @@
 			 <img src="image/${rvo.image }" width="400px"  style="text-align: center"><br><br>
 			<textarea class="form-control border-0 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" >${rvo.content }</textarea>
 			<br>
-			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
+			<form action="RecipeUpdateFormController.do" id="updateForm" method="post">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
-				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
-			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
-			  </c:if>
-			</div>			
 			</form><br>
-			</form>
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
-				<c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
+			</form>
+			  <c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
+			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
 			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
 			  </c:if>
-			</div>
-			</form>
+			</div>			
 		</div>
 		<br><br>
-		</body>
+	</main>	
+	<script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+    </body>
 </html>

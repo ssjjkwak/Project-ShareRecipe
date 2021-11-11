@@ -42,7 +42,7 @@
       <div class="container">
           <div class="row flex-center">
             <div class="col-lg-7 mx-auto text-center">
-              <h5 class="fw-bold fs-3 fs-lg-4 lh-sm" style="font-family: 'Jua';">카테고리별 게시판</h5><br>
+              <h5 class="fw-bold fs-3 fs-lg-4 lh-sm" style="font-family: 'Jua';">검색 게시판</h5><br>
             </div>
           </div>
           <div class="row flex-center">
@@ -99,7 +99,7 @@
               </div>
             </div>
           </div>
-		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100;">${param.category_num }</h3>
+		
 			<c:choose>
 		<c:when test="${sessionScope.mvo!=null}">
 		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div>
@@ -119,7 +119,7 @@
 			</thead>
           <c:forEach items="${requestScope.list}" var="li">
 			<tbody>
-				<tr onclick="location.href='RecipeDetailController.do?recipeNo=${li.recipeNo}'">
+				<tr>
 					<td>${li.recipeNo} </td>
 					<td><img src="./image/${li.image}" width="100px" height="70px"></td>
 					<td>${li.title}</td>
