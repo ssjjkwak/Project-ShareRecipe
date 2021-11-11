@@ -87,6 +87,7 @@
 				<a class="btn btn-lg btn-warning" type="reset" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a>
 			</div>
 			<br><br>
+
 			</form>
 		</div>
 	</body>

@@ -25,11 +25,11 @@ let i = 1;
 			let result = xhr.responseText;
 			if(result==1){
 				document.getElementById("idck").style.color="red";
-				document.getElementById("idck").innerHTML="아이디가 중복됩니다.";
+				document.getElementById("idck").innerHTML="이미 사용중인 아이디입니다.";
 				i=1;
 			}else{
 				document.getElementById("idck").style.color="green";
-				document.getElementById("idck").innerHTML="아이디가 중복되지 않습니다.";
+				document.getElementById("idck").innerHTML="사용 가능한 아이디입니다.";
 				i=0;
 			}
 		}

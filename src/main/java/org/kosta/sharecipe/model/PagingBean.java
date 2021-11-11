@@ -200,4 +200,11 @@ public class PagingBean {
 			flag=true;
 		return flag;
 	}
+
+	@Override
+	public String toString() {
+		return "PagingBean [nowPage=" + nowPage + ", postCountPerPage=" + postCountPerPage + ", pageCountPerPageGroup="
+				+ pageCountPerPageGroup + ", totalPostCount=" + totalPostCount + "]";
+	}
+	
 }
