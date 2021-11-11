@@ -34,7 +34,7 @@
     <link href="assets/css/theme.css" rel="stylesheet" />
 
   </head>
-  <body>
+  <body style="background-color: #F9FAFD">
   <main class="main" id="top">
   <!-- header import -->
   <c:import url="../header.jsp"></c:import>
