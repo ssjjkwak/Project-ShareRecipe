@@ -119,7 +119,7 @@
 			</thead>
           <c:forEach items="${requestScope.list}" var="li">
 			<tbody>
-				<tr>
+				<tr onclick="location.href='RecipeDetailController.do?recipeNo=${li.recipeNo}'">
 					<td>${li.recipeNo} </td>
 					<td><img src="./image/${li.image}" width="100px" height="70px"></td>
 					<td>${li.title}</td>
