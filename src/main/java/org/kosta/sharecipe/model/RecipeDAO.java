@@ -210,7 +210,11 @@ public class RecipeDAO {
 	//카테고리별 레시피 리스트
 	public ArrayList<RecipeVO> getRecipeByCategory (String category_name) throws SQLException{
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
-
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder("SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date ");
 			sql.append("FROM recipe r, category c ");
 			sql.append("WHERE r.category_num=c.category_num AND category_name=?");
@@ -251,29 +255,30 @@ public class RecipeDAO {
 		ResultSet rs = null;
 		try {
 			con = dataSource.getConnection();
-			StringBuilder sql = new StringBuilder("SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date ");
-			sql.append("FROM (select * from recipe order by reg_date desc) ");
-			sql.append("WHERE rownum<=8 ");
-			sql.append("ORDER BY reg_date DESC");
+			StringBuilder sql = new StringBuilder("SELECT r.recipe_num,r.image, r.title,r.likes,TO_CHAR(r.reg_date,'YYYY.MM.DD')AS reg_date , c.category_name ");
+			sql.append("FROM (select * from recipe order by reg_date desc)   r, category c ");
+			sql.append("WHERE rownum<=8 AND r.category_num=c.category_num ");
 			pstmt = con.prepareStatement(sql.toString());
 			rs= pstmt.executeQuery();
 			while(rs.next()) {
 				RecipeVO rvo = new RecipeVO();
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
 				rvo.setImage(rs.getString("image"));
 				rvo.setTitle(rs.getString("title"));
 				rvo.setLikes(rs.getInt("likes"));
 				rvo.setWroteDate(rs.getString("reg_date"));
+				
+				CategoryVO cvo = new CategoryVO();
+				cvo.setcName(rs.getString("category_name"));
+				rvo.setCategoryVO(cvo);
 				list.add(rvo);
 			}
 		}finally {
 			closeAll(rs, pstmt, con);
 		}
-		return list;
-		
+		return list;	
 	}
 	
-}
-
 	//총 게시물수 구하기
 	public int getTotalPostCount() throws SQLException {
 		int TotalPostCount = 0;
@@ -295,7 +300,7 @@ public class RecipeDAO {
 		return TotalPostCount;
 	}
 	
-	//카테고리로 레시피검색
+	//카테고리로 레시피검색 test
 	public ArrayList<RecipeVO> getRecipeByCategory(PagingBean pagingBean, String num) throws SQLException {
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
