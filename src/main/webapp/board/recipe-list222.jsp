@@ -69,18 +69,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${requestScope.list}" var="li">
-			<tr onclick="location.href='RecipeDetailController.do?recipeNo=${li.recipeNo}'">
-				<td>${li.recipeNo} </td>
-				<td>${li.categoryVO.cName}</td>
-				<td><img src="./image/${li.image}" width="100px" height="70px"></td>
+				<c:forEach items="${requestScope.categoryList}" var="cl">
+			<tr onclick="location.href='RecipeDetailController.do?recipeNo=${cl.recipeNo}'">
+				<td>${cl.recipeNo} </td>
+				<td>한식</td>
+				<td><img src="./image/${cl.image}" width="100px" height="70px"></td>
 				<td>
-				${li.title}
+				${cl.title}
 				</td>
-				<td>${li.memberVO.id}</td>
-				<td>${li.hits}</td>
-				<td>${li.likes}</td>
-				<td>${li.wroteDate}</td>
+				<td>${cl.memberVO.id}</td>
+				<td>${cl.hits}</td>
+				<td>${cl.likes}</td>
+				<td>${cl.wroteDate}</td>
 			</tr>
 			</c:forEach>
 			</tbody>
@@ -96,13 +96,13 @@
 		 </c:if>
 		 
 		 
-		 <c:forEach begin="${pagingBean.startPageOfPageGroup }" end="${pagingBean.endPageOfPageGroup }" var="page"> <!-- 아래처럼 다쓰지말고 for 구문으로 loop돌린다 begin~end갯수만큼-->
+		 <c:forEach begin="${pagingBean.startPageOfPageGroup }" end="${pagingBean.endPageOfPageGroup }" var="pg"> <!-- 아래처럼 다쓰지말고 for 구문으로 loop돌린다 begin~end갯수만큼-->
 		 <c:choose>
 		 <c:when test="${page==pagingBean.nowPage}">
-		 <li class="page-item active"><a class="page-link" href="RecipeListController.do?pageNo=${page }">${page }</a></li>
+		 <li class="page-item active"><a class="page-link" href="RecipeFindByCategoryController.do?pgNo=${pg }">${pg }</a></li>
 		 </c:when>
 		 <c:otherwise>
-		 <li class="page-item"><a class="page-link" href="RecipeListController.do?pageNo=${page }">${page }</a></li>
+		 <li class="page-item"><a class="page-link" href="RecipeFindByCategoryController.do?pgNo=${pg }">${pg }</a></li>
 		 </c:otherwise>
 		 </c:choose>
 		 
