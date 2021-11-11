@@ -51,11 +51,11 @@
                   
                   <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                      <form class="row gx-2 gy-2 align-items-center">
+                      <form class="row gx-2 gy-2 align-items-center" action="RecipeSearchController.do">
                         <div class="col">
                         <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
                             <label class="visually-hidden" for="inputDelivery">Address</label>
-                            <input class="form-control input-box form-foodwagon-control" style="font-family: 'Jua'; font-weight: 500;" id="inputDelivery" type="text" placeholder="먹고싶은 음식을 검색해보세요!" />
+                            <input class="form-control input-box form-foodwagon-control" style="font-family: 'Jua'; font-weight: 500;" id="inputDelivery" type="text" name="search" placeholder="먹고싶은 음식을 검색해보세요!" />
                           </div>
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
