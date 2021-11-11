@@ -66,6 +66,9 @@ select r.recipe_num,r.title,m.id,r.content,r.hits,r.likes,to_char(r.reg_date,'yy
 from recipe r, recipe_member m
 where r.id=m.id and r.recipe_num=3; 
 
+--상세보기 sql 변경
+SELECT recipe_num, title, id, content, hits ,likes, to_char(reg_date,'yyyy.mm.dd') as reg_date, image
+FROM recipe;
 
 --조회수 증가
 update recipe set hits=hits+1 where recipe_num=3;
@@ -150,12 +153,23 @@ where rnum between 1 and 5;
 
 
 --최신 데이터 8개만 가져오기
-select * from RECIPE
+select * from RECIPE order by reg_date desc;
 
 SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date
 FROM (select * from recipe order by reg_date desc) 
 WHERE rownum<=8 
 ORDER BY reg_date DESC;
+
+--카테고리 이름, 레시피 넘버, image, 제목, likes , 작성일시  , 작성자 아이디, 조회수, content, 
+SELECT recipe_num, id, title, content, image, hits, likes, TO_CHAR(r. reg_date,'YYYY.MM.DD') AS reg_date,  c.category_num , c.category_name
+from RECIPE R,  CATEGORY C
+WHERE ROWNUM<=8 AND R.CATEGORY_NUM =C.CATEGORY_NUM 
+ORDER BY reg_date DESC;
+
+SELECT r.recipe_num,r.image, r.title,r.likes,TO_CHAR(r.reg_date,'YYYY.MM.DD')AS reg_date , c.category_name
+FROM (select * from recipe order by reg_date desc)   r, category c
+WHERE rownum<=8 AND r.category_num=c.category_num
+
 
 
 --시간계산 더 생각해보기
