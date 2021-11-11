@@ -89,7 +89,7 @@
 	  <c:import url="${requestScope.popular }"/>
 	  
       <!-- recipe-newWrite.jsp import -->
-      <c:import url="${requestScope.newWrite }"/>
+      <c:import url="${requestScope.latest }"/>
 
 
 
@@ -109,21 +109,10 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                                            
-                     <a href="#" style="display:block;" onclick="hansick()"> 
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">                      
+                        <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <script type="text/javascript">
-                        	function hansick(){
-                        		alert("이동하시겠습니까?");
-                        		document.getElementById("hansick").submit();
-                        	}
-                        </script>
-                        <form  action="RecipeFindByCategoryController.do" id="hansick" method="post">
-                        <input type="hidden" name="hansick" value="1">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
-                        </form>
-                  
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h5>
                           </div>
@@ -132,7 +121,7 @@
                       
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
                           <div class="card-body ps-0">
@@ -142,7 +131,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
                           <div class="card-body ps-0">
@@ -152,7 +141,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
                           <div class="card-body ps-0">
@@ -162,7 +151,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <a href="#" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
                           <div class="card-body ps-0">
@@ -172,7 +161,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <a href="#" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
                           <div class="card card-span h-100 rounded-circle">
                             <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
                             <div class="card-body ps-0">

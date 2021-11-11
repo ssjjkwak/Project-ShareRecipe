@@ -76,6 +76,15 @@ delete from RECIPE where recipe_num=6;
 --레시피 수정
 update recipe set category_num=2,title='화요일저녁',content='밤',image='1636449018556.jpg' where recipe_num=3;
 
+
+--카테고리별 리스트
+select category_num,recipe_num,image,title,id,hits,likes,to_char(reg_date,'YYYY.MM.DD') from recipe where category_num=1;
+
+SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD')  AS reg_date
+FROM recipe r, category c
+WHERE r.category_num=c.category_num AND category_name='한식';
+
+
 --페이지구현--
 --데이터삽입
 INSERT INTO recipe(RECIPE_NUM,id,title,content,category_num,image) 
@@ -140,6 +149,24 @@ where rnum between 1 and 5;
 
 
 
+--최신 데이터 8개만 가져오기
+select * from RECIPE
+
+SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date
+FROM (select * from recipe order by reg_date desc) 
+WHERE rownum<=8 
+ORDER BY reg_date DESC;
+
+
+--시간계산 더 생각해보기
+SELECT TO_DATE(sysdate, 'YYYY-MM-DD') - TO_DATE('2021-05-01', 'YYYY-MM-DD')
+  FROM dual
+
+  SELECT recipe_num , ROUND((sysdate-reg_date)*24*60*60) FROM recipe
+
+  
+  
+  
 --데이블 drop 할 경우 아래의 순서로 진행해야함
 drop table recipe;
 drop table category;

@@ -52,42 +52,42 @@
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">                      
-                        <a href="#" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;중식</h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;일식</h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="#" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;양식</h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                        <a href="#" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;채식</h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                        <a href="#" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
                             <div class="card-body ps-0">
                               <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;디저트</h5>
                             </div>
@@ -99,39 +99,36 @@
               </div>
             </div>
           </div>
-		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100;">카테고리명</h3>
+		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100;">${param.category_num }</h3>
+			<c:choose>
+		<c:when test="${sessionScope.mvo!=null}">
+		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div>
+		</c:when>
+		</c:choose>
 		<table class="table table-hover table-striped boardlist" style="font-family: 'Jua'; font-weight: 100;">
 			<thead>
 				<tr style="background-color: #FFB30E">
 					<th>번호</th>
-					<th>제목</th>
+					<th>이미지</th>
+					<th class="title">제목</th>
 					<th>작성자</th>
-					<th>작성일</th>
 					<th>조회</th>
+					<th>추천수</th>
+					<th>작성일</th>
 				</tr>
 			</thead>
+          <c:forEach items="${requestScope.list}" var="li">
 			<tbody>
 				<tr>
-					<td>1</td>
-					<td>라면</td>
-					<td>김근영</td>
-					<td>2021.11.08</td>
-					<td>6</td>
+					<td>${li.recipeNo} </td>
+					<td><img src="./image/${li.image}" width="100px" height="70px"></td>
+					<td>${li.title}</td>
+					<td>${li.memberVO.id}</td>
+					<td>${li.hits}</td>
+					<td>${li.likes}</td>
+					<td>${li.wroteDate}</td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>라면</td>
-					<td>김근영</td>
-					<td>2021.11.08</td>
-					<td>6</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>라면</td>
-					<td>김근영</td>
-					<td>2021.11.08</td>
-					<td>6</td>
-				</tr>
+			</c:forEach>
 			</tbody>
 		</table><br>
 		<ul class="pagination justify-content-center" style="font-family: 'Jua'; font-weight: 100;">
