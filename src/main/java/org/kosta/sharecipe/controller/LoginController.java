@@ -12,17 +12,19 @@ public class LoginController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//요청방식 POST 체크
-				if(request.getMethod().equals("POST")==false) {
-					throw new ServletException("로그인은 POST방식만 허용됩니다");
-				}
+		// 요청방식 POST 체크
+		if (request.getMethod().equals("POST") == false) {
+			throw new ServletException("로그인은 POST방식만 허용됩니다");
+		}
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		MemberVO mvo = MemberDAO.getInstance().login(id, password);
-		if(mvo==null)
+		if (mvo == null) {
 			return "redirect:member/login-fail.jsp";
-		HttpSession session = request.getSession();
-		session.setAttribute("mvo", mvo);
-		return "index.jsp";
+		} else {
+			HttpSession session = request.getSession();
+			session.setAttribute("mvo", mvo);
+			return "index.jsp";
+		}
 	}
 }
