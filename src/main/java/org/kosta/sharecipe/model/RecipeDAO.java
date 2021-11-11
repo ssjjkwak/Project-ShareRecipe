@@ -34,21 +34,40 @@ public class RecipeDAO {
 	}
 
 	/* 레시피 목록 전체 */
-	public ArrayList<RecipeVO> getRecipeList() throws SQLException {
+	public ArrayList<RecipeVO> getRecipeList(PagingBean pagingBean) throws SQLException {
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
+			/*
+			 * con = dataSource.getConnection(); StringBuilder sql = new StringBuilder(
+			 * "select c.category_name,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,To_CHAR(r.reg_date,'YYYY.MM.DD') as reg_date "
+			 * ); sql.append("from recipe r,category c ");
+			 * sql.append("where r.category_num=c.category_num ");
+			 * sql.append("order by r.reg_date desc");
+			 */
 			con = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder(
-					"select c.category_name,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,To_CHAR(r.reg_date,'YYYY.MM.DD') as reg_date ");
-			sql.append("from recipe r,category c ");
-			sql.append("where r.category_num=c.category_num ");
-			sql.append("order by r.reg_date desc");
+					"select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from( ");
+			sql.append("select row_number() over(order by RECIPE_NUM desc) ");
+			sql.append("as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.reg_date  ");
+			sql.append("from recipe r,category c where r.category_num=c.category_num) ");
+			sql.append("where rnum between ? and ? ");
 			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, pagingBean.getStartRowNumber());
+			pstmt.setInt(2, pagingBean.getEndRowNumber());
+			
 			rs = pstmt.executeQuery();
-
+			/*
+			 * select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from(
+			 * --카테고리명까지 조인해서 가져온 것으로부터 select row_number() over(order by RECIPE_NUM desc)
+			 * as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.
+			 * reg_date from recipe r,category c where r.category_num=c.category_num ) where
+			 * rnum between 1 and 5;
+			 */
+			
+			
 			while (rs.next()) {
 				RecipeVO rvo = new RecipeVO();
 				CategoryVO cvo = new CategoryVO();
@@ -149,7 +168,7 @@ public class RecipeDAO {
 			closeAll(pstmt, con);
 		}
 	}
-	
+
 	// 레시피 삭제
 	public void deleteRecipeByNo(String no) throws SQLException {
 		Connection con = null;
@@ -164,30 +183,179 @@ public class RecipeDAO {
 			closeAll(pstmt, con);
 		}
 	}
-	
-	//레시피 수정 
+
+	// 레시피 수정
 	public int updateRecipeByNo(RecipeVO rvo) throws SQLException {
-		Connection con=null;
-		PreparedStatement pstmt=null;
-		int result =0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
 		try {
-			con=dataSource.getConnection();
-			StringBuilder sql=new StringBuilder("update recipe set category_num=?,title=?,content=? , image=?");
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder("update recipe set category_num=?,title=?,content=? , image=?");
 			sql.append("where recipe_num=?");
-			pstmt=con.prepareStatement(sql.toString());
+			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setInt(1, rvo.getCategoryVO().getCategoryNo());
 			pstmt.setString(2, rvo.getTitle());
 			pstmt.setString(3, rvo.getContent());
 			pstmt.setString(4, rvo.getImage());
 			pstmt.setInt(5, rvo.getRecipeNo());
 			result = pstmt.executeUpdate();
-		}finally {
+		} finally {
 			closeAll(pstmt, con);
 		}
 		return result;
 	}
+	
+
+	//카테고리별 레시피 리스트
+	public ArrayList<RecipeVO> getRecipeByCategory (String category_name) throws SQLException{
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+
+			StringBuilder sql = new StringBuilder("SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date ");
+			sql.append("FROM recipe r, category c ");
+			sql.append("WHERE r.category_num=c.category_num AND category_name=?");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, category_name);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				CategoryVO cvo = new CategoryVO();
+				cvo.setCategoryNo(rs.getInt("category_num"));
+				rvo.setCategoryVO(cvo);
+
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
+
+				MemberVO mvo = new MemberVO();
+				mvo.setId(rs.getString("id"));
+				rvo.setMemberVO(mvo);
+
+				rvo.setHits(rs.getInt("hits"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+
+				list.add(rvo);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+	}
+	
+	//최신 데이터 8개 
+	public ArrayList<RecipeVO> getLatestRecipe () throws SQLException{
+		ArrayList<RecipeVO> list  = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder("SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date ");
+			sql.append("FROM (select * from recipe order by reg_date desc) ");
+			sql.append("WHERE rownum<=8 ");
+			sql.append("ORDER BY reg_date DESC");
+			pstmt = con.prepareStatement(sql.toString());
+			rs= pstmt.executeQuery();
+			while(rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+				list.add(rvo);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+		
+	}
+	
 }
 
+	//총 게시물수 구하기
+	public int getTotalPostCount() throws SQLException {
+		int TotalPostCount = 0;
 
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "select count(*) from recipe";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				TotalPostCount = rs.getInt(1);
+			}
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return TotalPostCount;
+	}
+	
+	//카테고리로 레시피검색
+	public ArrayList<RecipeVO> getRecipeByCategory(PagingBean pagingBean, String num) throws SQLException {
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		//select RECIPE_NUM,image,title,id,hits,likes,reg_date
+		//from(
+		//select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date 
+		//from recipe
+		//where category_num=1
+		//)
+		//where rnum between 1 and 5;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder(
+					"select RECIPE_NUM,image,title,id,hits,likes,reg_date ");
+			sql.append("from( ");
+			sql.append("select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date  ");
+			sql.append("from recipe ");
+			sql.append("where category_num=? ");
+			sql.append(")where rnum between ? and ?");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, num);
+			pstmt.setInt(2, pagingBean.getStartRowNumber());
+			pstmt.setInt(3, pagingBean.getEndRowNumber());
+			
+			rs = pstmt.executeQuery();
+			/*
+			 * select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from(
+			 * --카테고리명까지 조인해서 가져온 것으로부터 select row_number() over(order by RECIPE_NUM desc)
+			 * as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.
+			 * reg_date from recipe r,category c where r.category_num=c.category_num ) where
+			 * rnum between 1 and 5;
+			 */
+			
+			
+			while (rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				//CategoryVO cvo = new CategoryVO();
+				//cvo.setcName(rs.getString("category_name"));
+				//rvo.setCategoryVO(cvo);
 
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
 
+				MemberVO mvo = new MemberVO();
+				mvo.setId(rs.getString("id"));
+				rvo.setMemberVO(mvo);
+
+				rvo.setHits(rs.getInt("hits"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+
+				list.add(rvo);
+			}
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+	}
+	
+}
