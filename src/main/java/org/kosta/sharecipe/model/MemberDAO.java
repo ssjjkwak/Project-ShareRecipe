@@ -72,8 +72,8 @@ public class MemberDAO {
 		}
 	}
 
-	public boolean checkId(String id) throws SQLException {
-		boolean result = false;
+	public int checkId(String id) throws SQLException {
+		int result=0;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -84,7 +84,7 @@ public class MemberDAO {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next() && rs.getInt(1) == 1)
-				result = true;
+				result = 1;
 		} finally {
 			closeAll(rs, pstmt, con);
 		}
@@ -134,6 +134,47 @@ public class MemberDAO {
 		}
 		return mvo;
 	}
+	public MemberVO FindMemberId(String name,String email) throws SQLException {
+		MemberVO vo=null;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			con=dataSource.getConnection();
+			String sql="select id from recipe_member where name=? and email=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				vo=new MemberVO();
+				vo.setId(rs.getString(1));
+				vo.setName(name);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return vo;
+	}
+	public MemberVO FindMemberPw(String id, String email) throws SQLException{
+	      MemberVO mvo = null;
+	      Connection con = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs =null;
+	      try {
+	         con = dataSource.getConnection();
+	         String sql = "select password from recipe_member where id=? and email=?";
+	         pstmt=con.prepareStatement(sql);
+	         pstmt.setString(1, id);
+	         pstmt.setString(2, email);
+	         rs=pstmt.executeQuery();
+	         if(rs.next())
+	            mvo=new MemberVO(id, rs.getString("password"),null,null,null,null,email,null);
+	      }finally {
+	         closeAll(rs, pstmt, con);
+	      }
+	      return mvo;
+	   }
 }
 
 

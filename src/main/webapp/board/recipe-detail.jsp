@@ -19,19 +19,18 @@
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/home-favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/home-favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/home-favicon-32x32.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/home-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/home-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicons/home-favicon-32x32.ico">
+    <link rel="manifest" href="../assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
     <meta name="theme-color" content="#ffffff">
-
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
     
     <!-- BootStrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -49,36 +48,45 @@
 	 function updateRecipe(){
 		 if(confirm("수정하시겠습니까?")){
 			document.getElementById("updateForm").submit();
-		 	//location.href="board/recipe-update.jsp";
 		 }
 	 }
   </script>
 	<body>
-		<c:import url="../header.jsp"></c:import>
-		<br><br><br><br><br><br>
-		<div class="container" style="text-align: center;">
+	<main class="main" id="top">
+	<c:import url="../header.jsp"></c:import>
+		<br><br><br><br>
+		<div class="container mt-5">
 			<input type="hidden" name="id">
-			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">제목: ${rvo.title }</div><br>
-			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">작성자: ${rvo.memberVO.id }</div><br>
-			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">작성일: ${rvo.wroteDate }</div><br>
-			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">추천수: ${rvo.likes }</div><br>
-			 <div class="form-control border-5 input-box bg-100 text-center" style="font-family: 'Jua'; font-weight: 500; width:30%;">조회수: ${rvo.hits }</div><br>
-			 <img src="image/${rvo.image }" width="400px"  style="text-align: center"><br>
-			<textarea class="form-control border-5 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" >${rvo.content }</textarea>
+			 <div class="col-lg-9 mx-auto text-center mt-3 mb-5">
+			 <div class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; font-size: 30px; text-align: left;">제목: ${rvo.title }</div>
+			<%--  <span class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; text-align: left;">작성자: ${rvo.memberVO.id }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;작성일: ${rvo.wroteDate }</span>  --%>
+			 <span class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; text-align: left;">작성자: ${rvo.memberVO.id }</span> 
+			 <span class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; text-align: right;">작성일: ${rvo.wroteDate }</span> 
+			 <span class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; text-align: right;">추천수: ${rvo.likes }&nbsp;&nbsp;조회수: ${rvo.hits }</span>
+			 <img src="image/${rvo.image }" width="400px"  style="text-align: center"><br><br>
+			<textarea class="form-control border-0 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" >${rvo.content }</textarea>
 			<br>
-			<form  action="RecipeUpdateFormController.do" id="updateForm" method="post">
-			<div class="d-grid gap-2 text-right">
+			<form action="RecipeUpdateFormController.do" id="updateForm" method="post">
 				<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
-			<a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
-			</div>			
 			</form><br>
 			<form action="RecipeDeleteController.do" id="deleteForm" method="post">
-			<div class="d-grid gap-2 text-right">
 				<input type="hidden" name="no" value="${rvo.recipeNo}">
-			<a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
-			</div>
 			</form>
+			  <c:if test="${requestScope.rvo.memberVO.id==sessionScope.mvo.id }">
+			  <a class="btn btn-lg btn-warning" onclick="updateRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+			  <a class="btn btn-lg btn-warning" onclick="deleteRecipe()" style="font-family: 'Jua'; font-weight: 100; width:10%;">삭제</a>
+			  </c:if>
+			</div>			
 		</div>
 		<br><br>
-	</body>
+	</main>	
+	<script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+    </body>
 </html>

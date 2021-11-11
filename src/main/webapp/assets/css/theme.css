@@ -18491,6 +18491,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom-color: #F17228;
 }
 
+#teamInfo {border-color: yellow;}
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/

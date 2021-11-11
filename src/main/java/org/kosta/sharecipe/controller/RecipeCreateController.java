@@ -3,6 +3,7 @@ package org.kosta.sharecipe.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,25 +17,23 @@ import org.kosta.sharecipe.model.MemberVO;
 import org.kosta.sharecipe.model.RecipeDAO;
 import org.kosta.sharecipe.model.RecipeVO;
 
-public class CreateRecipeController implements Controller {
+public class RecipeCreateController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//로그인 체크
-		/*
-		HttpSession session = request.getSession(false);
-		if(session ==null ||session.getAttribute("mvo")==null)
-			return "redirect:ListController.do";
-		*/
+		//요청방식 POST 체크
+		if(request.getMethod().equals("POST")==false) {
+			throw new ServletException("레시피 등록은 POST방식만 허용됩니다");
+		}
 		
 		//아래와 같이 작성하면 동작은 하지만 depricated 될 예정이라 다른 방법을 찾음
 		//String saveDir=request.getRealPath("image");
 		//프로젝트 완료 후 실제 서비스 시에 사용할 경로 - 프로젝트 새로 로드하면 이미지가 사라지므로 프로젝트 완료후 사용
-		//String saveDir = request.getSession().getServletContext().getRealPath("image");
+		String saveDir = request.getSession().getServletContext().getRealPath("image");
 		
 		//이미지 삽입에 관련된 사항들
 		//용은
-		String saveDir="C:/kosta224/toy-project/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
+		//String saveDir="C:/kosta224/toy-project/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
 		//정훈
 		//String saveDir="C:/kosta224/gitTest-workspace/semi-project-11-8/src/main/webapp/image"; //저장될 위치 설정
 		
@@ -51,10 +50,6 @@ public class CreateRecipeController implements Controller {
 		//업로드된 정보 분석!!! 각각의 컴포넌트들을  FileItem 단위로 쪼갠다..
 		request.setCharacterEncoding("utf-8"); //다국어 인코딩
 		
-		//java.lang.ClassCastException: org.apache.catalina.connector.RequestFacade cannot be cast to org.apache.tomcat.util.http.fileupload.RequestContext
-		// 이슈 기록대상
-		//List<FileItem> items=upload.parseRequest(request);
-		//List<FileItem> items=upload.parseRequest((RequestContext) request);
 		List<FileItem> items  = upload.parseRequest(new ServletRequestContext(request));
 		
 		RecipeVO recipeVO = new RecipeVO();//Empty상태의 VO 생성 
@@ -125,6 +120,5 @@ public class CreateRecipeController implements Controller {
 		
 		//int result = RecipeDAO.getInstance().createRecipe(recipeVO);
 		*/
-		
 	}
 }

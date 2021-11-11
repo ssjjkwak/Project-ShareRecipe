@@ -16,7 +16,30 @@
 <link href="../assets/css/theme.css" rel="stylesheet" />
 </head>
 <script type="text/javascript">
-function checkId() {
+let i = 1;
+	function checkId() {
+		let joinId=document.getElementById("joinId").value;
+		let xhr=new XMLHttpRequest();
+		xhr.onload=function(){
+			
+			let result = xhr.responseText;
+			if(result==1){
+				document.getElementById("idck").style.color="red";
+				document.getElementById("idck").innerHTML="아이디가 중복됩니다.";
+				i=1;
+			}else{
+				document.getElementById("idck").style.color="green";
+				document.getElementById("idck").innerHTML="아이디가 중복되지 않습니다.";
+				i=0;
+			}
+		}
+		xhr.open("get","../RegisterIdCheckServlet?joinId="+joinId);
+		xhr.send();
+	}
+
+
+
+/* function checkId() {
 	let mid = document.getElementById("joinId").value;
 
 	if (mid=="") {
@@ -25,14 +48,59 @@ function checkId() {
 		window.open("../RegisterIdCheckController.do?joinId="+mid, "mypopup",
 				"width=300,height=200,top=150,left=500");
 	}
-}
+} */
 // 아이디 중복확인하지 않은 상태에서 가입하기를 누르면 아이디 중복확인하세요 alert 후 전송시키지 않는다 
 function checkForm() {
-	if(document.getElementById("joinId").value!=document.getElementById("flag").value){
-		alert("아이디 중복 확인이 필요합니다.");
+	if(i==1){
+		alert("아이디가 중복되었습니다.");
+		document.getElementById("joinId").focus();
 		return false;
 	}
-} 
+	let joinId=document.getElementById("joinId").value;
+	if(joinId==""){
+		alert("아이디를 입력하셔야 합니다.");
+		return false;
+	}
+	let password = document.forms[0];
+	let pass1 = password.joinPw.value;
+	let pass2 = password.joinPwck.value;
+	/* if(document.getElementById("joinId").value!=document.getElementById("flag").value){
+		alert("아이디 중복 확인이 필요합니다.");
+		return false;
+	} */
+	if(pass1!=pass2){
+		alert("패스워드가 일치하지 않습니다.");
+		return false;
+	}
+	var str = document.getElementsByClassName("check");
+	var blank_pattern = /[\s]/g;
+	if( blank_pattern.test( str.value) == true){
+	    alert(' 공백은 사용할 수 없습니다. ');
+	    return false;
+	}
+
+
+	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+	if( special_pattern.test(str.value) == true ){
+	    alert('특수문자는 사용할 수 없습니다.');
+	    return false;
+	}
+}
+// 패스워드 일치 확인
+function pwCheck() {
+	let password = document.forms[0];
+	let pass1 = password.joinPw.value;
+	let pass2 = password.joinPwck.value;
+	if(pass1!=pass2){
+		document.getElementById("checkPwd").style.color="red";
+		document.getElementById("checkPwd").innerHTML="비밀번호가 일치하지 않습니다.";
+	}else{
+		document.getElementById("checkPwd").style.color="green";
+		document.getElementById("checkPwd").innerHTML="비밀번호가 일치합니다.";
+	}
+}
+
 </script>
 <body>
 	<div class="container">
@@ -44,20 +112,21 @@ function checkForm() {
 				<br><br>
 				<form action="../RegisterMemberController.do" onsubmit="return checkForm()" method="post">
 					<input type="hidden" id="flag" value="">
-					<input class="form-control border-0 input-box bg-100"
-						style="font-family: 'Jua'; font-weight: 500; width: 75%; margin-bottom: 20px; display: inline-block; float: left;"
+					<input class="form-control border-0 input-box bg-100 check"
+						onkeyup="checkId()" style="font-family: 'Jua'; font-weight: 500; width: 75%; margin-bottom: 20px; display: inline-block; float: left;"
 						type="text" id="joinId" name="joinId" placeholder="아이디를 입력하세요."
 						required="required">
-					<button class="btn btn-danger" onclick="checkId()"
-						style="position: relative; margin: 0; padding: 0; height: 38px; width: 20%; font-family: 'Jua'; font-weight: 500;"
-						type="button">중복확인</button>
-					<br> <input class="form-control border-0 input-box bg-100"
+					<span id="idck" style="position:relative; top:5px; margin-left: 20px; font-family: 'Jua'; font-weight: 200; font-size: 13px;"></span>
+					<br> <input class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
 						name="joinPw" placeholder="비밀번호를 입력하세요." required="required">
 					<br> <input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
-						name="joinPwck" placeholder="비밀번호 재확인" required="required">
-					<br> <input class="form-control border-0 input-box bg-100"
+						name="joinPwck" placeholder="비밀번호 재확인" onkeyup="pwCheck()" required="required">
+						<div style="text-align: left; margin-top: 5px; margin-bottom: -10px;">
+							<span style="margin-left: 40px; font-family: 'Jua'; font-weight: 200; font-size: 12px;" id="checkPwd"></span>
+						</div>
+					<br> <input class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500;" type="text"
 						name="joinName" placeholder="이름 입력" required="required"> <br>
 					<input class="form-control border-0 input-box bg-100"
@@ -80,14 +149,14 @@ function checkForm() {
 						style="font-family: 'Jua'; font-weight: 500; width: 48%; display: inline-block; float: left; margin-bottom: 20px;"
 						type="text" name="joinAddr4" id="sample2_extraAddress"
 						placeholder="참고항목"> <br> <input
-						class="form-control border-0 input-box bg-100"
+						class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500;" type="text"
 						name="joinTel" placeholder="휴대폰번호(공백없이 숫자만 입력)"
-						required="required"><br> <div style="text-align: left;"><span style="font-family: 'Jua'; font-weight: 500;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생년월일</span></div><br><input
-						class="form-control border-0 input-box bg-100"
+						required="required" pattern="[0-9]+"><br> <div style="text-align: left;"><span style="font-family: 'Jua'; font-weight: 500;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생년월일</span></div><br><input
+						class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500;" type="date"
 						name="joinBirthday" required="required"><br> <input
-						class="form-control border-0 input-box bg-100"
+						class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500; width: 48%; display: inline-block; float: left; margin-bottom: 20px;"
 						type="text" name="joinMail1" placeholder="이메일" required="required">
 					<%-- <span style="position: relative; top:5px">@</span>--%>

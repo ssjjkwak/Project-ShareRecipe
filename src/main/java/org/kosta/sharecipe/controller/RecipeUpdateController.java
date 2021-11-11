@@ -3,6 +3,7 @@ package org.kosta.sharecipe.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +21,10 @@ public class RecipeUpdateController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//요청방식 POST 체크
+				if(request.getMethod().equals("POST")==false) {
+					throw new ServletException("레시피 수정은 POST방식만 허용됩니다");
+				}
 
 		//프로젝트 완료 후 실제 서비스 시에 사용할 경로 - 프로젝트 새로 로드하면 이미지가 사라지므로 프로젝트 완료후 사용
 		//String saveDir = request.getSession().getServletContext().getRealPath("image");
@@ -41,11 +46,6 @@ public class RecipeUpdateController implements Controller {
 		// 업로드된 정보 분석!!! 각각의 컴포넌트들을 FileItem 단위로 쪼갠다..
 		request.setCharacterEncoding("utf-8"); // 다국어 인코딩
 
-		// java.lang.ClassCastException: org.apache.catalina.connector.RequestFacade
-		// cannot be cast to org.apache.tomcat.util.http.fileupload.RequestContext
-		// 이슈 기록대상
-		// List<FileItem> items=upload.parseRequest(request);
-		// List<FileItem> items=upload.parseRequest((RequestContext) request);
 		List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
 
 		RecipeVO recipeVO = new RecipeVO();// Empty상태의 VO 생성
@@ -89,7 +89,5 @@ public class RecipeUpdateController implements Controller {
 			System.out.println("수정성공");
 			return "redirect:board/recipe-update-ok.jsp";
 		}
-
 	}
-
 }
