@@ -255,18 +255,22 @@ public class RecipeDAO {
 		ResultSet rs = null;
 		try {
 			con = dataSource.getConnection();
-			StringBuilder sql = new StringBuilder("SELECT  image, title,likes,TO_CHAR(reg_date,'YYYY.MM.DD')AS reg_date ");
-			sql.append("FROM (select * from recipe order by reg_date desc) ");
-			sql.append("WHERE rownum<=8 ");
-			sql.append("ORDER BY reg_date DESC");
+			StringBuilder sql = new StringBuilder("SELECT r.recipe_num,r.image, r.title,r.likes,TO_CHAR(r.reg_date,'YYYY.MM.DD')AS reg_date , c.category_name ");
+			sql.append("FROM (select * from recipe order by reg_date desc)   r, category c ");
+			sql.append("WHERE rownum<=8 AND r.category_num=c.category_num ");
 			pstmt = con.prepareStatement(sql.toString());
 			rs= pstmt.executeQuery();
 			while(rs.next()) {
 				RecipeVO rvo = new RecipeVO();
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
 				rvo.setImage(rs.getString("image"));
 				rvo.setTitle(rs.getString("title"));
 				rvo.setLikes(rs.getInt("likes"));
 				rvo.setWroteDate(rs.getString("reg_date"));
+				
+				CategoryVO cvo = new CategoryVO();
+				cvo.setcName(rs.getString("category_name"));
+				rvo.setCategoryVO(cvo);
 				list.add(rvo);
 			}
 		}finally {
