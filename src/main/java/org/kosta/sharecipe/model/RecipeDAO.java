@@ -362,5 +362,47 @@ public class RecipeDAO {
 		}
 		return list;
 	}
+
+	//검색으로 리스트 조회
+	public ArrayList<RecipeVO> searchTitleRecipe(String search) throws SQLException {
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder("SELECT recipe_num, image,title,id,hits,likes,to_char(reg_date,'YYYY.MM.DD') AS reg_date ");
+			sql.append("FROM recipe ");
+			sql.append("WHERE title like ? order by recipe_num desc");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, "%"+search+"%");
+			//pstmt.setString(1, search);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				//CategoryVO cvo = new CategoryVO();
+				//cvo.setCategoryNo(rs.getInt(null));
+				rvo.setCategoryVO(null);
+
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
+
+				MemberVO mvo = new MemberVO();
+				mvo.setId(rs.getString("id"));
+				rvo.setMemberVO(mvo);
+
+				rvo.setHits(rs.getInt("hits"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+
+				list.add(rvo);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+	}
+	
 	
 }
