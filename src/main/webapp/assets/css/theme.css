@@ -14,6 +14,12 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ .etc {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
 :root {
   --bs-blue: #2780ED;
   --bs-indigo: #6237FF;
@@ -18491,6 +18497,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-bottom-color: #F17228;
 }
 
+#teamInfo {border-color: yellow;}
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/

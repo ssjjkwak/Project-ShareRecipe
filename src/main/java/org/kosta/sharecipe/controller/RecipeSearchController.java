@@ -8,13 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import org.kosta.sharecipe.model.RecipeDAO;
 import org.kosta.sharecipe.model.RecipeVO;
 
-public class RecipeLatestListController implements Controller {
+public class RecipeSearchController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ArrayList<RecipeVO> list=RecipeDAO.getInstance().getLatestRecipe();
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+		String search = request.getParameter("search");
+		System.out.println(search);
+		list = RecipeDAO.getInstance().searchTitleRecipe(search);
+		System.out.println(search+list);
 		request.setAttribute("list", list);
-		return "board/recipe-latest-list.jsp";
+		return "board/recipe-titleSearch-list.jsp";
 	}
 
 }

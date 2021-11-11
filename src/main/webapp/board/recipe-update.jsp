@@ -50,8 +50,9 @@
 		<c:import url="../header.jsp"></c:import>
 		<br><br><br><br><br><br>
 		<div class="container">
-			<form enctype="multipart/form-data" id="submitForm" action="../CreateRecipeController.do" method="post">
+			<form enctype="multipart/form-data" id="submitForm" action="RecipeUpdateController.do" method="post">
 			<input type="hidden" name="id">
+			<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
 			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
 				<option style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>
@@ -62,8 +63,8 @@
 				<option value="6" style="text-align: left;">&nbsp;디저트</option>
 			</select>
 			<br><br>
-			<input class="form-control border-5 input-box bg-100" type="text" name="title" placeholder="제목을 10자 이내로 입력해 주세요." style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" required="required"/><br>
-			<textarea class="form-control border-5 input-box bg-100" name="content" placeholder="레시피 작성 예시) 1. 난이도 / 2. 소요시간 / 3. 재료 / 4. 만족도 / 5. 본문" rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required"></textarea>
+			<input class="form-control border-5 input-box bg-100" type="text" name="title" value="${rvo.title }" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" required="required"/><br>
+			<textarea class="form-control border-5 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required">${rvo.content }</textarea>
 			<br>
 			<input class="form-control border-5 input-box bg-100" type="file" name="image" style="font-family: 'Jua'; font-weight: 500; width:60%;">
 			
