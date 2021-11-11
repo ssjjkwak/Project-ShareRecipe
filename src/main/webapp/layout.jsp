@@ -89,7 +89,7 @@
 	  <c:import url="${requestScope.popular }"/>
 	  
       <!-- recipe-newWrite.jsp import -->
-      <c:import url="${requestScope.newWrite }"/>
+      <c:import url="${requestScope.latest }"/>
 
 
 
