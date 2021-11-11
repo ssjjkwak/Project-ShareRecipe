@@ -403,6 +403,85 @@ public class RecipeDAO {
 		}
 		return list;
 	}
-	
-	
+	public int getMyTotalPostCount(String id) throws SQLException {
+		int TotalPostCount = 0;
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "select count(*) from recipe where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				TotalPostCount = rs.getInt(1);
+			}
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return TotalPostCount;
+	}
+	/*  나의 레시피 목록 전체 */
+	public ArrayList<RecipeVO> getMyRecipeList(PagingBean pagingBean,String id) throws SQLException {
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			/*
+			 * con = dataSource.getConnection(); StringBuilder sql = new StringBuilder(
+			 * "select c.category_name,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,To_CHAR(r.reg_date,'YYYY.MM.DD') as reg_date "
+			 * ); sql.append("from recipe r,category c ");
+			 * sql.append("where r.category_num=c.category_num ");
+			 * sql.append("order by r.reg_date desc");
+			 */
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder(
+					"select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from( ");
+			sql.append("select row_number() over(order by RECIPE_NUM desc) ");
+			sql.append("as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.reg_date  ");
+			sql.append("from recipe r,category c,recipe_member m where r.category_num=c.category_num  and r.id=? and r.id=m.id) ");
+			sql.append("where rnum between ? and ? ");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+			pstmt.setInt(2, pagingBean.getStartRowNumber());
+			pstmt.setInt(3, pagingBean.getEndRowNumber());
+			
+			rs = pstmt.executeQuery();
+			/*
+			 * select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from(
+			 * --카테고리명까지 조인해서 가져온 것으로부터 select row_number() over(order by RECIPE_NUM desc)
+			 * as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.
+			 * reg_date from recipe r,category c where r.category_num=c.category_num ) where
+			 * rnum between 1 and 5;
+			 */
+			
+			
+			while (rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				CategoryVO cvo = new CategoryVO();
+				cvo.setcName(rs.getString("category_name"));
+				rvo.setCategoryVO(cvo);
+
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setTitle(rs.getString("title"));
+
+				MemberVO mvo = new MemberVO();
+				mvo.setId(rs.getString("id"));
+				rvo.setMemberVO(mvo);
+
+				rvo.setHits(rs.getInt("hits"));
+				rvo.setLikes(rs.getInt("likes"));
+				rvo.setWroteDate(rs.getString("reg_date"));
+
+				list.add(rvo);
+			}
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+	}
 }
