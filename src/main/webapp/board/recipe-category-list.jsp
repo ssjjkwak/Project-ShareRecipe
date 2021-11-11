@@ -34,6 +34,7 @@
     <link href="assets/css/theme.css" rel="stylesheet" />
 
   </head>
+  
   <body>
   <main class="main" id="top">
   <!-- header import -->
@@ -54,7 +55,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">                      
                         <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" id="innerText01" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h4>
                           </div>
                         </a>
                       </div>
@@ -141,4 +142,20 @@
         </div>
       </main>
 	</body>
+	<script type="text/javascript">
+  function categoryBold() {
+		let categoryNum = "${param.category_num }";
+		/* alert(categoryNum); */
+		//alert(textselect.innerText);
+		let str1 = "한식";
+		//alert(categoryNum==str1);
+		if(categoryNum==str1){
+			document.getElementById("innerText01").style.color="#f00";
+		}
+			
+			
+	}
+	window.addEventListener("DOMContentLoaded",categoryBold);
+  
+  </script>
 </html>

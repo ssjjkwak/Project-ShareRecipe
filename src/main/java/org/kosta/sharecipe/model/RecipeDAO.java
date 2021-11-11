@@ -128,7 +128,7 @@ public class RecipeDAO {
 		try {
 			con = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder(
-					"select r.recipe_num,r.title,m.id,r.content,r.hits,r.likes,to_char(r.reg_date,'yyyy.mm.dd') as reg_date,r.image ");
+					"select r.category_num, r.recipe_num,r.title,m.id,r.content,r.hits,r.likes,to_char(r.reg_date,'yyyy.mm.dd') as reg_date,r.image ");
 			sql.append("from recipe r, recipe_member m ");
 			sql.append("where r.id=m.id and r.recipe_num=? ");
 			pstmt = con.prepareStatement(sql.toString());
@@ -136,6 +136,9 @@ public class RecipeDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				rvo = new RecipeVO();
+				CategoryVO cvo = new CategoryVO();
+				cvo.setCategoryNo(rs.getInt("category_num"));
+				rvo.setCategoryVO(cvo);
 				rvo.setRecipeNo(rs.getInt("recipe_num"));
 				rvo.setTitle(rs.getString("title"));
 				rvo.setContent(rs.getString("content"));
