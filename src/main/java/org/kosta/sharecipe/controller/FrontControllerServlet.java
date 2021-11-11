@@ -28,6 +28,8 @@ public class FrontControllerServlet extends HttpServlet {
 		permitAllList.add("RegisterMemberController");
 		permitAllList.add("RegisterIdCheckController");
 		permitAllList.add("HomeController");
+		permitAllList.add("FindPasswordController");
+		permitAllList.add("FindIdController");
 			}
 	
 	/**

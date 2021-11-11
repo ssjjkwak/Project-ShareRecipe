@@ -8,7 +8,7 @@ public class HomeController implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setAttribute("popular", "board/recipe-popular.jsp");
-		request.setAttribute("newWrite", "board/recipe-newWrite.jsp");
+		request.setAttribute("latest", "board/recipe-latest-list.jsp");
 		return "layout.jsp";
 	}
 
