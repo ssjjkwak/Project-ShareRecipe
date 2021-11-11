@@ -72,8 +72,8 @@ public class MemberDAO {
 		}
 	}
 
-	public boolean checkId(String id) throws SQLException {
-		boolean result = false;
+	public int checkId(String id) throws SQLException {
+		int result=0;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -84,7 +84,7 @@ public class MemberDAO {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next() && rs.getInt(1) == 1)
-				result = true;
+				result = 1;
 		} finally {
 			closeAll(rs, pstmt, con);
 		}
@@ -156,7 +156,7 @@ public class MemberDAO {
 		}
 		return vo;
 	}
-	public MemberVO getMemberByPw(String id, String email) throws SQLException{
+	public MemberVO FindMemberPw(String id, String email) throws SQLException{
 	      MemberVO mvo = null;
 	      Connection con = null;
 	      PreparedStatement pstmt = null;

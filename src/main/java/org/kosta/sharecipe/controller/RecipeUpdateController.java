@@ -3,6 +3,7 @@ package org.kosta.sharecipe.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +21,10 @@ public class RecipeUpdateController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//요청방식 POST 체크
+				if(request.getMethod().equals("POST")==false) {
+					throw new ServletException("레시피 수정은 POST방식만 허용됩니다");
+				}
 
 		//프로젝트 완료 후 실제 서비스 시에 사용할 경로 - 프로젝트 새로 로드하면 이미지가 사라지므로 프로젝트 완료후 사용
 		//String saveDir = request.getSession().getServletContext().getRealPath("image");

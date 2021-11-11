@@ -15,7 +15,7 @@ public class FindPasswordController implements Controller {
 		mail.append(request.getParameter("mail1"));
 		mail.append(request.getParameter("mail2"));
 		String email=mail.toString();
-		MemberVO pvo = MemberDAO.getInstance().getMemberByPw(id, email);
+		MemberVO pvo = MemberDAO.getInstance().FindMemberPw(id, email);
 		System.out.println(id+email+pvo);
 		System.out.println(pvo);
 		if(pvo==null) {
