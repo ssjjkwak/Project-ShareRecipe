@@ -210,7 +210,11 @@ public class RecipeDAO {
 	//카테고리별 레시피 리스트
 	public ArrayList<RecipeVO> getRecipeByCategory (String category_name) throws SQLException{
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
-
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
 			StringBuilder sql = new StringBuilder("SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date ");
 			sql.append("FROM recipe r, category c ");
 			sql.append("WHERE r.category_num=c.category_num AND category_name=?");
@@ -268,12 +272,9 @@ public class RecipeDAO {
 		}finally {
 			closeAll(rs, pstmt, con);
 		}
-		return list;
-		
+		return list;	
 	}
 	
-}
-
 	//총 게시물수 구하기
 	public int getTotalPostCount() throws SQLException {
 		int TotalPostCount = 0;
@@ -295,7 +296,7 @@ public class RecipeDAO {
 		return TotalPostCount;
 	}
 	
-	//카테고리로 레시피검색
+	//카테고리로 레시피검색 test
 	public ArrayList<RecipeVO> getRecipeByCategory(PagingBean pagingBean, String num) throws SQLException {
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
