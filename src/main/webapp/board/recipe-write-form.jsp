@@ -42,6 +42,12 @@
   </head>
   <script type="text/javascript">
   function recipeSubmit(){
+			
+			let category = document.getElementById("category").value;
+			if(category==0){
+				alert("카테고리를 선택해주세요");
+				return false;
+			}
 			document.getElementById("submitForm").submit();
 	}
 
@@ -55,8 +61,8 @@
 			    </div>
 			<form enctype="multipart/form-data" id="submitForm" action="../RecipeCreateController.do" method="post">
 			<input type="hidden" name="id">
-			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
-				<option style="text-align: left;">카테고리</option>
+			<select name="category_num" id="category" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
+				<option value="0" style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>
 				<option value="2" style="text-align: left;">&nbsp;&nbsp;중식</option>
 				<option value="3" style="text-align: left;">&nbsp;&nbsp;일식</option>

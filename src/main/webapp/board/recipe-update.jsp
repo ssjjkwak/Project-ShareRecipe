@@ -41,20 +41,34 @@
   
   </head>
   <script type="text/javascript">
-  function recipeSubmit(){
+  	function recipeSubmit(){
+		  let category = document.getElementById("category").value;
+			if(category==0){
+				alert("카테고리를 선택해주세요");
+				return false;
+			}
 			document.getElementById("submitForm").submit();
 	}
-
+ 	function category() {
+ 		let categoryNum = "${rvo.categoryVO.categoryNo }";
+		let selectbox=document.getElementById("category");
+		if(categoryNum==categoryNum){
+			selectbox[categoryNum].selected=true;
+		}
+	}
+ 	window.addEventListener("DOMContentLoaded",category);
+  
   </script>
-	<body>
+	<body onload="paging()">
+	
 		<c:import url="../header.jsp"></c:import>
 		<br><br><br><br><br><br>
-		<div class="container">
+		<div class="container" >
 			<form enctype="multipart/form-data" id="submitForm" action="RecipeUpdateController.do" method="post">
 			<input type="hidden" name="id">
 			<input type="hidden" name="recipeNo" value="${rvo.recipeNo }">
-			<select name="category_num" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
-				<option style="text-align: left;">카테고리</option>
+			<select name="category_num" id="category" class="btn btn-warning dropdown-toggle" style="font-family: 'Jua'; font-weight: 500;">
+				<option value="0" style="text-align: left;">카테고리</option>
 				<option value="1" style="text-align: left;">&nbsp;&nbsp;한식</option>
 				<option value="2" style="text-align: left;">&nbsp;&nbsp;중식</option>
 				<option value="3" style="text-align: left;">&nbsp;&nbsp;일식</option>
@@ -63,15 +77,30 @@
 				<option value="6" style="text-align: left;">&nbsp;디저트</option>
 			</select>
 			<br><br>
+			
 			<input class="form-control border-5 input-box bg-100" type="text" name="title" value="${rvo.title }" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" required="required"/><br>
 			<textarea class="form-control border-5 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required">${rvo.content }</textarea>
 			<br>
 			<input class="form-control border-5 input-box bg-100" type="file" name="image" style="font-family: 'Jua'; font-weight: 500; width:60%;">
-			
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a></div>
-			<div class="d-grid gap-2"><a class="btn btn-lg btn-warning" type="reset" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a></div>
-			
+			<div class="d-grid gap-2 text-right">
+				<a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
+				<a class="btn btn-lg btn-warning" type="reset" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a>
+			</div>
+			<br><br>
 			</form>
 		</div>
 	</body>
+	<script type="text/javascript">
+	 /* function paging() {
+	  let category_num = ${rvo.categoryVO};
+		alert("출력");
+	} */
+	/* window.onload=function{
+		
+	}
+	function paging(){
+		  let category_num = ${rvo.categoryVO};
+		  alert("출력");
+	  } */
+	</script>
 </html>
