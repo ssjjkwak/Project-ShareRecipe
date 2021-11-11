@@ -50,7 +50,7 @@
 		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100; " >최신등록순</h3>
 		<c:choose>
 		<c:when test="${sessionScope.mvo!=null}">
-		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div>
+		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-write-form.jsp" >글쓰기</a></div>
 		</c:when>
 		</c:choose>
 

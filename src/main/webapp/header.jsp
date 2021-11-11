@@ -17,7 +17,7 @@
 	</c:when>
 	<c:otherwise>
         <a href="member/update-member.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500; padding: 0.5rem 1rem;"> <i class="fas fa-user me-2"></i>${sessionScope.mvo.name} 님</div></a>
-        <a href="board/recipe-form.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500; padding: 0.5rem 1rem;">레시피 작성</div></a>
+        <a href="board/recipe-write-form.jsp"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500; padding: 0.5rem 1rem;">레시피 작성</div></a>
         <a href="#"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500; padding: 0.5rem 1rem;">나의 레시피</div></a>
         <a href="LogoutController.do"><div class="btn btn-white text-warning" style="font-family: 'Jua'; font-weight: 500; padding: 0.5rem 1rem;">로그아웃</div></a>
 	</c:otherwise>
