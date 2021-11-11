@@ -16,6 +16,7 @@
 <link href="../assets/css/theme.css" rel="stylesheet" />
 </head>
 <script type="text/javascript">
+let i = 1;
 	function checkId() {
 		let joinId=document.getElementById("joinId").value;
 		let xhr=new XMLHttpRequest();
@@ -25,9 +26,11 @@
 			if(result==1){
 				document.getElementById("idck").style.color="red";
 				document.getElementById("idck").innerHTML="아이디가 중복됩니다.";
+				i=1;
 			}else{
 				document.getElementById("idck").style.color="green";
 				document.getElementById("idck").innerHTML="아이디가 중복되지 않습니다.";
+				i=0;
 			}
 		}
 		xhr.open("get","../RegisterIdCheckServlet?joinId="+joinId);
@@ -48,6 +51,11 @@
 } */
 // 아이디 중복확인하지 않은 상태에서 가입하기를 누르면 아이디 중복확인하세요 alert 후 전송시키지 않는다 
 function checkForm() {
+	if(i==1){
+		alert("아이디가 중복되었습니다.");
+		document.getElementById("joinId").focus();
+		return false;
+	}
 	let joinId=document.getElementById("joinId").value;
 	if(joinId==""){
 		alert("아이디를 입력하셔야 합니다.");

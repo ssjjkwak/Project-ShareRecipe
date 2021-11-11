@@ -14,7 +14,7 @@
           <div class="row h-100" style="background-color:#F9FAFD;">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
             	<a href="../index.jsp"><img src="../assets/img/favicons/favicon.jpg" style="width:350px;"></a><br><br>
-				<form action="../FindPasswordController.do" method="post">
+				<form action="../FindPasswordController.do">
 				    <input class="form-control border-0 input-box bg-100" type="text" name="id" placeholder="아이디" required="required" style="font-family: 'Jua'; font-weight: 500;" aria-label="Search" /><br>
 				     <input class="form-control border-0 input-box bg-100" style="font-family: 'Jua'; font-weight: 500; width: 48%; display: inline-block; float: left; margin-bottom: 20px;"
 						type="text" name="mail1" placeholder="이메일" required="required">
