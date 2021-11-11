@@ -156,7 +156,7 @@ public class MemberDAO {
 		}
 		return vo;
 	}
-	public MemberVO getMemberByPw(String id, String email) throws SQLException{
+	public MemberVO FindMemberPw(String id, String email) throws SQLException{
 	      MemberVO mvo = null;
 	      Connection con = null;
 	      PreparedStatement pstmt = null;
