@@ -14,7 +14,7 @@ public class RecipeLatestListController implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ArrayList<RecipeVO> list=RecipeDAO.getInstance().getLatestRecipe();
 		request.setAttribute("list", list);
-		return "";
+		return "board/recipe-latest-list.jsp";
 	}
 
 }
