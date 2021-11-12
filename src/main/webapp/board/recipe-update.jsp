@@ -84,11 +84,11 @@
 			
 			<input class="form-control border-5 input-box bg-100" type="file" name="image" style="font-family: 'Jua'; font-weight: 500; width:60%;">
 
-			<br>
-			<div class="d-grid gap-2 text-right float-right" style="width: 10%;">
-				<a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100;">수정</a>
-        <a class="btn btn-lg btn-warning" href="recipeDetailController.do?recipeNo=${rvo.recipeNo }" style="font-family: 'Jua'; font-weight: 100;">수정</a>
-			</div>
+			
+			<a class="btn btn-lg btn-warning" href="RecipeDetailController.do?recipeNo=${rvo.recipeNo }" style="float:right; font-family: 'Jua'; font-weight: 100; width:10%; margin-left: 10px;">취소</a>
+				<a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%; float:right; display: inline-block;">수정</a>
+        		
+			
 			<br><br>
 			</form>
 		</div>
