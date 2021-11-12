@@ -79,7 +79,7 @@
 					- 항상 열정적으로 공부하려는 자세가 잡혀있고, 프로젝트의 기능을 하나씩 구현해가며 성장하는 모습이 보인다.
 					- 모두가 포기하려 했을 때, 끝까지 포기하지 않고 오류의 원인을 침착하게 찾아냈다.
 					- 어려운 문제에서도 포기하지 않고 끈기 있게 문제를 해결하려 했고, 조언을 구하며 맡은 역할을 수행하려는 책임감 있는 팀원이다!
-					-
+					- 엉뚱한 매력으로 팀원들에게 크고 작은 웃음을 선사해주었다.
 				</textarea><br>
             	<h5 style="font-family: 'Jua'; font-weight: 500;">To. 정훈</h5>
 				<textarea class="form-control border-5 border-warning input-box bg-100" id="teamInfo" rows="5" cols="200" style="font-family: 'Jua'; font-weight: 500;" readonly="readonly">
