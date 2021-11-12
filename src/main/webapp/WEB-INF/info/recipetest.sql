@@ -170,6 +170,11 @@ SELECT r.recipe_num,r.image, r.title,r.likes,TO_CHAR(r.reg_date,'YYYY.MM.DD')AS 
 FROM (select * from recipe order by reg_date desc)   r, category c
 WHERE rownum<=8 AND r.category_num=c.category_num
 
+-- 조회수 높은 게시글 10개 가져오기
+SELECT * FROM recipe ORDER BY hits DESC;
+SELECT image,title,hits FROM recipe WHERE rownum<=10 
+
+SELECT image,title,hits FROM (SELECT * FROM recipe ORDER BY hits DESC)  WHERE  rownum<=10
 
 
 --시간계산 더 생각해보기
