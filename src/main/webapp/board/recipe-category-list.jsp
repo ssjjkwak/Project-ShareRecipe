@@ -177,13 +177,38 @@
 			</c:forEach>
 			</tbody>
 		</table><br>
+		
+		<%--★★★★★페이징 처리★★★★★ --%>
 		<ul class="pagination justify-content-center" style="font-family: 'Jua'; font-weight: 100;">
-		  <li class="page-item"><a class="page-link" href="#"><<</a></li>
-		  <li class="page-item"><a class="page-link" href="#">1</a></li>
+		<c:if test="${pagingBean.previousPageGroup }"> <!-- el동작이 get이랑 is계열 메서드의 return을 받아오는데 is계열은 t/f반환이므로 -->
+		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.startPageOfPageGroup-1 }&category_num=${param.category_num }">Previous</a></li> 
+		 <!-- 위에 -1하면 이전그룹 가는거다 , 쿼리스트링방식으로 name(pageNo) 넘겨서 컨트롤러에서 받음-->
+		 
+		  <!-- 맨첨 list뜨면 1이 nowpage이므로previous그룹안뜨고 next그룹만 뜬다 -->
+		 </c:if>
+		 
+		 
+		 <c:forEach begin="${pagingBean.startPageOfPageGroup }" end="${pagingBean.endPageOfPageGroup }" var="page"> <!-- 아래처럼 다쓰지말고 for 구문으로 loop돌린다 begin~end갯수만큼-->
+		 <c:choose>
+		 <c:when test="${page==pagingBean.nowPage}">
+		 <li class="page-item active"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&category_num=${param.category_num }">${page }</a></li>
+		 </c:when>
+		 <c:otherwise>
+		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&category_num=${param.category_num }">${page }</a></li>
+		 </c:otherwise>
+		 </c:choose>
+		  <!--위에 var는 begin~end 한 갯수만큼 보여주고 1~5페이지라면 총 12345 보여줄텐데 그때마다 쿼리스트링도 1-1 2-2 3-3 이렇게 넘어간다 -->
+		</c:forEach>
+		 <!--   <li class="page-item"><a class="page-link" href="#">1</a></li>
 		  <li class="page-item"><a class="page-link" href="#">2</a></li>
 		  <li class="page-item"><a class="page-link" href="#">3</a></li>
-		  <li class="page-item"><a class="page-link" href="#">>></a></li>
+		  <li class="page-item"><a class="page-link" href="#">4</a></li> -->
+		  
+		  <c:if test="${pagingBean.nextPageGroup }">  <!-- el동작이 get이랑 is계열 메서드의 return을 받아오는데 is계열은 t/f반환이므로 -->
+		  <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.endPageOfPageGroup+1 }&category_num=${param.category_num }">Next</a></li>
+		  </c:if>
 		</ul><br>
+		
         </div>
       </main>
 	</body>

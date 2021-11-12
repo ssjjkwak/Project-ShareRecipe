@@ -211,18 +211,45 @@ public class RecipeDAO {
 	
 
 	//카테고리별 레시피 리스트
-	public ArrayList<RecipeVO> getRecipeByCategory (String category_name) throws SQLException{
+	public ArrayList<RecipeVO> getRecipeByCategory (String category_name,PagingBean pagingBean) throws SQLException{
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
+			/*
+			StringBuilder sql = new StringBuilder(
+					"select RECIPE_NUM,image,title,id,hits,likes,reg_date ");
+			sql.append("from( ");
+			sql.append("select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date  ");
+			sql.append("from recipe ");
+			sql.append("where category_num=? ");
+			sql.append(")where rnum between ? and ?");
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, num);
+			pstmt.setInt(2, pagingBean.getStartRowNumber());
+			pstmt.setInt(3, pagingBean.getEndRowNumber());
+			*/
+			
+			
 			con = dataSource.getConnection();
-			StringBuilder sql = new StringBuilder("SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date ");
-			sql.append("FROM recipe r, category c ");
-			sql.append("WHERE r.category_num=c.category_num AND category_name=?");
+			StringBuilder sql = new StringBuilder("select category_num,RECIPE_NUM,image,title,id,hits,likes,to_char(reg_date,'YYYY.MM.DD') AS reg_date ");
+			sql.append("from(  ");
+			sql.append("select row_number() over(order by RECIPE_NUM desc) as rnum,r.RECIPE_NUM,c.category_num,r.image,r.title,r.id,r.hits,r.likes,r.reg_date ");
+			sql.append("from recipe r,category c ");
+			sql.append("where r.category_num=c.category_num and category_name=? ");
+			sql.append(")where rnum between ? and ?");
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, category_name);
+			pstmt.setInt(2, pagingBean.getStartRowNumber());
+			pstmt.setInt(3, pagingBean.getEndRowNumber());
+			
+			/*
+			 * con = dataSource.getConnection(); StringBuilder sql = new
+			 * StringBuilder("SELECT c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date "
+			 * ); sql.append("FROM recipe r, category c ");
+			 * sql.append("WHERE r.category_num=c.category_num AND category_name=?");
+			 */
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				RecipeVO rvo = new RecipeVO();
@@ -303,69 +330,6 @@ public class RecipeDAO {
 		return TotalPostCount;
 	}
 	
-	//카테고리로 레시피검색 test
-	public ArrayList<RecipeVO> getRecipeByCategory(PagingBean pagingBean, String num) throws SQLException {
-		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		//select RECIPE_NUM,image,title,id,hits,likes,reg_date
-		//from(
-		//select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date 
-		//from recipe
-		//where category_num=1
-		//)
-		//where rnum between 1 and 5;
-		try {
-			con = dataSource.getConnection();
-			StringBuilder sql = new StringBuilder(
-					"select RECIPE_NUM,image,title,id,hits,likes,reg_date ");
-			sql.append("from( ");
-			sql.append("select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date  ");
-			sql.append("from recipe ");
-			sql.append("where category_num=? ");
-			sql.append(")where rnum between ? and ?");
-			pstmt = con.prepareStatement(sql.toString());
-			pstmt.setString(1, num);
-			pstmt.setInt(2, pagingBean.getStartRowNumber());
-			pstmt.setInt(3, pagingBean.getEndRowNumber());
-			
-			rs = pstmt.executeQuery();
-			/*
-			 * select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date from(
-			 * --카테고리명까지 조인해서 가져온 것으로부터 select row_number() over(order by RECIPE_NUM desc)
-			 * as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.
-			 * reg_date from recipe r,category c where r.category_num=c.category_num ) where
-			 * rnum between 1 and 5;
-			 */
-			
-			
-			while (rs.next()) {
-				RecipeVO rvo = new RecipeVO();
-				//CategoryVO cvo = new CategoryVO();
-				//cvo.setcName(rs.getString("category_name"));
-				//rvo.setCategoryVO(cvo);
-
-				rvo.setRecipeNo(rs.getInt("recipe_num"));
-				rvo.setImage(rs.getString("image"));
-				rvo.setTitle(rs.getString("title"));
-
-				MemberVO mvo = new MemberVO();
-				mvo.setId(rs.getString("id"));
-				rvo.setMemberVO(mvo);
-
-				rvo.setHits(rs.getInt("hits"));
-				rvo.setLikes(rs.getInt("likes"));
-				rvo.setWroteDate(rs.getString("reg_date"));
-
-				list.add(rvo);
-			}
-		} finally {
-			closeAll(rs, pstmt, con);
-		}
-		return list;
-	}
-
 	//검색으로 리스트 조회
 	public ArrayList<RecipeVO> searchTitleRecipe(String search,PagingBean pagingBean) throws SQLException {
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
