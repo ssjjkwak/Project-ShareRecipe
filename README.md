@@ -117,3 +117,8 @@ Back to List (목록으로 복귀하는 버튼)
  
 </details> 
 
+## 이슈관리 🍞
+(https://docs.google.com/document/d/1Up6tVTLItHgWeiIwyY5E0VczxGOz9STl1AWgGCH5QZ8/edit#heading=h.nrnw03t7conb)
+
+
+
