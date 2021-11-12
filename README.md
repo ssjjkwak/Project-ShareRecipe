@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 ## :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
  
 ## 개요 :stew:
 + 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판 기능을 수행할 수 있는 프로젝트입니다.
    + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시
-=======
+
 # :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento: 
  
 ## 개요 :stew: 
@@ -16,9 +16,7 @@
 + 약 3주 (2021.10.29 ~ 2021.11.11~)
 
 
-<<<<<<< HEAD
 
-=======
 ## 구성원 및 구현 기능 :meat_on_bone:
 + 김근영 ([kk-young](https://github.com/kk-young)) : DEVELOPER / DB / FE 
 + 김정훈 ([anngdung2](https://github.com/anngdung2)) : DEVELOPER / FE / DB
@@ -109,49 +107,7 @@ Back to List (목록으로 복귀하는 버튼)
 
 <details>
 <summary>FILE LIST</summary>               
-MemberDAO.java <br>                                                                     
-MemberVO.java <br>                                                                  
-DataSourceManager.java<br>                                                                                                                                  
-RecipeVO.java             <br>           
-PagingBean.java               <br>                                                                 
-RecipeDAO.java<br>
-CategoryVO.java<br>
-Controller.java<br>
-FrontControllerServlet.java<br> 
-ImageController.java<br>
-CreateRecipeController.java<br>
-CreateRecipeFormController.java<br>
-RecipeDetailController.java<br>
-UpdateRecipeController.java<br>
-UpdateRecipeFormController.java<br>
-DeleteRecipeController.java  <br>
-IdCheckController.java<br>
-RegisterMemberController.java<br>
-LoginController.java<br>
-LogoutController.java   <br>            
-UpdateMemberController.java<br>
-UpdateMemberFormController.java<br>
-RegisterMemberFormController.java<br>
-LoginFormController.java<br>
-error.jsp <br>
-header.jsp<br>
-index.jsp<br>
-layout.jsp<br>
-register-member.jsp <br>                              
-idcheck-ok.jsp<br>
-idcheck-fail.jsp<br>
-register-result.jsp<br>
-login.jsp<br>
-login-fail.jsp<br>
-update-member.jsp<br>
-update-result.jsp<br>
-recipe-list.jsp<br>
-recipe-update.jsp<br>
-recipe-write.jsp<br>
-recipe-detail.jsp<br>
-recipe-delete.jsp    <br>                          
-Board.sql<br>
-Member.sql
+
 
 </details>
 
