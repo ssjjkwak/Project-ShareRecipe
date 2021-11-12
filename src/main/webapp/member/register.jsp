@@ -119,7 +119,7 @@ function pwCheck() {
 					<span id="idck" style="position:relative; top:5px; margin-left: 20px; font-family: 'Jua'; font-weight: 200; font-size: 13px;"></span>
 					<br> <input class="form-control border-0 input-box bg-100 check"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
-						name="joinPw" placeholder="비밀번호를 입력하세요." required="required" onkeyup="passwordStrength()"><span id="strength">Strength</span>
+						name="joinPw" placeholder="비밀번호를 입력하세요." required="required" onkeyup="passwordStrength()"><span id="strength"></span>
 					<br> <input class="form-control border-0 input-box bg-100"
 						style="font-family: 'Jua'; font-weight: 500;" type="password"
 						name="joinPwck" placeholder="비밀번호 재확인" onkeyup="pwCheck()" required="required">
