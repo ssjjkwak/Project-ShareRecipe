@@ -82,12 +82,12 @@
 			<textarea class="form-control border-5 input-box bg-100" name="content"  rows="10" cols="120" style="resize: none; font-family: 'Jua'; font-weight: 500;" required="required">${rvo.content }</textarea>
 			<br>
 			<input class="form-control border-5 input-box bg-100" type="file" name="image" style="font-family: 'Jua'; font-weight: 500; width:60%;">
+			
 			<div class="d-grid gap-2 text-right">
 				<a class="btn btn-lg btn-warning" onclick="recipeSubmit()" style="font-family: 'Jua'; font-weight: 100; width:10%;">수정</a>
 				<a class="btn btn-lg btn-warning" type="reset" style="font-family: 'Jua'; font-weight: 100; width:10%;">취소</a>
 			</div>
 			<br><br>
-
 			</form>
 		</div>
 	</body>
