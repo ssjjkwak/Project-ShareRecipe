@@ -123,6 +123,10 @@ Back to List (목록으로 복귀하는 버튼)
 <summary>이슈관리대장</summary>
 
 (https://docs.google.com/document/d/1Up6tVTLItHgWeiIwyY5E0VczxGOz9STl1AWgGCH5QZ8/edit#heading=h.nrnw03t7conb)
+
+ 
+ ![이슈관리대장](https://user-images.githubusercontent.com/72936976/141394362-46328550-3c1b-44c1-ba15-03bc8f7604ae.PNG)
+
  
  
 </details> 
