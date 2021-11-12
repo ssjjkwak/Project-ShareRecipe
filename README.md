@@ -117,7 +117,7 @@ Back to List (목록으로 복귀하는 버튼)
  
 </details> 
 
-## 이슈 관리 🍞
+## 이슈관리 🍞
 
 <details>
 <summary>이슈관리대장</summary>
@@ -131,4 +131,30 @@ Back to List (목록으로 복귀하는 버튼)
  
 </details> 
 
+## 화면구성 🍤
+
+<details>
+<summary>UI</summary>
+
+![favicon-last](https://user-images.githubusercontent.com/72936976/141396399-c9a85fcc-ac39-48b7-b98a-6d2ddb6d7995.png)
+
+ 
+ 
+![ui1](https://user-images.githubusercontent.com/72936976/141396232-5c49b1b5-3d46-44ac-8f78-ddc55c27e9e1.PNG)
+
+ 
+![ui2](https://user-images.githubusercontent.com/72936976/141396439-c3add957-197e-450a-bd41-000c0b5cd9c2.PNG)
+
+![ui3](https://user-images.githubusercontent.com/72936976/141396483-784e6d15-8c07-41a7-ad36-8b311e8054a1.PNG)
+
+![ui4](https://user-images.githubusercontent.com/72936976/141396504-3f788a4f-ce06-4793-9505-c2e044610524.PNG)
+ 
+![ui5](https://user-images.githubusercontent.com/72936976/141396522-a43ffcfd-7cf8-47b6-bfdc-ec94c5242bcb.PNG)
+
+![ui6](https://user-images.githubusercontent.com/72936976/141396550-1a3fa703-dbaa-4317-9285-59c7fe43d1b0.PNG)
+
+![ui7](https://user-images.githubusercontent.com/72936976/141396606-ce2bdfdc-7f5c-47c7-8203-924c0e44167e.PNG)
+ 
+ 
+</details> 
 

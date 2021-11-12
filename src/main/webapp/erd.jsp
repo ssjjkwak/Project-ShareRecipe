@@ -46,11 +46,11 @@
             	<div class="col-lg-7 mx-auto text-center mt-5 mb-3">
             	<a href="index.jsp"><img src="assets/img/favicons/favicon.jpg" style="width:300px;"></a><br><br>
             	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Logical (개발 전)</h3><br>
-				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-logical-before-cut.png" style="width:650px; height:350px;">
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-3차회의.jpg" style="width:650px; height:350px;">
 			</div>
         	<div class="col-lg-7 mx-auto text-center mt-3 mb-3">
             	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Physical (개발 전)</h3><br>
-				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-physical-before.png" style="width:650px; height:350px;">
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-physical.png" style="width:650px; height:350px;">
 			</div>
         	<div class="col-lg-7 mx-auto text-center mt-3 mb-3">
             	<h3 style="font-family: 'Jua'; font-weight: 500;">ERD - Logical (개발 후)</h3><br>
