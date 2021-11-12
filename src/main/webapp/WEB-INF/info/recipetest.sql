@@ -134,7 +134,7 @@ where r.category_num=c.category_num and rnum between 1 and 5;
 
 --step4 << 3안되서 새로운방법으로 >>>됐다! (조인먼저 뽑고 그담 rnum 정렬로 뽑은거임)
 select RECIPE_NUM,category_name,image,title,id,hits,likes,reg_date
-from( --카테고리명까지 조인해서 가져온 것으로부터
+from( 
 select row_number() over(order by RECIPE_NUM desc) as rnum,r.RECIPE_NUM,c.category_name,r.image,r.title,r.id,r.hits,r.likes,r.reg_date 
 from recipe r,category c
 where r.category_num=c.category_num
@@ -142,13 +142,32 @@ where r.category_num=c.category_num
 where rnum between 1 and 5; --가장최신꺼 5개 불러오겠다
 
 --카테고리로조회 (조인헷갈려서, 그리고 카테고리로 들어온거라 카테고리명은 일단 뺴봄..)
-select RECIPE_NUM,image,title,id,hits,likes,reg_date
+select rnum, RECIPE_NUM,image,title,id,hits,likes,reg_date
 from( 
 select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date 
 from recipe
 where category_num=1
 )
 where rnum between 1 and 5;
+
+------------------------------11/12최종 카테고리로수정
+select rnum,category_num,RECIPE_NUM,image,title,id,hits,likes,to_char(reg_date,'YYYY.MM.DD') AS reg_date
+from( 
+select row_number() over(order by RECIPE_NUM desc) as rnum,r.RECIPE_NUM,c.category_num,r.image,r.title,r.id,r.hits,r.likes,r.reg_date 
+from recipe r,category c
+where r.category_num=c.category_num and category_name='한식'
+)
+where rnum between 1 and 5; --가장최신꺼 5개 불러오겠다
+
+
+---------------------------------
+select rnum,c.category_num,r.RECIPE_NUM,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date
+from( 
+select row_number() over(order by RECIPE_NUM desc) as rnum,RECIPE_NUM,image,title,id,hits,likes,reg_date 
+from recipe
+where category_num='한식'
+) r, category c
+where r.category_num=c.category_num AND rnum between 1 and 5;
 
 
 
@@ -165,10 +184,14 @@ SELECT recipe_num, id, title, content, image, hits, likes, TO_CHAR(r. reg_date,'
 from RECIPE R,  CATEGORY C
 WHERE ROWNUM<=8 AND R.CATEGORY_NUM =C.CATEGORY_NUM 
 ORDER BY reg_date DESC;
-
+--
 SELECT r.recipe_num,r.image, r.title,r.likes,TO_CHAR(r.reg_date,'YYYY.MM.DD')AS reg_date , c.category_name
 FROM (select * from recipe order by reg_date desc)   r, category c
 WHERE rownum<=8 AND r.category_num=c.category_num
+
+---
+
+
 
 -- 조회수 높은 게시글 10개 가져오기
 SELECT * FROM recipe ORDER BY hits DESC;
@@ -192,3 +215,10 @@ drop table category;
 drop table recipe_member;
 
 drop table recipe cascade constraint
+
+select
+
+select count(*)from recipe where category_name
+
+
+
