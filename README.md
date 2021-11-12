@@ -1,10 +1,3 @@
-
-## :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
- 
-## 개요 :stew:
-+ 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판 기능을 수행할 수 있는 프로젝트입니다.
-   + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시
-
 # :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento: 
  
 ## 개요 :stew: 
@@ -14,7 +7,6 @@
 
 ## 개발기간 :hamburger:
 + 약 3주 (2021.10.29 ~ 2021.11.11~)
-
 
 
 ## 구성원 및 구현 기능 :meat_on_bone:
@@ -88,7 +80,7 @@ Back to List (목록으로 복귀하는 버튼)
 <details>
 <summary>CLASS DIAGRAM</summary>
 
-![class-diagram-강사님feedback](https://user-images.githubusercontent.com/72936976/141053671-24c6e73b-73cc-4e50-98c3-e32af6b67dcf.jpg)
+![class-diagram-after](https://user-images.githubusercontent.com/72936976/141393593-26aa45a0-d744-4ded-8892-d6db154919a9.PNG)
 
 
 
