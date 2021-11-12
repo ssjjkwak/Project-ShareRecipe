@@ -1,24 +1,14 @@
-<<<<<<< HEAD
-## :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento:
- 
-## 개요 :stew:
-+ 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판 기능을 수행할 수 있는 프로젝트입니다.
-   + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시
-=======
 # :spaghetti: SEMI-PROJECT-SHARE:CIPE :bento: 
  
 ## 개요 :stew: 
 + 자취생을 위한 개인 집밥 레시피를 공유하고 저장하는 게시판을 제작하는 프로젝트입니다.
    + 기능 : 로그인, 로그아웃, 회원가입(아이디 중복확인), 회원정보수정, 회원리스트 조회, 아이디 찾기, 비밀번호 찾기, 레시피 게시, 레시피 수정, 레시피 조회, 레시피 '좋아요' 기능
->>>>>>> 571268e84844d565b5c214f03f48f5844ff5decf
+
 
 ## 개발기간 :hamburger:
 + 약 3주 (2021.10.29 ~ 2021.11.11~)
 
 
-<<<<<<< HEAD
-
-=======
 ## 구성원 및 구현 기능 :meat_on_bone:
 + 김근영 ([kk-young](https://github.com/kk-young)) : DEVELOPER / DB / FE 
 + 김정훈 ([anngdung2](https://github.com/anngdung2)) : DEVELOPER / FE / DB
@@ -90,7 +80,7 @@ Back to List (목록으로 복귀하는 버튼)
 <details>
 <summary>CLASS DIAGRAM</summary>
 
-![class-diagram-강사님feedback](https://user-images.githubusercontent.com/72936976/141053671-24c6e73b-73cc-4e50-98c3-e32af6b67dcf.jpg)
+![class-diagram-after](https://user-images.githubusercontent.com/72936976/141393593-26aa45a0-d744-4ded-8892-d6db154919a9.PNG)
 
 
 
@@ -109,50 +99,10 @@ Back to List (목록으로 복귀하는 버튼)
 
 <details>
 <summary>FILE LIST</summary>               
-MemberDAO.java <br>                                                                     
-MemberVO.java <br>                                                                  
-DataSourceManager.java<br>                                                                                                                                  
-RecipeVO.java             <br>           
-PagingBean.java               <br>                                                                 
-RecipeDAO.java<br>
-CategoryVO.java<br>
-Controller.java<br>
-FrontControllerServlet.java<br> 
-ImageController.java<br>
-CreateRecipeController.java<br>
-CreateRecipeFormController.java<br>
-RecipeDetailController.java<br>
-UpdateRecipeController.java<br>
-UpdateRecipeFormController.java<br>
-DeleteRecipeController.java  <br>
-IdCheckController.java<br>
-RegisterMemberController.java<br>
-LoginController.java<br>
-LogoutController.java   <br>            
-UpdateMemberController.java<br>
-UpdateMemberFormController.java<br>
-RegisterMemberFormController.java<br>
-LoginFormController.java<br>
-error.jsp <br>
-header.jsp<br>
-index.jsp<br>
-layout.jsp<br>
-register-member.jsp <br>                              
-idcheck-ok.jsp<br>
-idcheck-fail.jsp<br>
-register-result.jsp<br>
-login.jsp<br>
-login-fail.jsp<br>
-update-member.jsp<br>
-update-result.jsp<br>
-recipe-list.jsp<br>
-recipe-update.jsp<br>
-recipe-write.jsp<br>
-recipe-detail.jsp<br>
-recipe-delete.jsp    <br>                          
-Board.sql<br>
-Member.sql
 
+![파일리스트 최종](https://user-images.githubusercontent.com/72936976/141393320-9255107f-1583-4cc2-96e4-7352c8a22639.png)
+
+ 
 </details>
 
 ## GIT 🥩
@@ -166,4 +116,45 @@ Member.sql
  
  
 </details> 
->>>>>>> 571268e84844d565b5c214f03f48f5844ff5decf
+
+## 이슈관리 🍞
+
+<details>
+<summary>이슈관리대장</summary>
+
+(https://docs.google.com/document/d/1Up6tVTLItHgWeiIwyY5E0VczxGOz9STl1AWgGCH5QZ8/edit#heading=h.nrnw03t7conb)
+
+ 
+ ![이슈관리대장](https://user-images.githubusercontent.com/72936976/141394362-46328550-3c1b-44c1-ba15-03bc8f7604ae.PNG)
+
+ 
+ 
+</details> 
+
+## 화면구성 🍤
+
+<details>
+<summary>UI</summary>
+
+![favicon-last](https://user-images.githubusercontent.com/72936976/141396399-c9a85fcc-ac39-48b7-b98a-6d2ddb6d7995.png)
+
+ 
+ 
+![ui1](https://user-images.githubusercontent.com/72936976/141396232-5c49b1b5-3d46-44ac-8f78-ddc55c27e9e1.PNG)
+
+ 
+![ui2](https://user-images.githubusercontent.com/72936976/141396439-c3add957-197e-450a-bd41-000c0b5cd9c2.PNG)
+
+![ui3](https://user-images.githubusercontent.com/72936976/141396483-784e6d15-8c07-41a7-ad36-8b311e8054a1.PNG)
+
+![ui4](https://user-images.githubusercontent.com/72936976/141396504-3f788a4f-ce06-4793-9505-c2e044610524.PNG)
+ 
+![ui5](https://user-images.githubusercontent.com/72936976/141396522-a43ffcfd-7cf8-47b6-bfdc-ec94c5242bcb.PNG)
+
+![ui6](https://user-images.githubusercontent.com/72936976/141396550-1a3fa703-dbaa-4317-9285-59c7fe43d1b0.PNG)
+
+![ui7](https://user-images.githubusercontent.com/72936976/141396606-ce2bdfdc-7f5c-47c7-8203-924c0e44167e.PNG)
+ 
+ 
+</details> 
+
