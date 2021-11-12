@@ -45,11 +45,7 @@
         <div class="row h-100" style="background-color:#F9FAFD;">
         	<div class="col-lg-7 mx-auto text-center mt-5 mb-3">
             	<a href="index.jsp"><img src="assets/img/favicons/favicon.jpg" style="width:300px;"></a><br><br>
-            	<h3 style="font-family: 'Jua'; font-weight: 500;">Use Case Diagram (개발 전)</h3><br>
-				<img class="form-control border-5 border-warning bg-100" src="assets/img/usecase-강사님feedback.jpg" style="width:650px; height:350px;">
-			</div>
-        	<div class="col-lg-7 mx-auto text-center mt-3 mb-5">
-            	<h3 style="font-family: 'Jua'; font-weight: 500;">Use Case Diagram (개발 후)</h3><br>
+            	<h3 style="font-family: 'Jua'; font-weight: 500;">Use Case Diagram (개발 전후 동일)</h3><br>
 				<img class="form-control border-5 border-warning bg-100" src="assets/img/usecase-강사님feedback.jpg" style="width:650px; height:350px;">
 			</div>
 		</div>
