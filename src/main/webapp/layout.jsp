@@ -112,7 +112,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">                      
                         <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
+                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/bibimbap.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h5>
                           </div>
@@ -123,7 +123,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                       <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
+                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/jjambbong.png" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;중식</h5>
                           </div>
@@ -133,7 +133,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                       <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
+                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sushi.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;일식</h5>
                           </div>
@@ -143,7 +143,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                       <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;양식</h5>
                           </div>
@@ -153,7 +153,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                         <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
-                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
+                        <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/salad.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;채식</h5>
                           </div>
@@ -163,7 +163,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                         <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
                           <div class="card card-span h-100 rounded-circle">
-                            <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
+                            <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/cake.jpg" alt="..." />
                             <div class="card-body ps-0">
                               <h5 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;디저트</h5>
                             </div>
