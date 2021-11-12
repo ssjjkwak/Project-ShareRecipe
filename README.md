@@ -158,3 +158,17 @@ Back to List (목록으로 복귀하는 버튼)
  
 </details> 
 
+## 회의록 🥗
+
+<details>
+<summary>이슈관리대장</summary>
+
+(https://docs.google.com/document/d/1v5NDAiH5BJWUB0K_4FcZCznZGSXsz3ds5SfMzIIHAGk/edit)
+
+ 
+ ![회의록](https://user-images.githubusercontent.com/72936976/141410809-9bcbc60b-51ff-48ec-88e7-89d28ece1223.PNG)
+
+
+ 
+</details> 
+
