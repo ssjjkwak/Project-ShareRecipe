@@ -32,7 +32,52 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
-
+	<script type="text/javascript">
+  function categoryBold() {
+		let categoryNum = "${param.category_num }";
+		/* alert(categoryNum); */
+		//alert(textselect.innerText);
+		let str1 = "한식";
+		let str2 = "중식";
+		let str3 = "일식";
+		let str4 = "양식";
+		let str5 = "채식";
+		let str6 = "디저트";
+		//alert(categoryNum==str1);
+		//#FFB30E
+		//#
+		/* if(categoryNum==str1){
+			document.getElementById("innerText01").style.color="red";
+		}else if(categoryNum==str2){
+			document.getElementById("innerText02").style.color="red";
+		}else if(categoryNum==str3){
+			document.getElementById("innerText03").style.color="red";
+		}else if(categoryNum==str4){
+			document.getElementById("innerText04").style.color="red";
+		}else if(categoryNum==str5){
+			document.getElementById("innerText05").style.color="red";
+		}else if(categoryNum==str6){
+			document.getElementById("innerText06").style.color="red";
+		} */
+		if(categoryNum==str1){
+			document.getElementById("innerText01").style.color="#FFB30E";
+		}else if(categoryNum==str2){
+			document.getElementById("innerText02").style.color="#FFB30E";
+		}else if(categoryNum==str3){
+			document.getElementById("innerText03").style.color="#FFB30E";
+		}else if(categoryNum==str4){
+			document.getElementById("innerText04").style.color="#FFB30E";
+		}else if(categoryNum==str5){
+			document.getElementById("innerText05").style.color="#FFB30E";
+		}else if(categoryNum==str6){
+			document.getElementById("innerText06").style.color="#FFB30E";
+		}
+			
+			
+	}
+	window.addEventListener("DOMContentLoaded",categoryBold);
+  
+  </script>
   </head>
   
   <body>
@@ -55,42 +100,42 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">                      
                         <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" id="innerText01" style="font-family: 'Jua';">&nbsp;&nbsp;한식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2"  style="font-family: 'Jua';"><span id="innerText01">&nbsp;&nbsp;한식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
                       <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;중식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText02">&nbsp;&nbsp;중식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
                       <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;일식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText03">&nbsp;&nbsp;일식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
                       <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;양식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText04">&nbsp;&nbsp;양식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
                         <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
                           <div class="card-body ps-0">
-                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;채식</h4>
+                            <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText05">&nbsp;&nbsp;채식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
                         <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
                             <div class="card-body ps-0">
-                              <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';">&nbsp;&nbsp;디저트</h5>
+                              <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText06">&nbsp;&nbsp;디저트</span></h5>
                             </div>
                         </a>
                       </div>
@@ -100,7 +145,7 @@
               </div>
             </div>
           </div>
-		<h3 style="text-align: 'center'; font-family: 'Jua'; font-weight: 100;">${param.category_num }</h3>
+	
 			<c:choose>
 		<c:when test="${sessionScope.mvo!=null}">
 		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div>
@@ -142,20 +187,5 @@
         </div>
       </main>
 	</body>
-	<script type="text/javascript">
-  function categoryBold() {
-		let categoryNum = "${param.category_num }";
-		/* alert(categoryNum); */
-		//alert(textselect.innerText);
-		let str1 = "한식";
-		//alert(categoryNum==str1);
-		if(categoryNum==str1){
-			document.getElementById("innerText01").style.color="#f00";
-		}
-			
-			
-	}
-	window.addEventListener("DOMContentLoaded",categoryBold);
-  
-  </script>
+	
 </html>
