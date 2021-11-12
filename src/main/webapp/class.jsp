@@ -50,7 +50,7 @@
 			</div>
         	<div class="col-lg-7 mx-auto text-center mt-3 mb-5">
             	<h3 style="font-family: 'Jua'; font-weight: 500;">Class Diagram (개발 후)</h3><br>
-				<img class="form-control border-5 border-warning bg-100" src="assets/img/class-diagram-강사님feedback.jpg" style="width:650px; height:350px;">
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/class-diagram-after.png" style="width:650px; height:350px;">
 			</div>
 		</div>
 	</div>
