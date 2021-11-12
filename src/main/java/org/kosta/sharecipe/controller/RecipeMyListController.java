@@ -11,7 +11,7 @@ import org.kosta.sharecipe.model.PagingBean;
 import org.kosta.sharecipe.model.RecipeDAO;
 import org.kosta.sharecipe.model.RecipeVO;
 
-public class MyRecipeListController implements Controller {
+public class RecipeMyListController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -35,7 +35,7 @@ public class MyRecipeListController implements Controller {
 		//페이징 정보
 		request.setAttribute("pagingBean", pagingBean); //리스트로보낸다
 		
-		return "board/my-recipe-list.jsp";
+		return "board/recipe-my-list.jsp";
 	}
 
 }
