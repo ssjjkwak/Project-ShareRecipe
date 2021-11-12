@@ -12,6 +12,7 @@
           <c:forEach items="${requestScope.latestList }" var="li">
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
             <a href="RecipeDetailController.do?recipeNo=${li.recipeNo }" style="display:block;">
+
               <div class="card card-span h-100 text-white rounded-3 ">
               <div style="width:271px; height:204px; text-align:center; "> 
               <img class="img-fluid rounded-3 h-100"  src="./image/${li.image }" alt="..."  />
@@ -20,6 +21,7 @@
                 <div class="card-body ps-0">
                     <div class="flex-1 ms-3" style="width:239px;">
                       <h5 class="mb-0 fw-bold text-1000 etc" style="font-family: 'Jua';">${li.title}</h5>
+
                     </div>
                 </div>
               </div>

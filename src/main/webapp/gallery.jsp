@@ -82,8 +82,12 @@
 				<img class="form-control border-5 border-warning bg-100" src="assets/img/11-10-food.jpg" style="width:650px; height:400px;">
 			</div>
         	<div class="col-lg-7 mx-auto text-center mt-3 mb-5">
-            	<h4 style="font-family: 'Jua'; font-weight: 500;">계속...</h4><br>
-				<img class="form-control border-5 border-warning bg-100" src="assets/img/erd-physical-before.png" style="width:650px; height:350px;">
+            	<h4 style="font-family: 'Jua'; font-weight: 500;">11/11 스터디(미금)</h4><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/11-11-study.png" style="width:650px; height:350px;">
+			</div>
+        	<div class="col-lg-7 mx-auto text-center mt-3 mb-5">
+            	<h4 style="font-family: 'Jua'; font-weight: 500;">11/12 스터디(미금)</h4><br>
+				<img class="form-control border-5 border-warning bg-100" src="assets/img/11-12-study.jpg" style="width:650px; height:350px;">
 			</div>
 		</div>
 	</div>
