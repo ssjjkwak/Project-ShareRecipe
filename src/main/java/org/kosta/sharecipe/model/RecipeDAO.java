@@ -487,4 +487,29 @@ public class RecipeDAO {
 		}
 		return list;
 	}
+	
+	public ArrayList<RecipeVO> getPopularRecipeList () throws SQLException{
+		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
+		Connection con = null;
+		PreparedStatement pstmt =null;
+		ResultSet rs = null;
+		try {
+			con = dataSource.getConnection();
+			StringBuilder sql = new StringBuilder("SELECT recipe_num,image,title,hits FROM (SELECT * FROM recipe ORDER BY hits DESC)  ");
+			sql.append("WHERE rownum<=10 ");
+			pstmt = con.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				RecipeVO rvo = new RecipeVO();
+				rvo.setRecipeNo(rs.getInt("recipe_num"));
+				rvo.setTitle(rs.getString("title"));
+				rvo.setImage(rs.getString("image"));
+				rvo.setHits(rs.getInt("hits"));
+				list.add(rvo);
+			}
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return list;
+	}
 }

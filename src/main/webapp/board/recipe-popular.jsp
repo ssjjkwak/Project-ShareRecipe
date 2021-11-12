@@ -13,90 +13,36 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row gx-3 h-100 align-items-center">
+                  	<c:forEach items="${requestScope.popularList }" var="pli" begin="0" end="4">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1 etc" style="font-family: 'Jua'; width: 195px;">sdfsdfsd	은열글자까지가능</h4><!-- varchar2(48) -->
+                        <div class="card card-span h-100 rounded-3">
+                        	<div style="width:208px; height:156px; text-align:center;">
+                        	<img style="object_fit: cover; "class="img-fluid rounded-3 h-100" src="./image/${pli.image }" alt="..." />
+                        	</div>
+                          	<div class="card-body ps-0">
+                            <h4 class="fw-bold text-1000 text-truncate mb-1 etc" style="font-family: 'Jua'; width: 190px;">${pli.title }</h4><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">${pli.hits }</span>
                           </div>
                         </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
+                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="RecipeDetailController.do?recipeNo=${pli.recipeNo }" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/toffes-cake.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">팬케이크</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/dancake.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">호떡</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/crispy-sandwitch.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">샌드위치</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/thai-soup.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">스프</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
+                  	</c:forEach>
                     </div>
                   </div>
                   <div class="carousel-item" data-bs-interval="5000">
                     <div class="row gx-3 h-100 align-items-center">
+                  	<c:forEach items="${requestScope.popularList }" var="pli" begin="5" end="9">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3">
+                        <div style="width:208px; height:156px; text-align:center;">
+                        <img style="object_fit: contain; "width="100px" height="100px" class="img-fluid rounded-3 h-100" src="./image/${pli.image }" alt="..." />
+                          </div>
                           <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">제목은열글자까지가능</h4><!-- varchar2(48) -->
+                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua'; width: 190px;">${pli.title }</h4><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">${pli.hits }</span>
                           </div>
                         </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
+                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="RecipeDetailController.do?recipeNo=${pli.recipeNo }"  style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/toffes-cake.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">팬케이크</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/dancake.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">호떡</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/crispy-sandwitch.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">샌드위치</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/thai-soup.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua';">스프</h4>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button" style="font-family: 'Jua'; font-weight: 100">V i e w</a></div>
-                      </div>
+                  	</c:forEach>  
                     </div>
                   </div>
                 </div>
