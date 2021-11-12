@@ -176,6 +176,12 @@ SELECT image,title,hits FROM recipe WHERE rownum<=10
 
 SELECT image,title,hits FROM (SELECT * FROM recipe ORDER BY hits DESC)  WHERE  rownum<=10
 
+-- 타이틀 검색으로 리스트 조회
+SELECT rnum, recipe_num, image,title,id,hits,likes,reg_date,category_name
+FROM (SELECT row_number() over (ORDER BY recipe_num DESC) AS rnum, r.recipe_num, c.category_name,c.category_num,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date
+FROM recipe r, category c 
+WHERE r.category_num=c.category_num AND title like '%기랑%') 
+WHERE rnum BETWEEN 1 AND 5;
 
 --시간계산 더 생각해보기
 SELECT TO_DATE(sysdate, 'YYYY-MM-DD') - TO_DATE('2021-05-01', 'YYYY-MM-DD')

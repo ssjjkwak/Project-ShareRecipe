@@ -367,25 +367,44 @@ public class RecipeDAO {
 	}
 
 	//검색으로 리스트 조회
-	public ArrayList<RecipeVO> searchTitleRecipe(String search) throws SQLException {
+	public ArrayList<RecipeVO> searchTitleRecipe(String search,PagingBean pagingBean) throws SQLException {
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
 			con = dataSource.getConnection();
-			StringBuilder sql = new StringBuilder("SELECT recipe_num, image,title,id,hits,likes,to_char(reg_date,'YYYY.MM.DD') AS reg_date ");
-			sql.append("FROM recipe ");
-			sql.append("WHERE title like ? order by recipe_num desc");
+			StringBuilder sql = new StringBuilder("SELECT rnum, recipe_num, image,title,id,hits,likes,reg_date,category_name ");
+			sql.append("FROM (SELECT row_number() over (ORDER BY recipe_num DESC) AS rnum, r.recipe_num, c.category_name,c.category_num,r.image,r.title,r.id,r.hits,r.likes,to_char(r.reg_date,'YYYY.MM.DD') AS reg_date ");
+			sql.append("FROM recipe r, category c ");
+			sql.append("WHERE title like ? and r.category_num=c.category_num) ");
+			sql.append("WHERE rnum BETWEEN ? AND ?");
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, "%"+search+"%");
+			pstmt.setInt(2, pagingBean.getStartRowNumber());
+			pstmt.setInt(3, pagingBean.getEndRowNumber());
 			//pstmt.setString(1, search);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
+				/*
+				 * RecipeVO rvo = new RecipeVO(); //CategoryVO cvo = new CategoryVO();
+				 * //cvo.setCategoryNo(rs.getInt(null)); rvo.setCategoryVO(null);
+				 * 
+				 * rvo.setRecipeNo(rs.getInt("recipe_num"));
+				 * rvo.setImage(rs.getString("image")); rvo.setTitle(rs.getString("title"));
+				 * 
+				 * MemberVO mvo = new MemberVO(); mvo.setId(rs.getString("id"));
+				 * rvo.setMemberVO(mvo);
+				 * 
+				 * rvo.setHits(rs.getInt("hits")); rvo.setLikes(rs.getInt("likes"));
+				 * rvo.setWroteDate(rs.getString("reg_date"));
+				 * 
+				 * list.add(rvo);
+				 */
 				RecipeVO rvo = new RecipeVO();
-				//CategoryVO cvo = new CategoryVO();
-				//cvo.setCategoryNo(rs.getInt(null));
-				rvo.setCategoryVO(null);
+				CategoryVO cvo = new CategoryVO();
+				cvo.setcName(rs.getString("category_name"));
+				rvo.setCategoryVO(cvo);
 
 				rvo.setRecipeNo(rs.getInt("recipe_num"));
 				rvo.setImage(rs.getString("image"));
@@ -511,5 +530,24 @@ public class RecipeDAO {
 			closeAll(rs, pstmt, con);
 		}
 		return list;
+	}
+
+	public int getTotalSearchPostCount(String search) throws SQLException {
+		int count=0;
+		Connection con = null;
+		PreparedStatement pstmt =null;
+		ResultSet rs=null;
+		try {
+			con = dataSource.getConnection();
+			String sql="select count(*) from recipe where title like ?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, "%"+search+"%");
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				count=rs.getInt(1);
+		}finally {
+			closeAll(pstmt, con);
+		}
+		return count;
 	}
 }
