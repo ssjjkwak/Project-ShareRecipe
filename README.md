@@ -161,7 +161,7 @@ Back to List (목록으로 복귀하는 버튼)
 ## 회의록 🥗
 
 <details>
-<summary>이슈관리대장</summary>
+<summary>회의록 내용</summary>
 
 (https://docs.google.com/document/d/1v5NDAiH5BJWUB0K_4FcZCznZGSXsz3ds5SfMzIIHAGk/edit)
 
