@@ -34,7 +34,7 @@
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                         <div class="card card-span h-100 rounded-3">
                         <div style="width:208px; height:156px; text-align:center;">
-                        <img style="object_fit: contain; "width="100px" height="100px" class="img-fluid rounded-3 h-100" src="./image/${pli.image }" alt="..." />
+                        <img style="object_fit: cover; "class="img-fluid rounded-3 h-100" src="./image/${pli.image }" alt="..." />
                           </div>
                           <div class="card-body ps-0">
                             <h4 class="fw-bold text-1000 text-truncate mb-1" style="font-family: 'Jua'; width: 190px;">${pli.title }</h4><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">${pli.hits }</span>

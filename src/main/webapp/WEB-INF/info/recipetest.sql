@@ -226,5 +226,5 @@ select
 
 select count(*)from recipe where category_name
 
-
-
+delete from recipe where recipe_num=105;
+select * from recipe
