@@ -110,7 +110,7 @@
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">                      
-                        <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=1" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/bibimbap.jpg" alt="..." />
                           <div class="card-body ps-0">
@@ -121,7 +121,7 @@
                       
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=2" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/jjambbong.png" alt="..." />
                           <div class="card-body ps-0">
@@ -131,7 +131,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=3" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sushi.jpg" alt="..." />
                           <div class="card-body ps-0">
@@ -141,7 +141,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=4" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
                           <div class="card-body ps-0">
@@ -151,7 +151,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=5" style="display:block;">
                         <div class="card card-span h-100 rounded-circle">
                         <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/salad.jpg" alt="..." />
                           <div class="card-body ps-0">
@@ -161,7 +161,7 @@
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=6" style="display:block;">
                           <div class="card card-span h-100 rounded-circle">
                             <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/cake.jpg" alt="..." />
                             <div class="card-body ps-0">
