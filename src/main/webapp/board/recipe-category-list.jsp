@@ -37,12 +37,12 @@
 		let categoryNum = "${param.category_num }";
 		/* alert(categoryNum); */
 		//alert(textselect.innerText);
-		let str1 = "한식";
-		let str2 = "중식";
-		let str3 = "일식";
-		let str4 = "양식";
-		let str5 = "채식";
-		let str6 = "디저트";
+		let str1 = "1";
+		let str2 = "2";
+		let str3 = "3";
+		let str4 = "4";
+		let str5 = "5";
+		let str6 = "6";
 		//alert(categoryNum==str1);
 		//#FFB30E
 		//#
@@ -98,42 +98,42 @@
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">                      
-                        <a href="RecipeCategoryListController.do?category_num=한식" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=1" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2"  style="font-family: 'Jua';"><span id="innerText01">&nbsp;&nbsp;한식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=중식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=2" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText02">&nbsp;&nbsp;중식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=일식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=3" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText03">&nbsp;&nbsp;일식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                      <a href="RecipeCategoryListController.do?category_num=양식" style="display:block;">
+                      <a href="RecipeCategoryListController.do?category_num=4" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText04">&nbsp;&nbsp;양식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                        <a href="RecipeCategoryListController.do?category_num=채식" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=5" style="display:block;">
                           <div class="card-body ps-0">
                             <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText05">&nbsp;&nbsp;채식</span></h4>
                           </div>
                         </a>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-2 h-100">
-                        <a href="RecipeCategoryListController.do?category_num=디저트" style="display:block;">
+                        <a href="RecipeCategoryListController.do?category_num=6" style="display:block;">
                             <div class="card-body ps-0">
                               <h4 class="text-center fw-bold text-1000 text-truncate mb-2" style="font-family: 'Jua';"><span id="innerText06">&nbsp;&nbsp;디저트</span></h5>
                             </div>
@@ -148,7 +148,7 @@
 	
 			<c:choose>
 		<c:when test="${sessionScope.mvo!=null}">
-		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-form.jsp" >글쓰기</a></div>
+		<div class="d-grid gap-12"><a style="font-family: 'Jua'; font-weight: 100; font-size: 20px; text-align: right;" href="board/recipe-write-form.jsp" >글쓰기</a></div>
 		</c:when>
 		</c:choose>
 		<table class="table table-hover table-striped boardlist" style="font-family: 'Jua'; font-weight: 100;">
@@ -181,7 +181,7 @@
 		<%--★★★★★페이징 처리★★★★★ --%>
 		<ul class="pagination justify-content-center" style="font-family: 'Jua'; font-weight: 100;">
 		<c:if test="${pagingBean.previousPageGroup }"> <!-- el동작이 get이랑 is계열 메서드의 return을 받아오는데 is계열은 t/f반환이므로 -->
-		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.startPageOfPageGroup-1 }&category_num=${param.category_num }">Previous</a></li> 
+		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.startPageOfPageGroup-1 }&&category_num=${param.category_num }">Previous</a></li> 
 		 <!-- 위에 -1하면 이전그룹 가는거다 , 쿼리스트링방식으로 name(pageNo) 넘겨서 컨트롤러에서 받음-->
 		 
 		  <!-- 맨첨 list뜨면 1이 nowpage이므로previous그룹안뜨고 next그룹만 뜬다 -->
@@ -191,10 +191,10 @@
 		 <c:forEach begin="${pagingBean.startPageOfPageGroup }" end="${pagingBean.endPageOfPageGroup }" var="page"> <!-- 아래처럼 다쓰지말고 for 구문으로 loop돌린다 begin~end갯수만큼-->
 		 <c:choose>
 		 <c:when test="${page==pagingBean.nowPage}">
-		 <li class="page-item active"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&category_num=${param.category_num }">${page }</a></li>
+		 <li class="page-item active"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&&category_num=${param.category_num }">${page }</a></li>
 		 </c:when>
 		 <c:otherwise>
-		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&category_num=${param.category_num }">${page }</a></li>
+		 <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${page }&&category_num=${param.category_num }">${page }</a></li>
 		 </c:otherwise>
 		 </c:choose>
 		  <!--위에 var는 begin~end 한 갯수만큼 보여주고 1~5페이지라면 총 12345 보여줄텐데 그때마다 쿼리스트링도 1-1 2-2 3-3 이렇게 넘어간다 -->
@@ -205,7 +205,7 @@
 		  <li class="page-item"><a class="page-link" href="#">4</a></li> -->
 		  
 		  <c:if test="${pagingBean.nextPageGroup }">  <!-- el동작이 get이랑 is계열 메서드의 return을 받아오는데 is계열은 t/f반환이므로 -->
-		  <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.endPageOfPageGroup+1 }&category_num=${param.category_num }">Next</a></li>
+		  <li class="page-item"><a class="page-link" href="RecipeCategoryListController.do?pageNo=${pagingBean.endPageOfPageGroup+1 }&&category_num=${param.category_num }">Next</a></li>
 		  </c:if>
 		</ul><br>
 		

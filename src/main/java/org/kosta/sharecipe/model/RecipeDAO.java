@@ -211,7 +211,7 @@ public class RecipeDAO {
 	
 
 	//카테고리별 레시피 리스트
-	public ArrayList<RecipeVO> getRecipeByCategory (String category_name,PagingBean pagingBean) throws SQLException{
+	public ArrayList<RecipeVO> getRecipeByCategory (int category_num,PagingBean pagingBean) throws SQLException{
 		ArrayList<RecipeVO> list = new ArrayList<RecipeVO>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -237,10 +237,10 @@ public class RecipeDAO {
 			sql.append("from(  ");
 			sql.append("select row_number() over(order by RECIPE_NUM desc) as rnum,r.RECIPE_NUM,c.category_num,r.image,r.title,r.id,r.hits,r.likes,r.reg_date ");
 			sql.append("from recipe r,category c ");
-			sql.append("where r.category_num=c.category_num and category_name=? ");
+			sql.append("where r.category_num=c.category_num and r.category_num=? ");
 			sql.append(")where rnum between ? and ?");
 			pstmt = con.prepareStatement(sql.toString());
-			pstmt.setString(1, category_name);
+			pstmt.setInt(1, category_num);
 			pstmt.setInt(2, pagingBean.getStartRowNumber());
 			pstmt.setInt(3, pagingBean.getEndRowNumber());
 			
@@ -514,4 +514,44 @@ public class RecipeDAO {
 		}
 		return count;
 	}
+	// category 별 총 게시물 수
+	public int getTotalPostCountByCategory(int category_num) throws SQLException {
+		int totalPostCount=0;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			con=dataSource.getConnection();
+			String sql="select count(*) from recipe where category_num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, category_num);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				totalPostCount=rs.getInt(1);
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return totalPostCount;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

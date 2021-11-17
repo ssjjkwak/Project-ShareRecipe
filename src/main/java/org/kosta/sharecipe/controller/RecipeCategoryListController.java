@@ -13,11 +13,10 @@ public class RecipeCategoryListController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		int totalPostCount=RecipeDAO.getInstance().getTotalPostCount(); //총게시물수 db연동후 받아오기 dao에 메서드있음
+		int category_num = Integer.parseInt(request.getParameter("category_num"));
+		int totalPostCount=RecipeDAO.getInstance().getTotalPostCountByCategory(category_num); //총게시물수 db연동후 받아오기 dao에 메서드있음
 		
 		String pageNo=request.getParameter("pageNo"); //recipe-list.jsp에서 클라이언트가 페이지 조작시 쿼리스트링으로 넘어온다
-		System.out.println(pageNo);
 		
 		PagingBean pagingBean=null;
 		if(pageNo==null) { //client가 넘긴 페이지. 정보가 없고 그냥 첫화면이면
@@ -30,7 +29,6 @@ public class RecipeCategoryListController implements Controller {
 		
 		
 		//페이징 정보
-		String category_num = request.getParameter("category_num");
 		ArrayList<RecipeVO> list=RecipeDAO.getInstance().getRecipeByCategory(category_num,pagingBean);
 		request.setAttribute("list", list);
 		request.setAttribute("pagingBean", pagingBean); //리스트로보낸다
